@@ -13,32 +13,45 @@ const FOCUSED_THRESHOLD = 1000;
 async function scrapeSteamDB() {
     console.log("Starting SteamDB Tracker...");
     
-    const userDataDir = path.join(__dirname, 'playwright_data');
-    
-    const launchOptions = {
-        headless: false,
-        userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
-        viewport: { width: 1280, height: 720 },
-        args: ['--disable-blink-features=AutomationControlled']
-    };
+    let context;
+    let page;
+    const isRemote = process.argv.includes('--remote');
 
-    if (process.env.BROWSER_EXECUTABLE_PATH) {
-        launchOptions.executablePath = process.env.BROWSER_EXECUTABLE_PATH;
-        console.log(`🚀 Booting custom browser from: ${launchOptions.executablePath}`);
-    } else if (process.env.BROWSER_CHANNEL) {
-        launchOptions.channel = process.env.BROWSER_CHANNEL;
-        console.log(`🚀 Booting standard browser channel: ${launchOptions.channel}`);
+    if (isRemote) {
+        console.log("🔌 Connecting to pre-launched Edge browser to bypass Cloudflare completely...");
+        const browser = await chromium.connectOverCDP('http://localhost:9222');
+        context = browser.contexts()[0];
+        page = context.pages().find(p => p.url().includes('steamdb.info'));
+        if (!page) page = await context.newPage();
     } else {
-        console.log(`🚀 Booting default Playwright Chromium bot...`);
+        const userDataDir = path.join(__dirname, 'playwright_data');
+        
+        const launchOptions = {
+            headless: false,
+            userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+            viewport: { width: 1280, height: 720 },
+            args: ['--disable-blink-features=AutomationControlled']
+        };
+
+        if (process.env.BROWSER_EXECUTABLE_PATH) {
+            launchOptions.executablePath = process.env.BROWSER_EXECUTABLE_PATH;
+            console.log(`🚀 Booting custom browser from: ${launchOptions.executablePath}`);
+        } else if (process.env.BROWSER_CHANNEL) {
+            launchOptions.channel = process.env.BROWSER_CHANNEL;
+            console.log(`🚀 Booting standard browser channel: ${launchOptions.channel}`);
+        } else {
+            console.log(`🚀 Booting default Playwright Chromium bot...`);
+        }
+
+        context = await chromium.launchPersistentContext(userDataDir, launchOptions);
+        
+        await context.addInitScript(() => {
+            Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+        });
+
+        page = await context.newPage();
     }
 
-    const context = await chromium.launchPersistentContext(userDataDir, launchOptions);
-    
-    await context.addInitScript(() => {
-        Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
-    });
-
-    const page = await context.newPage();
     const allGames = [];
     const weeksToScrape = getUpcomingWeeks(6); 
     
