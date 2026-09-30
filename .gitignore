@@ -1,0 +1,5 @@
+node_modules/
+playwright_data/
+steamdb_master_data.json
+steamdb_upcoming_tracker.xlsx
+.env
