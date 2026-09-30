@@ -1,0 +1,7660 @@
+{
+  "839140": {
+    "name": "修仙界",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "17"
+    }
+  },
+  "1148310": {
+    "name": "Behind the Beyond",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "428"
+    }
+  },
+  "1488490": {
+    "name": "Nivalis Nights",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "74754"
+    }
+  },
+  "1515710": {
+    "name": "Anna: The Series Test",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "462"
+    }
+  },
+  "1565490": {
+    "name": "Train Station Tycoon",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "1381"
+    }
+  },
+  "1706510": {
+    "name": "Songs of Glimmerwick",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "13098"
+    }
+  },
+  "1732430": {
+    "name": "Neighbors: Suburban Warfare",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "23743"
+    }
+  },
+  "1780320": {
+    "name": "Acolyte's Fall",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "7"
+    }
+  },
+  "1912410": {
+    "name": "Minecraft Dungeons II",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "25730"
+    }
+  },
+  "1944880": {
+    "name": "Drop Command",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "3495"
+    }
+  },
+  "1975470": {
+    "name": "Band of Mercenaries",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "63"
+    }
+  },
+  "2067820": {
+    "name": "RetroSpace",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "10715"
+    }
+  },
+  "2088782": {
+    "name": "Little Nightmares III - The Shores DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "2123460": {
+    "name": "Auto Chess Souls-棋魂之弈",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "65"
+    }
+  },
+  "2288340": {
+    "name": "ACE COMBAT 8: WINGS OF THEVE",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "55424"
+    }
+  },
+  "2386200": {
+    "name": "PSI: Pressure Climbing",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "431"
+    }
+  },
+  "2407780": {
+    "name": "Gus Game",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "26"
+    }
+  },
+  "2521160": {
+    "name": "The Merlies",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "1296"
+    }
+  },
+  "2543830": {
+    "name": "Way of the Hunter 2",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "12344"
+    }
+  },
+  "2552110": {
+    "name": "LurkDarts",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "10"
+    }
+  },
+  "2622610": {
+    "name": "Pancake Patrol - Horde's Revenge DLC",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "2640020": {
+    "name": "Monkey",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "12"
+    }
+  },
+  "2659600": {
+    "name": "Ammossum",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "1838"
+    }
+  },
+  "2663920": {
+    "name": "BATTLE MEATING",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "5"
+    }
+  },
+  "2697670": {
+    "name": "Petal Crash 2",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "187"
+    }
+  },
+  "2761220": {
+    "name": "Escape from 8-Bit High",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "235"
+    }
+  },
+  "2873060": {
+    "name": "The Bell Echoes",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "1116"
+    }
+  },
+  "2893580": {
+    "name": "AI-VJ Application",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "361"
+    }
+  },
+  "2900640": {
+    "name": "TOEM 2",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "4217"
+    }
+  },
+  "2934330": {
+    "name": "RADIOSOL",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "4601"
+    }
+  },
+  "2954090": {
+    "name": "Nion Forge",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "46"
+    }
+  },
+  "2976770": {
+    "name": "The Depths of Despair",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "266"
+    }
+  },
+  "2978940": {
+    "name": "Sauna Simulator",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "396"
+    }
+  },
+  "3058680": {
+    "name": "FUDAN ADVENTURE",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "5"
+    }
+  },
+  "3075420": {
+    "name": "OrbitFix",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "16"
+    }
+  },
+  "3104800": {
+    "name": "DayZ Badlands Playtest Beta",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "3129150": {
+    "name": "Super Chillers: The Chat Room",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "350"
+    }
+  },
+  "3130680": {
+    "name": "BomberParty",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "6"
+    }
+  },
+  "3133010": {
+    "name": "Tiny Flock",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "439"
+    }
+  },
+  "3151070": {
+    "name": "Stellacore Defense Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "3161200": {
+    "name": "EMOJI JACKPOT: Word Finder Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "3171340": {
+    "name": "ysh park",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "3175050": {
+    "name": "Space Cat Solitaire",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "62"
+    }
+  },
+  "3192650": {
+    "name": "Secret Glory Hole",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "2201"
+    }
+  },
+  "3212940": {
+    "name": "Meteor Raiders",
+    "releaseDate": "03 Oct",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "3230470": {
+    "name": "Mahou Shoujo Escape",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "81"
+    }
+  },
+  "3263880": {
+    "name": "Project DevourSlime",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "109"
+    }
+  },
+  "3284260": {
+    "name": "Blades & Battles",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "618"
+    }
+  },
+  "3304130": {
+    "name": "MR.M",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "3315780": {
+    "name": "Celtic Heroes Playtest Beta",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "3316400": {
+    "name": "Blitz",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "34"
+    }
+  },
+  "3339490": {
+    "name": "C4: Classical Caliber Combat Contest",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "41"
+    }
+  },
+  "3346480": {
+    "name": "Empires of a Tiny Universe",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "204"
+    }
+  },
+  "3386350": {
+    "name": "Shinjuku Anomaly",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "209"
+    }
+  },
+  "3392290": {
+    "name": "House Builder - Plumbing DLC DLC",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "3396560": {
+    "name": "The Blessed Fool",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "184"
+    }
+  },
+  "3402660": {
+    "name": "System Clues",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "117"
+    }
+  },
+  "3412490": {
+    "name": "Obstacle Overdrive",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "321"
+    }
+  },
+  "3418160": {
+    "name": "Radiotext",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "881"
+    }
+  },
+  "3456700": {
+    "name": "Iron Pact",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "282"
+    }
+  },
+  "3461270": {
+    "name": "XenoHaven",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "1278"
+    }
+  },
+  "3464000": {
+    "name": "Eropsychosis: The Project Elysiara",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "7669"
+    }
+  },
+  "3466220": {
+    "name": "Insurance Inc.",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "3469900": {
+    "name": "Legend of the Crystal Skulls",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "3479090": {
+    "name": "Soul's Remnant Playtest Beta",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "3479420": {
+    "name": "Okko The Exiled",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "2035"
+    }
+  },
+  "3493540": {
+    "name": "Transport Fever 3",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "52388"
+    }
+  },
+  "3499220": {
+    "name": "Gamer Stop Simulator",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "3168"
+    }
+  },
+  "3500590": {
+    "name": "Cicada Communication",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "262"
+    }
+  },
+  "3504020": {
+    "name": "Shroomwood",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "102"
+    }
+  },
+  "3510590": {
+    "name": "Purr-fect Chef: Kitchen Chaos",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "182"
+    }
+  },
+  "3540570": {
+    "name": "Survivesmith",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "22"
+    }
+  },
+  "3541630": {
+    "name": "HR: Human Remains",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "1701"
+    }
+  },
+  "3557530": {
+    "name": "Bug Cleaners",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "836"
+    }
+  },
+  "3579040": {
+    "name": "Heroes Of Isekai Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "3582120": {
+    "name": "Cohen 1939",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "1862"
+    }
+  },
+  "3594090": {
+    "name": "The Great Wastes",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "1273"
+    }
+  },
+  "3630680": {
+    "name": "Galaxy Critter Co.",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "209"
+    }
+  },
+  "3634190": {
+    "name": "MXGP 26 - The Official Game",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "994"
+    }
+  },
+  "3658250": {
+    "name": "Deck of Stabs",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "136"
+    }
+  },
+  "3670670": {
+    "name": "Wizzo PopOut",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "35"
+    }
+  },
+  "3670900": {
+    "name": "Minute Man",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "19"
+    }
+  },
+  "3671920": {
+    "name": "Help 2034",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "3694100": {
+    "name": "Unshine Arcade",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "382"
+    }
+  },
+  "3719200": {
+    "name": "Strange Days Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "3720900": {
+    "name": "King's Guard",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "80"
+    }
+  },
+  "3725800": {
+    "name": "Island of Rebirth~NTR and Love~",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "1613"
+    }
+  },
+  "3735860": {
+    "name": "Havoc Heirs",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "100"
+    }
+  },
+  "3737680": {
+    "name": "Bloodspill",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "829"
+    }
+  },
+  "3750230": {
+    "name": "Scourge of War - Brandy Station DLC",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "3775670": {
+    "name": "Rogue Reels Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "3776750": {
+    "name": "Four Directions",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "3779090": {
+    "name": "Pumpkin & Patch",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "41"
+    }
+  },
+  "3793200": {
+    "name": "American Truck Simulator - Road Trip: Ford DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "3807650": {
+    "name": "Cyber Cleaner Simulator",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "659"
+    }
+  },
+  "3832490": {
+    "name": "Antivirus Survivors 2003 Professional",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "3882"
+    }
+  },
+  "3839750": {
+    "name": "Skingdom Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "3841510": {
+    "name": "DYNASTY WARRIORS 3: Complete Edition Remastered",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "10847"
+    }
+  },
+  "3845510": {
+    "name": "Vexcell",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "58"
+    }
+  },
+  "3853240": {
+    "name": "Monster Ops 24",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "14"
+    }
+  },
+  "3853260": {
+    "name": "Monster Ops 23",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "24"
+    }
+  },
+  "3866160": {
+    "name": "Sketch Play",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "25"
+    }
+  },
+  "3867170": {
+    "name": "Sengoku Rance",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "3329"
+    }
+  },
+  "3873330": {
+    "name": "Redhowl",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "146"
+    }
+  },
+  "3892280": {
+    "name": "Bloody Bunny 3D",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "16"
+    }
+  },
+  "3908240": {
+    "name": "Guildream",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "11"
+    }
+  },
+  "3910670": {
+    "name": "AE: Archeological Expedition",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "17"
+    }
+  },
+  "3916080": {
+    "name": "Taru's Infernal Pledge",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "315"
+    }
+  },
+  "3917700": {
+    "name": "Dicevaders",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "1607"
+    }
+  },
+  "3935530": {
+    "name": "Frutiger Home",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "2355"
+    }
+  },
+  "3937930": {
+    "name": "Idle Realms: Rise",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "3958210": {
+    "name": "Digging A Hole In Ice With A Chainsaw",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "3977320": {
+    "name": "Grave Of Voices",
+    "releaseDate": "04 Oct",
+    "history": {
+      "2026-09-30": "38"
+    }
+  },
+  "3977540": {
+    "name": "Arcturus Vision Gaussian XR",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "157"
+    }
+  },
+  "3979620": {
+    "name": "Transport Fever 3: Deluxe Upgrade DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4007050": {
+    "name": "姐姐恋爱法则 Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4013110": {
+    "name": "Paws VS Paws",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "4014460": {
+    "name": "Horror Scenarios: The Redwood Estate",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "71"
+    }
+  },
+  "4020370": {
+    "name": "Boxcutter",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "124"
+    }
+  },
+  "4037160": {
+    "name": "Dream:scape Revelation",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "19"
+    }
+  },
+  "4045050": {
+    "name": "Lustfire Escape",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "117"
+    }
+  },
+  "4060000": {
+    "name": "Rescue Ops Playtest Beta",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4070710": {
+    "name": "Wall Escaper: Stream Sabotage",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "4076080": {
+    "name": "KIN:D Barabin's Expedition Playtest Beta",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4076450": {
+    "name": "Paddle Legends",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "9"
+    }
+  },
+  "4079530": {
+    "name": "Eyes And Hypercubes",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "4092770": {
+    "name": "Pocket Parade",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "8"
+    }
+  },
+  "4093500": {
+    "name": "GameGuru MAX - The Farm DLC",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4096590": {
+    "name": "NTREX",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "1839"
+    }
+  },
+  "4111250": {
+    "name": "Alonitaire",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "62"
+    }
+  },
+  "4114220": {
+    "name": "Tempest Rising: The Veti’s Wrath DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4119330": {
+    "name": "Restoration",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "7"
+    }
+  },
+  "4135270": {
+    "name": "Ball Bots Playtest Beta",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4147170": {
+    "name": "Late Order",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "111"
+    }
+  },
+  "4157800": {
+    "name": "PLATiNA :: LAB - Anime Day ｢Renai Circulation｣ DLC",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4165370": {
+    "name": "Match 3 Labyrinth",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "18"
+    }
+  },
+  "4174010": {
+    "name": "Humanize Robotics",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "70"
+    }
+  },
+  "4183870": {
+    "name": "Grapixo Arte em Guerra",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "92"
+    }
+  },
+  "4190040": {
+    "name": "病み菌少女 地雷ちゃん",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "9"
+    }
+  },
+  "4198330": {
+    "name": "Femboy Ghost",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "954"
+    }
+  },
+  "4198430": {
+    "name": "The Last Camp : Dawn",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "140"
+    }
+  },
+  "4201760": {
+    "name": "Don't Breathe or They Might Hear",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "835"
+    }
+  },
+  "4205180": {
+    "name": "Wreck Below",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "117"
+    }
+  },
+  "4211470": {
+    "name": "MAEVOR Demo Demo",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4214800": {
+    "name": "Chromascape",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "56"
+    }
+  },
+  "4221840": {
+    "name": "The Starfallen Prince",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "28"
+    }
+  },
+  "4229200": {
+    "name": "Muchi Muchi Pork! & PinkSweets Boosted",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "669"
+    }
+  },
+  "4232900": {
+    "name": "Crusader Kings III: By God Alone DLC",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4254010": {
+    "name": "The Charity Shop Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4254090": {
+    "name": "Project - Labyrinth",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "6"
+    }
+  },
+  "4268050": {
+    "name": "Chains Of Clues",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "15"
+    }
+  },
+  "4271950": {
+    "name": "HYPERFRAG",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "42"
+    }
+  },
+  "4285040": {
+    "name": "Golf It! - Under Construction DLC",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4285110": {
+    "name": "Tunnel Escape Fates Entwined",
+    "releaseDate": "03 Oct",
+    "history": {
+      "2026-09-30": "2054"
+    }
+  },
+  "4294950": {
+    "name": "Baby Lemonade",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "25"
+    }
+  },
+  "4297230": {
+    "name": "Midas Playtest Beta",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4297720": {
+    "name": "Crescent Break",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "118"
+    }
+  },
+  "4301910": {
+    "name": "The War Disorder Hexa",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "44"
+    }
+  },
+  "4303680": {
+    "name": "Car Factory Tycoon",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "55"
+    }
+  },
+  "4311440": {
+    "name": "Carry The Count",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "258"
+    }
+  },
+  "4320620": {
+    "name": "Delegatory",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "41"
+    }
+  },
+  "4323880": {
+    "name": "Loophole: The Prison Break",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "22"
+    }
+  },
+  "4324030": {
+    "name": "LEAF",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "24"
+    }
+  },
+  "4334440": {
+    "name": "Wong Playtest Beta",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4340400": {
+    "name": "Remember to Die",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "12"
+    }
+  },
+  "4343890": {
+    "name": "FUTANARI SEX",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "417"
+    }
+  },
+  "4343910": {
+    "name": "Compound Interest",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "324"
+    }
+  },
+  "4345470": {
+    "name": "Speedway Club Manager 26",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "125"
+    }
+  },
+  "4347380": {
+    "name": "Next of Kin: Epiphany Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4348970": {
+    "name": "Transmission: Shortwave",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "4352150": {
+    "name": "MatiPlayer Application",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "4363700": {
+    "name": "Dreidel I Shall Spin",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "4366830": {
+    "name": "SVETIK",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "53"
+    }
+  },
+  "4367430": {
+    "name": "Fill That Pig",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "4368960": {
+    "name": "The Last Camp : Dawn - Explorer Weapon Bag DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4368970": {
+    "name": "The Last Camp : Dawn - Conqueror Toolkit DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4375880": {
+    "name": "声韵之恋",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "18"
+    }
+  },
+  "4376740": {
+    "name": "Fruit Fetish",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "11"
+    }
+  },
+  "4377310": {
+    "name": "Desktop Sticky Notes Application",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "4386170": {
+    "name": "Zenith Expanse",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "758"
+    }
+  },
+  "4398550": {
+    "name": "LONG PIECE!",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "11"
+    }
+  },
+  "4401480": {
+    "name": "Rorasuketo",
+    "releaseDate": "03 Oct",
+    "history": {
+      "2026-09-30": "10"
+    }
+  },
+  "4403870": {
+    "name": "Father After 40 / 男人40",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "9"
+    }
+  },
+  "4405080": {
+    "name": "Island Idle RPG: Build and Conquer",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "17"
+    }
+  },
+  "4406710": {
+    "name": "Watatuyo-ANOTHER",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "4412510": {
+    "name": "Sacred Echoes",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "19"
+    }
+  },
+  "4414810": {
+    "name": "TOEM 2 Original Soundtrack Music",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4415120": {
+    "name": "Growing My Manhole",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "290"
+    }
+  },
+  "4418690": {
+    "name": "Log Away - Halloween DLC DLC",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4430190": {
+    "name": "Soup Weather",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "31"
+    }
+  },
+  "4433200": {
+    "name": "Sweet Boom Demo Demo",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4433930": {
+    "name": "Maul Tactics",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "13"
+    }
+  },
+  "4435360": {
+    "name": "Water Droplet Simulator",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "4442360": {
+    "name": "Chaos of the Realms",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "4444200": {
+    "name": "Fsh",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "179"
+    }
+  },
+  "4448650": {
+    "name": "Proto Zero",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "19"
+    }
+  },
+  "4452790": {
+    "name": "Smiglee's Statues: The Cursed Curation",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "4456120": {
+    "name": "Despair",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "8"
+    }
+  },
+  "4459540": {
+    "name": "SS13 BAR SIM",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "203"
+    }
+  },
+  "4459980": {
+    "name": "Catventure",
+    "releaseDate": "04 Oct",
+    "history": {
+      "2026-09-30": "9"
+    }
+  },
+  "4463710": {
+    "name": "Altaria Online",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "12"
+    }
+  },
+  "4465840": {
+    "name": "Zombie Survivors - last soldier -",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "8"
+    }
+  },
+  "4484530": {
+    "name": "Tech Survivor",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "4486860": {
+    "name": "Discovery 2",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "21"
+    }
+  },
+  "4491690": {
+    "name": "KUNTEYNIR",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "14"
+    }
+  },
+  "4502140": {
+    "name": "STAR TALE: Odyssey One",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "100"
+    }
+  },
+  "4504620": {
+    "name": "Hacker CLIcker",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "35"
+    }
+  },
+  "4506270": {
+    "name": "Molluscarium Soundtrack Music",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4506460": {
+    "name": "GOAT - Gear Optimization Auto-Battle Tactics Demo Demo",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4508540": {
+    "name": "P.I.G.E.O.N.",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "18"
+    }
+  },
+  "4511420": {
+    "name": "Cold Site",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "4524010": {
+    "name": "A Maze In Labyrinth",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "13"
+    }
+  },
+  "4529700": {
+    "name": "Aquilon: Lust Guild",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "2049"
+    }
+  },
+  "4532250": {
+    "name": "Space Mine Raider",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "8"
+    }
+  },
+  "4535430": {
+    "name": "童谣无忌",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "6"
+    }
+  },
+  "4541270": {
+    "name": "Cards Of Calling",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "19"
+    }
+  },
+  "4543490": {
+    "name": "Infinite Museum",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "28"
+    }
+  },
+  "4549090": {
+    "name": "Escape From Z",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "39"
+    }
+  },
+  "4552190": {
+    "name": "《30天》",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "8"
+    }
+  },
+  "4556750": {
+    "name": "Slots & Sword & Magic",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "55"
+    }
+  },
+  "4557870": {
+    "name": "It's cooked",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "6"
+    }
+  },
+  "4563610": {
+    "name": "Corrupt Receptionist Elina Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4564080": {
+    "name": "CrazyLobster",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "4565100": {
+    "name": "Crow's Curated Closet - Shop Simulator",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "14"
+    }
+  },
+  "4566390": {
+    "name": "CROUPIERED",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "6"
+    }
+  },
+  "4582790": {
+    "name": "Suika Game 2024 Memorial Pack DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4587590": {
+    "name": "Ultraquarium",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "4588190": {
+    "name": "Hikel",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "4590580": {
+    "name": "The Completionist: 1980-1989",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "39"
+    }
+  },
+  "4593690": {
+    "name": "Ando Tale Playtest Beta",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4596250": {
+    "name": "Bonki D Bonk",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "28"
+    }
+  },
+  "4597860": {
+    "name": "Split Happens Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4599870": {
+    "name": "Escape: Immersion Soundtrack Music",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4600990": {
+    "name": "Clash of Crests",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "4601120": {
+    "name": "Endless Rails",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "874"
+    }
+  },
+  "4609220": {
+    "name": "Cornered",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "4610080": {
+    "name": "Bering Tonnage",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "1496"
+    }
+  },
+  "4611600": {
+    "name": "Stick Cards RNG",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "14"
+    }
+  },
+  "4612540": {
+    "name": "Lone Mining Engineer",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "6"
+    }
+  },
+  "4613180": {
+    "name": "Dog in the Machine",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "357"
+    }
+  },
+  "4613270": {
+    "name": "Catch Meow If You Can Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4613660": {
+    "name": "Skingdom Playtest Beta",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4617940": {
+    "name": "Incoherence: Dark Rooms Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4617970": {
+    "name": "MugiPunch",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "13"
+    }
+  },
+  "4618710": {
+    "name": "Chief Bubble Officer Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4621980": {
+    "name": "菇菇悠闲汤屋 Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4623570": {
+    "name": "Deskrawl: Idle ARPG",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "6579"
+    }
+  },
+  "4629170": {
+    "name": "Epic Action Packs",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "4630130": {
+    "name": "Ceniza - Tower Defense",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "6"
+    }
+  },
+  "4631620": {
+    "name": "UNO FLEX!™ DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4632980": {
+    "name": "Turn Off the Lights",
+    "releaseDate": "03 Oct",
+    "history": {
+      "2026-09-30": "7"
+    }
+  },
+  "4633560": {
+    "name": "CRABRUN",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "5"
+    }
+  },
+  "4641670": {
+    "name": "Mountain Surfer Drone Racing Game",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "5"
+    }
+  },
+  "4644650": {
+    "name": "End of End Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4648300": {
+    "name": "PaletCard",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "4655360": {
+    "name": "My Murder",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "9"
+    }
+  },
+  "4657760": {
+    "name": "River Drift Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4660280": {
+    "name": "DUAL PROTOCOL: The Case of Eva & Miles",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "1368"
+    }
+  },
+  "4661020": {
+    "name": "H.O.A Simulator",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "10"
+    }
+  },
+  "4665400": {
+    "name": "Bustle Beacon",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "53"
+    }
+  },
+  "4666490": {
+    "name": "Beautiful Spores",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "9"
+    }
+  },
+  "4669750": {
+    "name": "Clawless Coin",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "26"
+    }
+  },
+  "4673480": {
+    "name": "Technoidium",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "4676150": {
+    "name": "Piece Quest Idle Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4677000": {
+    "name": "Sausage Legend Arena Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4677320": {
+    "name": "AlterMage Playtest Beta",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4680530": {
+    "name": "Train Sim World® 7: Tadami Line: Aizu-Wakamatsu - Tadami Route Add-On DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4681750": {
+    "name": "Tribal Towers - Siege of the Shifting Fortress Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4682330": {
+    "name": "Fister",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "32"
+    }
+  },
+  "4682610": {
+    "name": "13th Ball: The Nightmare Shift Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4687260": {
+    "name": "Launch Companion Application",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "4687290": {
+    "name": "Dino Cleanup Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4691070": {
+    "name": "DSprite Application",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "38"
+    }
+  },
+  "4691770": {
+    "name": "Desktopet",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "4692190": {
+    "name": "Idle Bomb Animals - Desktop Mining",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "4695330": {
+    "name": "Knightbane",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "26"
+    }
+  },
+  "4698510": {
+    "name": "Void Step Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4705440": {
+    "name": "Coloniam",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "31"
+    }
+  },
+  "4708680": {
+    "name": "Otpisani: Nightingale",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "22"
+    }
+  },
+  "4708730": {
+    "name": "Magic Circle Generator Application",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "23"
+    }
+  },
+  "4708930": {
+    "name": "Sarge's Horrors",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "20"
+    }
+  },
+  "4713190": {
+    "name": "Crown Of Blight",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "12"
+    }
+  },
+  "4729690": {
+    "name": "Referee Life Simulator 2026 Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4731880": {
+    "name": "Pop 'Un Orc",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "5"
+    }
+  },
+  "4735630": {
+    "name": "Pop 'Un Orc Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4738830": {
+    "name": "Cricket Management 26",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "178"
+    }
+  },
+  "4745180": {
+    "name": "Five Hearts Under One Roof season2 : Winter Trip DLC DLC",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4745790": {
+    "name": "Black Ledger: The Antique Mafia Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4747710": {
+    "name": "Amnesia Bullet",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "25"
+    }
+  },
+  "4748310": {
+    "name": "Slimeball Castle Wars",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "15"
+    }
+  },
+  "4758060": {
+    "name": "Socialiskigrad Playtest Beta",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4762810": {
+    "name": "SpyCat: Codename Wu",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "20"
+    }
+  },
+  "4764780": {
+    "name": "Another Tavern Simulator",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "13"
+    }
+  },
+  "4767810": {
+    "name": "Cancel Subscription Simulator",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "4778970": {
+    "name": "Chronicon - Cosmic Curse DLC",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4781680": {
+    "name": "LastStop",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "5"
+    }
+  },
+  "4782760": {
+    "name": "Beneath Paris Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4787700": {
+    "name": "Automania Remastered",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "12"
+    }
+  },
+  "4788320": {
+    "name": "Guardians of the Wall Playtest Beta",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4788870": {
+    "name": "C4: Original Soundtrack Music",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4802660": {
+    "name": "ENTRY_13 Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4803460": {
+    "name": "From Beyond: Arcade Edition",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "9"
+    }
+  },
+  "4807840": {
+    "name": "From Beyond: Album Edition Music",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4809430": {
+    "name": "FFFF : Fatal Five Finger Fillet Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4813190": {
+    "name": "Camp Whittlewood",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "921"
+    }
+  },
+  "4813330": {
+    "name": "Expat Manager",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "168"
+    }
+  },
+  "4814330": {
+    "name": "Hidden Clause",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "4814340": {
+    "name": "The Great Release",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "48"
+    }
+  },
+  "4814420": {
+    "name": "Shark Mart Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4815340": {
+    "name": "All Hallows Soundtrack Music",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4819260": {
+    "name": "小小行者 Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4819510": {
+    "name": "Monster Nursery",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "21"
+    }
+  },
+  "4822520": {
+    "name": "Fuck This Job",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "21"
+    }
+  },
+  "4823040": {
+    "name": "明末：力挽狂澜 Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4831080": {
+    "name": "Stickman Counter Zombie Strike 2: Multiplayer",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "4831090": {
+    "name": "Battle Simulator: Counter Zombie REBORN",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "4831650": {
+    "name": "Subterfuge",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "55"
+    }
+  },
+  "4836350": {
+    "name": "C4: Supporter Pack DLC",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4838830": {
+    "name": "Desktop Fishing Garden",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "5"
+    }
+  },
+  "4839790": {
+    "name": "LeadFall",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "7"
+    }
+  },
+  "4842340": {
+    "name": "Organ Failure Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4844730": {
+    "name": "Corid",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "9"
+    }
+  },
+  "4847610": {
+    "name": "Wingspan Bird Pack: Birds of Continental Europe DLC",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4853530": {
+    "name": "Sweet Lake",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "9"
+    }
+  },
+  "4854000": {
+    "name": "DAY50 Playtest Beta",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4860330": {
+    "name": "留白 试玩版 Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4861570": {
+    "name": "Star Trek: Voyager - Across the Unknown - Equinox DLC DLC",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4865800": {
+    "name": "Desire on Tap - Busty on Tap DLC",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4866280": {
+    "name": "Cinnaboi Baked Brawl Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4867650": {
+    "name": "TWIN Hotel, Spa and More",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "450"
+    }
+  },
+  "4869180": {
+    "name": "GoatCart",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "4873700": {
+    "name": "World of Tanks: HEAT - Season 2 Soundtrack Music",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4884960": {
+    "name": "VESSELS: Noiret Mansion",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "315"
+    }
+  },
+  "4885400": {
+    "name": "BOX PUSH MASTER",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "4886050": {
+    "name": "WanderingChaoticEra流浪乱纪元",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "4887100": {
+    "name": "Checkate Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4889650": {
+    "name": "Edge of the Blade | 칼 끝에 서서 Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4890770": {
+    "name": "Intravenous 3: Borderline",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "2170"
+    }
+  },
+  "4891980": {
+    "name": "NIGHTRAIN POOL HALL Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4892000": {
+    "name": "Youyi Application",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "30"
+    }
+  },
+  "4892510": {
+    "name": "Moral Dilemma: Breaking Character Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4894370": {
+    "name": "Suits of Fantasia Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4894980": {
+    "name": "Bravest!2 Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4895330": {
+    "name": "Snack Factory Together - Prologue",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "45"
+    }
+  },
+  "4895890": {
+    "name": "Forest Quest 88",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "4898470": {
+    "name": "Dark Alley - Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4898770": {
+    "name": "Goblin Getaway Playtest Beta",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4900270": {
+    "name": "Youyi Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4900700": {
+    "name": "Dead Awake Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4902850": {
+    "name": "Pulse Drive Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4904950": {
+    "name": "Beta Bar",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "4909440": {
+    "name": "SUCCUBUS MONSTER CARDS",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "19"
+    }
+  },
+  "4912340": {
+    "name": "Echoes Within Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4917440": {
+    "name": "MOGGED: Looksmaxx or Die",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "792"
+    }
+  },
+  "4918300": {
+    "name": "The Wheelchair Man 2",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "63"
+    }
+  },
+  "4922600": {
+    "name": "游习 Learnbgame",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "4924820": {
+    "name": "Space Civilization Clicker",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "6"
+    }
+  },
+  "4929050": {
+    "name": "Pantheon Tactics",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "8"
+    }
+  },
+  "4932530": {
+    "name": "MoonDoku Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4933290": {
+    "name": "Tactics Quest: Erynari",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "4934730": {
+    "name": "Enlisted - Willys MB Squad DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4934740": {
+    "name": "Enlisted - Kubelwagen 82 Squad DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4934750": {
+    "name": "Enlisted - 8cm IJN AT launcher Squad DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4936670": {
+    "name": "La Mano Pachona",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "4938080": {
+    "name": "LumaEdge Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4938650": {
+    "name": "FACTORIZE: 1 Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4938700": {
+    "name": "PixelRift Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4939410": {
+    "name": "Mineiac",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "4942770": {
+    "name": "崇祯直聘：明末官场沉浮模拟器",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "397"
+    }
+  },
+  "4947060": {
+    "name": "異界ノ宿帳 Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4951740": {
+    "name": "謎好きサンタからの挑戦状",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "4953940": {
+    "name": "2D Factory",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "15"
+    }
+  },
+  "4955820": {
+    "name": "autocycle-light",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "4955940": {
+    "name": "Go Fish: The Card Game?",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "4956970": {
+    "name": "Chalk Paper Scissors",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "44"
+    }
+  },
+  "4957450": {
+    "name": "A Wee Flee",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "4958470": {
+    "name": "MarbleGo",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "8"
+    }
+  },
+  "4960590": {
+    "name": "Liminal Desktop Application",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "15"
+    }
+  },
+  "4961200": {
+    "name": "Kret: The Game",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "5"
+    }
+  },
+  "4962560": {
+    "name": "Eclesiar",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "259"
+    }
+  },
+  "4966930": {
+    "name": "Suika Game 2025 Memorial Pack DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4967290": {
+    "name": "SuikaGame Waterside DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4967300": {
+    "name": "Suika Game Night Chill DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4970010": {
+    "name": "Gnomicide",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "5"
+    }
+  },
+  "4971100": {
+    "name": "Chigusa's Diary Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4973140": {
+    "name": "盗墓贼Grave digging for wealth",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "5"
+    }
+  },
+  "4974510": {
+    "name": "Second Zero",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "9"
+    }
+  },
+  "4975570": {
+    "name": "Scroll Of Taiwu - Chicken Incarnation DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4976310": {
+    "name": "Hentai Tales: This Mesu Serves Me Now",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "16"
+    }
+  },
+  "4976530": {
+    "name": "Calypso Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4976640": {
+    "name": "Fengshen: Immortal Reborn",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "29"
+    }
+  },
+  "4978210": {
+    "name": "Gallipoli - Khaki Pack DLC",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4978220": {
+    "name": "Gallipoli - Black Watch Pack DLC",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4979430": {
+    "name": "The Enchanted Crayon",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "4980210": {
+    "name": "Key Fairy OST (Occult Sonic Tapestry) Music",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4983140": {
+    "name": "EVERBUILD Playtest Beta",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4983950": {
+    "name": "Jousting Around",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "14"
+    }
+  },
+  "4987200": {
+    "name": "Minesweeper Reloaded",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "4987280": {
+    "name": "Desktop Rave Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4988150": {
+    "name": "Kitsune Waifu",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "34"
+    }
+  },
+  "4989520": {
+    "name": "Immortal Zenith: Idle to Ascension",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "304"
+    }
+  },
+  "4990950": {
+    "name": "Anti-anti Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "4991900": {
+    "name": "Tilements",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "4993040": {
+    "name": "The Nun",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "755"
+    }
+  },
+  "4993850": {
+    "name": "Mahjong For All",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "12"
+    }
+  },
+  "4995620": {
+    "name": "青铜灰烬 Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5003710": {
+    "name": "Rewritten: Chasing History",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "5005640": {
+    "name": "WESTERN SHOP SIMULATOR",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "70"
+    }
+  },
+  "5005870": {
+    "name": "Cash & Chaos",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "16"
+    }
+  },
+  "5009680": {
+    "name": "Ear Cleaning Simulator",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "11"
+    }
+  },
+  "5011870": {
+    "name": "Ballad",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "5012840": {
+    "name": "Tooth for Tooth",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "110"
+    }
+  },
+  "5014980": {
+    "name": "Folklore War Game Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5015290": {
+    "name": "American Mahjong",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "7"
+    }
+  },
+  "5016420": {
+    "name": "The Witch Trials EP1 The Abyss Gazer",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "36"
+    }
+  },
+  "5017130": {
+    "name": "The Flying Feather Shotgun Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5020410": {
+    "name": "Mikael The Apprentice Merchant Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5020950": {
+    "name": "Cozy Classical Critters",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5022890": {
+    "name": "The Collective Demo Demo",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5023770": {
+    "name": "Let's Tidy Up! : Treasure",
+    "releaseDate": "03 Oct",
+    "history": {
+      "2026-09-30": "273"
+    }
+  },
+  "5024070": {
+    "name": "反击吧！牛马！！！",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "5024180": {
+    "name": "幸存者：彼岸撤离 Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5026630": {
+    "name": "Opi Popi",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "28"
+    }
+  },
+  "5026820": {
+    "name": "Pixel Lust: Hentai Girls Puzzle",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "9"
+    }
+  },
+  "5028210": {
+    "name": "Granny Horror House",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "9"
+    }
+  },
+  "5029410": {
+    "name": "Fishtographers Playtest Beta",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5030760": {
+    "name": "The Demon King's Reclusive Strategist Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5031490": {
+    "name": "My Desktop Cat",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "76"
+    }
+  },
+  "5034300": {
+    "name": "Cosmo Cat: A Cozy Desktop Idler",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "140"
+    }
+  },
+  "5034440": {
+    "name": "Cricket Team Manager",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "24"
+    }
+  },
+  "5034680": {
+    "name": "Mirage Rebellion Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5036540": {
+    "name": "HAS With Friends",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5037740": {
+    "name": "LOUGAWOU",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "5"
+    }
+  },
+  "5039680": {
+    "name": "Crawler 3D",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "122"
+    }
+  },
+  "5039850": {
+    "name": "Password Not Valid Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5040210": {
+    "name": "Desktop Mate Miyamai Moca DLC DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5040380": {
+    "name": "Cards after Midnight Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5040540": {
+    "name": "AQUA FALL Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5040980": {
+    "name": "MATE THEM ALL",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "23"
+    }
+  },
+  "5041240": {
+    "name": "Astral shifter",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "6"
+    }
+  },
+  "5041390": {
+    "name": "No Witnesses Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5042580": {
+    "name": "SwissBaha Game Assistant Application",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "7"
+    }
+  },
+  "5044280": {
+    "name": "TRAWL",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "5044540": {
+    "name": "Little Gable Studio",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "6"
+    }
+  },
+  "5044650": {
+    "name": "8 Hours Till Dawn Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5045830": {
+    "name": "Idle Trash",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5047760": {
+    "name": "Conjurariun",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5047780": {
+    "name": "InkQuest: Text Game Engine Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5048410": {
+    "name": "King's Heart Demo Demo",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5049390": {
+    "name": "HyperCore: Rhythm Bullet Hell - Original Soundtrack Music",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5049460": {
+    "name": "Gold Miner: Party Rush Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5049800": {
+    "name": "The Crimson Scales",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "75"
+    }
+  },
+  "5050350": {
+    "name": "HoloCozy Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5050850": {
+    "name": "Animation.exe",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5051290": {
+    "name": "BioBotGuide - Chara Pack VI DLC",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5051720": {
+    "name": "CRAFTLANDER",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5052470": {
+    "name": "Dieselpunk - Steel Ball Elite Battle Contract DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5052490": {
+    "name": "Dieselpunk - Overlord Elite Battle Contract DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5052500": {
+    "name": "Royal - Phoenix Elite Battle Contract DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5052510": {
+    "name": "Royal - Sabertooth Elite Battle Contract DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5052640": {
+    "name": "Biodome Bastion",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5054370": {
+    "name": "HUMAN INTELLIGENCE",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "5"
+    }
+  },
+  "5054890": {
+    "name": "Astro Kitty: Space Mining Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5057620": {
+    "name": "Fuga: Melodies of Steel (Manga) Vol. 13 DLC",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5057640": {
+    "name": "Fuga: Melodies of Steel (Manga) Vol. 13 DLC",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5057650": {
+    "name": "Fuga: Melodies of Steel (Manga) Vol. 13 DLC",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5058220": {
+    "name": "Prop Revolt",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5058740": {
+    "name": "Debt of Life",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "16"
+    }
+  },
+  "5063180": {
+    "name": "Phluxel Application",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "14"
+    }
+  },
+  "5063920": {
+    "name": "Society Chess 3D",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5063960": {
+    "name": "Halloween: Trick or Treat",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5064960": {
+    "name": "Bee on a Roll",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "6"
+    }
+  },
+  "5065060": {
+    "name": "Rippusion Application",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5065510": {
+    "name": "Bullet Banshee",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "12"
+    }
+  },
+  "5067380": {
+    "name": "Pigkour",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5068010": {
+    "name": "CHUD LIFE",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5068340": {
+    "name": "Butterflies Bloom Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5070640": {
+    "name": "Eternal Swordsmith",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "6"
+    }
+  },
+  "5072420": {
+    "name": "Off The Rocks",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "5073260": {
+    "name": "A Simple Puzzle Game About Numbers",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "5"
+    }
+  },
+  "5074750": {
+    "name": "Angel Legion-DLC First Love Glow F DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5075340": {
+    "name": "Infinite Three Kingdoms",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "8"
+    }
+  },
+  "5076420": {
+    "name": "Corporate Slave：Quiet Quitting",
+    "releaseDate": "04 Oct",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "5077960": {
+    "name": "Le Shampoo War II",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5078390": {
+    "name": "Dungeon Crawl 94: What Was Taken",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "15"
+    }
+  },
+  "5079290": {
+    "name": "Medal Mania: Coin Pusher",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "5080000": {
+    "name": "Morgenrot",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "5080220": {
+    "name": "Under the Earth",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "7"
+    }
+  },
+  "5081560": {
+    "name": "Traks Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5081950": {
+    "name": "Havoc Heirs Soundtrack Music",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5082420": {
+    "name": "Thrift Store Treasure Hidden Objects",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "5082440": {
+    "name": "The Waiting Room",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "5082880": {
+    "name": "The Wendigo Lives",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "5"
+    }
+  },
+  "5083090": {
+    "name": "Keepshore",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "5"
+    }
+  },
+  "5083380": {
+    "name": "Xenobiome Command Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5084100": {
+    "name": "Chess: Blood The Board",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "5"
+    }
+  },
+  "5085480": {
+    "name": "Epic Space Battles",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "6"
+    }
+  },
+  "5085740": {
+    "name": "Needle In A Haystack",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "443"
+    }
+  },
+  "5087930": {
+    "name": "Before Six",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5088290": {
+    "name": "Vinyl Store: Tidy Up!",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "70"
+    }
+  },
+  "5089030": {
+    "name": "My Catgirl Waifu",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "16"
+    }
+  },
+  "5089870": {
+    "name": "In My Name Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5090060": {
+    "name": "Starlathe",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "319"
+    }
+  },
+  "5092860": {
+    "name": "AimFit Application",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "5093260": {
+    "name": "StreamSpook Application",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "5"
+    }
+  },
+  "5093790": {
+    "name": "Scroll Of Taiwu - Pagada of The Fallen DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5093820": {
+    "name": "RE:CHAINED ~Links of Redemption~ Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5093830": {
+    "name": "Scroll Of Taiwu - Tame The Divine Loong DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5096190": {
+    "name": "Footy Manager",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "69"
+    }
+  },
+  "5096510": {
+    "name": "Once In Sakartvelo: Out Of Service",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "7"
+    }
+  },
+  "5096680": {
+    "name": "A Ball That Breaks Everything",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "5"
+    }
+  },
+  "5097630": {
+    "name": "Swarm Idle",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "50"
+    }
+  },
+  "5097880": {
+    "name": "Timberline Factory Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5100110": {
+    "name": "Abyss Card Legends Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5101330": {
+    "name": "Touhou Meishuugeki (東方明秋劇) ~ Cursed Sweeper and Bewildering Parallel",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "7"
+    }
+  },
+  "5101390": {
+    "name": "Foxy's Potion Shop",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "28"
+    }
+  },
+  "5101630": {
+    "name": "Dwellune: A Cozy Focus Room",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "9"
+    }
+  },
+  "5102200": {
+    "name": "Talkie Budgie: Talks When Loved - Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5102980": {
+    "name": "Penis Bird",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "446"
+    }
+  },
+  "5103590": {
+    "name": "Hockey Game",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5105020": {
+    "name": "Goreticulture Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5106320": {
+    "name": "Slot Heroes",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "5"
+    }
+  },
+  "5106690": {
+    "name": "Hundred Fires: OPEN VECTOR — Episode 1",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "19"
+    }
+  },
+  "5107870": {
+    "name": "貓貓盒CATBOX",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "5108620": {
+    "name": "Last Good Festival Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5108750": {
+    "name": "Unshine Arcade Soundtrack Music",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5109530": {
+    "name": "Vitro : Bloodstream",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5109800": {
+    "name": "Ballwark: Pinball Siege Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5110450": {
+    "name": "Tiny Cage Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5111090": {
+    "name": "HandFoot Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5112550": {
+    "name": "Shit-Stealing Gnomes Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5114580": {
+    "name": "Sculpturillo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "5"
+    }
+  },
+  "5114800": {
+    "name": "Paperstack",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5116180": {
+    "name": "CLINK",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "9"
+    }
+  },
+  "5116450": {
+    "name": "Hololive Fantasy Battle DLC - Usada Pekora Outfit “Noble White” DLC",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5116460": {
+    "name": "Hololive Fantasy Battle DLC - Houshou Marine Outfit “Jellyfish Swimsuit Outfit” DLC",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5116630": {
+    "name": "Panda Minesweeper",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "5116690": {
+    "name": "Shattered‑Realm Corridor",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5117300": {
+    "name": "Strip Memory: Milfy Librarians",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "9"
+    }
+  },
+  "5118070": {
+    "name": "Tryshape",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "5118740": {
+    "name": "Puke and Seek",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "7"
+    }
+  },
+  "5119030": {
+    "name": "Nexus: Eternal Ruin Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5119130": {
+    "name": "Homesider Survivors Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5119800": {
+    "name": "GODSPEED",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "9"
+    }
+  },
+  "5120310": {
+    "name": "Here Comes The Pride Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5120390": {
+    "name": "ERI: Emotive Rhythm Interaction Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5121060": {
+    "name": "Galactic Mayhem",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5124010": {
+    "name": "Taskbar Slime: Tucked-Away Terrarium",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "6"
+    }
+  },
+  "5124690": {
+    "name": "Kernel Override Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5124770": {
+    "name": "Autolantis Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5125950": {
+    "name": "Jurassic World Evolution 3: Prehistoric East DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5126870": {
+    "name": "Nova Protocol Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5127960": {
+    "name": "TON Wars",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "5128420": {
+    "name": "Way of the Hunter 2 - Night Hunting Pack DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5128430": {
+    "name": "Way of the Hunter 2 - Lodge Decoration DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5128450": {
+    "name": "Way of the Hunter 2 - Heirloom Pack DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5128460": {
+    "name": "Way of the Hunter 2 - Season Pass DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5128930": {
+    "name": "U.S. 666 Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5129130": {
+    "name": "Colony on the Run Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5130100": {
+    "name": "Hanok: From Thatch to Palace",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5130440": {
+    "name": "Get To Orbit",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5131830": {
+    "name": "Hero of the Kingdom: Echoes Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5132860": {
+    "name": "Cats Love Cakes Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5133940": {
+    "name": "Catacrypt Demo Demo",
+    "releaseDate": "03 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5133950": {
+    "name": "MUSIC BAND SIMULATOR:TOGETHER",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "9"
+    }
+  },
+  "5134720": {
+    "name": "Wheel Estate",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5135500": {
+    "name": "斩厄令Playtest Beta",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5136870": {
+    "name": "Path Of Peecho Demo Demo",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5137360": {
+    "name": "Snappy Shapes",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5138000": {
+    "name": "Better Chaos",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "143"
+    }
+  },
+  "5139700": {
+    "name": "Twin Hooks Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5140030": {
+    "name": "You Should Consider Making a Burger EX",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5140530": {
+    "name": "DEEPWARD Demo Demo",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5140650": {
+    "name": "Tech Chaos",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "20"
+    }
+  },
+  "5140790": {
+    "name": "Medieval Squad Tactics Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5142580": {
+    "name": "Super Brik Brik",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5142810": {
+    "name": "Drawaoke: Sing, Scribble, Showdown!",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "10"
+    }
+  },
+  "5143030": {
+    "name": "阴阳界：志怪放置副游",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "66"
+    }
+  },
+  "5144610": {
+    "name": "Autobattler Beta Beta",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5144970": {
+    "name": "Step Slash",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5145790": {
+    "name": "Airport Baggage Simulator - Night Shift DLC",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5146120": {
+    "name": "Sandnight Hill Revelation Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5146200": {
+    "name": "Greenhouse: Tidy Up!",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "125"
+    }
+  },
+  "5146790": {
+    "name": "Guns That Go Ribbit! Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5146820": {
+    "name": "Sporestorm: Frontier Defense Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5148180": {
+    "name": "Shadow Facade",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "55"
+    }
+  },
+  "5148410": {
+    "name": "Stellar Courier Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5148640": {
+    "name": "FIND ALL 10: Greece Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5149410": {
+    "name": "Nova Slash",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "8"
+    }
+  },
+  "5149530": {
+    "name": "Everybody's Stranger Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5150870": {
+    "name": "The Drawratos Playtest Beta",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5152940": {
+    "name": "Bamboo Beat Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5153210": {
+    "name": "punkt",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5153430": {
+    "name": "AFTERMATH: Bunker Trader Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5153580": {
+    "name": "Wych Ring",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "149"
+    }
+  },
+  "5154040": {
+    "name": "Potassium Poisoning",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5154250": {
+    "name": "Wallpaper Dungeon",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "10"
+    }
+  },
+  "5155260": {
+    "name": "Drive of the Dead Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5155480": {
+    "name": "Emberglade",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5156620": {
+    "name": "Chains of Eternity",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "6"
+    }
+  },
+  "5157950": {
+    "name": "メタルセイヴァーズ",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "5158840": {
+    "name": "Virtual Plant",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5159390": {
+    "name": "Arcane Eclipse: Survivors",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5160660": {
+    "name": "Bunker and Friends",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "9"
+    }
+  },
+  "5161650": {
+    "name": "SonDouKee",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "5162490": {
+    "name": "Railhold Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5163750": {
+    "name": "Death Game Simulator",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "64"
+    }
+  },
+  "5163790": {
+    "name": "Bad Shrooms Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5165420": {
+    "name": "CADRE: Centralized Administration, Data & Reporting Environment",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5166140": {
+    "name": "Tactical Commanders R Playtest Beta",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5166980": {
+    "name": "Wonderboy in Monster Land",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "40"
+    }
+  },
+  "5167010": {
+    "name": "By Royal Request",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "6"
+    }
+  },
+  "5167110": {
+    "name": "Suika Game Planet Night Chill DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5167120": {
+    "name": "Suika Game Planet Waterside DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5167130": {
+    "name": "Suika Game Planet Solar System DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5167410": {
+    "name": "Minecraft Dungeons II Deluxe Upgrade DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5167590": {
+    "name": "BRIO World - Railway: Horse Ranch DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5167600": {
+    "name": "BRIO World - Railway: Police & Metro DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5168890": {
+    "name": "Direct Investigation",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "5"
+    }
+  },
+  "5168990": {
+    "name": "Realm & Renown",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "5"
+    }
+  },
+  "5169440": {
+    "name": "Tidy Up the Royal Armory",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "119"
+    }
+  },
+  "5170210": {
+    "name": "Swing Shift",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "5170230": {
+    "name": "Launch Hazard Playtest Beta",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5172710": {
+    "name": "Dread of the Deep Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5173090": {
+    "name": "MadKeys",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5173860": {
+    "name": "Art Fraud",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "5174230": {
+    "name": "PixBit",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "5174520": {
+    "name": "Already Recorded The Statement Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5174580": {
+    "name": "BANNER PROTOCOL",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "5175030": {
+    "name": "Questris Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5175550": {
+    "name": "The Isles of the Nine Crowns: Tales of Alaric Stoneheart Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5178470": {
+    "name": "SUSHI PARADE Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5179030": {
+    "name": "The Long Graze",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "7"
+    }
+  },
+  "5179130": {
+    "name": "Sandcastle Battle",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "8"
+    }
+  },
+  "5180530": {
+    "name": "Armorer: Tidy Up the Armory Before Dawn Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5181690": {
+    "name": "Wheelie Bin Bash",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "5181950": {
+    "name": "Southern Lights Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5182140": {
+    "name": "So, I Decided to Start a Kendo Dojo-Secret NTR",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "23"
+    }
+  },
+  "5182940": {
+    "name": "Your Reputation Precedes You Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5183310": {
+    "name": "Rebelote : Belote & Coinche",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "5183690": {
+    "name": "Tritemple",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5183920": {
+    "name": "Dark Side Void Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5184050": {
+    "name": "Wizard Harder Or Get Laid Off",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "29"
+    }
+  },
+  "5184180": {
+    "name": "KOLUN Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5184600": {
+    "name": "Love Nest ~V0.098~",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "588"
+    }
+  },
+  "5184680": {
+    "name": "NO CARRIER",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5184950": {
+    "name": "Inspiration Test",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5185620": {
+    "name": "Dialshift Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5186650": {
+    "name": "Maze of Thorns",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5186690": {
+    "name": "Game Keeper: Somebody Messed Up My Shop!",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "1855"
+    }
+  },
+  "5186900": {
+    "name": "Solarlapse",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "5186970": {
+    "name": "1982 Tenacious of the Air Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5187330": {
+    "name": "Compression Quota",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5187640": {
+    "name": "You're It!",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "5187710": {
+    "name": "Lost Liminal:Prologue",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "5188150": {
+    "name": "Ultimate Pet Shop Simulator Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5188170": {
+    "name": "Boobs & Cowgirls",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "36"
+    }
+  },
+  "5188280": {
+    "name": "My First Ant Farm",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5188860": {
+    "name": "Royals7",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "5188900": {
+    "name": "Soul Emissary",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5189440": {
+    "name": "Tales of the Tang Recluse",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "6"
+    }
+  },
+  "5189530": {
+    "name": "Apple Worm: Logic Puzzle",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "7"
+    }
+  },
+  "5189750": {
+    "name": "Floor Wiping Race",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "5189820": {
+    "name": "NARNOK: Feed Grommy Candy Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5190150": {
+    "name": "CovertProgram",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5190270": {
+    "name": "Low Tide Tales",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "5191080": {
+    "name": "Starport Merchants Playtest Beta",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5191250": {
+    "name": "Beat Saber - ROSÉ & Bruno Mars - APT. DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5192490": {
+    "name": "Silly Potato — Home-Run Edition",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5193380": {
+    "name": "Deep Space Idle: Frontier Era",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "202"
+    }
+  },
+  "5193440": {
+    "name": "Slot Siege Demo Demo",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5193640": {
+    "name": "SEVEN SCHOOL GHOST STORIES | 学校の七つの怪談",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "8"
+    }
+  },
+  "5194070": {
+    "name": "Keep It Farming",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "9"
+    }
+  },
+  "5194140": {
+    "name": "Crime Podcast: 1976",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "16"
+    }
+  },
+  "5194940": {
+    "name": "EggDrock",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "5195170": {
+    "name": "Dead Dine",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5195230": {
+    "name": "Hunt And Hide",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "5195770": {
+    "name": "Universal Media Player - VR & Desktop Application",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "9"
+    }
+  },
+  "5196540": {
+    "name": "DAWN OF THE ROTTEN",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "16"
+    }
+  },
+  "5197060": {
+    "name": "SPEED: 8.X",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "6"
+    }
+  },
+  "5197080": {
+    "name": "Perfect Speed Playtest Beta",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5197180": {
+    "name": "フロアーⅩⅢの心象～S",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "7"
+    }
+  },
+  "5197420": {
+    "name": "Bureau of Hero Affairs Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5197780": {
+    "name": "Keep It Farming Soundtrack Music",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5198360": {
+    "name": "Mad Combo Squad Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5198720": {
+    "name": "Tidy Arcana Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5199750": {
+    "name": "GODS OF THE EARTH",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5199900": {
+    "name": "Tughra: Seals of Empire",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "5200080": {
+    "name": "No ESC Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5201270": {
+    "name": "AutoChart",
+    "releaseDate": "04 Oct",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "5201600": {
+    "name": "Science Monster: Grafted Heart",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5202020": {
+    "name": "Transmission: Shortwave Soundtrack Music",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5202590": {
+    "name": "SlimeBusters",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5202650": {
+    "name": "Everlusting Life - Mascot Kalahiki DLC",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5204820": {
+    "name": "The Dream Office - Office Decor Pack DLC",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5204830": {
+    "name": "Deleted Wiki: Clean Up the Lost Files",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "7"
+    }
+  },
+  "5204840": {
+    "name": "Sort Them Guns: Tidy Up",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "19"
+    }
+  },
+  "5204950": {
+    "name": "Eris One Stand Demo Demo",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5206450": {
+    "name": "Long March",
+    "releaseDate": "03 Oct",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "5206720": {
+    "name": "残クレバハムートで魔王討伐 ──10億Gの相棒と、月々10万Gの冒険。 Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5207120": {
+    "name": "大烟枪 Playtest Beta",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5207150": {
+    "name": "Traymon World: Taskbar Monster RPG DEMO Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5207160": {
+    "name": "High Roller Penny DEMO Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5208240": {
+    "name": "ESC ape, You died?",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "8"
+    }
+  },
+  "5208420": {
+    "name": "Duel Baccarat",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "5208510": {
+    "name": "Embersong: History Is Yours",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "12"
+    }
+  },
+  "5208600": {
+    "name": "Rise of the Merchants Playtest Beta",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5208970": {
+    "name": "Draw My Home 我画我家 Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5209350": {
+    "name": "You Should Consider Making a Burger EX - Artbook DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5209380": {
+    "name": "GODSPEED Playtest Beta",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5209880": {
+    "name": "Mercyrail: Haven Bound Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5209890": {
+    "name": "World War Whack",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "5210090": {
+    "name": "Perplexicube Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5210320": {
+    "name": "Apparatus Inspector Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5210610": {
+    "name": "Capital Criminal Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5210920": {
+    "name": "POLICEMAN FROM THE FUTURE",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5211040": {
+    "name": "DESIRO.",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "9"
+    }
+  },
+  "5211430": {
+    "name": "Vaulted Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5211480": {
+    "name": "Roulette Strategy Research Lab",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "5211690": {
+    "name": "Ghillie Wars",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "16"
+    }
+  },
+  "5211970": {
+    "name": "Combat Orders '42 Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5212110": {
+    "name": "Fox Clicker",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "5"
+    }
+  },
+  "5212420": {
+    "name": "Last Stop Defence Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5212550": {
+    "name": "A BILLION GOLD DEBT Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5212600": {
+    "name": "The Cartoon Adventures Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5212870": {
+    "name": "Clash of Crests Demo Demo",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5213660": {
+    "name": "Gundrobe: an Incremental Gun Builder",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "5"
+    }
+  },
+  "5213820": {
+    "name": "Horny Gnomes 🧙🏻‍♂️🔞 Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5213830": {
+    "name": "Songs of Glimmerwick - Supporter Pack DLC",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5213930": {
+    "name": "Vital Decisions Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5213940": {
+    "name": "BrickOps Playtest Beta",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5214000": {
+    "name": "Rampartloom: PvP Tower Defense Playtest Beta",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5214050": {
+    "name": "Songs of Glimmerwick Original Soundtrack Music",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5214280": {
+    "name": "Westner Hero 8",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "5214500": {
+    "name": "Fall Flux",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "5214840": {
+    "name": "Midnight Rogues Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5215860": {
+    "name": "Cook to Zero Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5216710": {
+    "name": "Deskrawl: Idle ARPG - Supporter Pack DLC",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5217240": {
+    "name": "Planet Nine Original Soundtrack Music",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5217620": {
+    "name": "Cosmo Arena",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "5"
+    }
+  },
+  "5217820": {
+    "name": "Miniciv - Supporter Pack DLC",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5218570": {
+    "name": "Lost & Found",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "5219020": {
+    "name": "Abyss Floors",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "5219250": {
+    "name": "Destiny's Deal",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "5219280": {
+    "name": "Three Kingdoms: Blood Battle Mahjong",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5219310": {
+    "name": "SOULLOOP Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5219520": {
+    "name": "Sediment",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5220200": {
+    "name": "Rever4 OCHIRO",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5220370": {
+    "name": "Usurper Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5220590": {
+    "name": "Massive Collapse Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5221510": {
+    "name": "Tidy Up the Flower Shop",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "145"
+    }
+  },
+  "5221540": {
+    "name": "Emojix",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "828"
+    }
+  },
+  "5221660": {
+    "name": "9.8 Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5222290": {
+    "name": "Rash Decision Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5222350": {
+    "name": "Taster's Table",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "5222430": {
+    "name": "Everfall: Rewind Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5222640": {
+    "name": "Huntian: StarTrace Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5222740": {
+    "name": "残明·末路 Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5222950": {
+    "name": "Boomfrog: Journey Through the Wild Realms",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5223050": {
+    "name": "The Last Buffet",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5223280": {
+    "name": "THE MIDNIGHT QUEENS 2",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "5223700": {
+    "name": "aSc Boom",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5223830": {
+    "name": "Sad Virus Dungeon",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "5225450": {
+    "name": "SET THEM UP",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5225620": {
+    "name": "Rebelote : Belote & Coinche – Friend Pass Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5226040": {
+    "name": "Taskbar Armory",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "9"
+    }
+  },
+  "5226240": {
+    "name": "Capitalize - Tech Industry DLC",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5226480": {
+    "name": "SightSplice",
+    "releaseDate": "04 Oct",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5226490": {
+    "name": "Astromino Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5226510": {
+    "name": "Tab-lings",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5226520": {
+    "name": "Sheepscape Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5227030": {
+    "name": "Okko The Exiled Original Soundtrack Music",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5227040": {
+    "name": "Cozy Jigsaw",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "5"
+    }
+  },
+  "5227330": {
+    "name": "ScriptReader",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "5"
+    }
+  },
+  "5227600": {
+    "name": "艾兰军校",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "8"
+    }
+  },
+  "5228240": {
+    "name": "67",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "5"
+    }
+  },
+  "5228570": {
+    "name": "StickWord",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "5228630": {
+    "name": "Ever Below",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5228770": {
+    "name": "島地在幹嘛(What the Isle) Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5229520": {
+    "name": "Onward",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5229590": {
+    "name": "Kill Breach Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5229750": {
+    "name": "Blackout",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5230000": {
+    "name": "Splash Park Tycoon",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "5230410": {
+    "name": "Factorized",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "5230530": {
+    "name": "电网大亨 Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5231920": {
+    "name": "Speed Goes Up Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5231940": {
+    "name": "BBQ Rush Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5232050": {
+    "name": "Fox Clicker - Supporter Art Book DLC",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5232340": {
+    "name": "PR1ME5 DEMO Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5232800": {
+    "name": "StellarSips:A Bartender’s Tale Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5232920": {
+    "name": "Taskbar Armory - Supporter Pack DLC",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5232980": {
+    "name": "Total Biochem",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5233060": {
+    "name": "RaceLineCalc Application",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "5233680": {
+    "name": "idle.am - lofi idle mmo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "8"
+    }
+  },
+  "5233900": {
+    "name": "Aura battle simulator",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5234050": {
+    "name": "The Last Byte: Serv-Bots Firewall Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5234070": {
+    "name": "Coilbound Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5234170": {
+    "name": "灵兽问道-MythicalBeast",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "10"
+    }
+  },
+  "5234500": {
+    "name": "洪荒之刷宝成圣 Playtest Beta",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5234680": {
+    "name": "Whispers of Orange Island Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5235460": {
+    "name": "Rusty Winter Playtest Beta",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5235500": {
+    "name": "Cozy Jigsaw Soundtrack Music",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5236890": {
+    "name": "Shape Shards Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5237110": {
+    "name": "CRIMSON PANDEMIC Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5237160": {
+    "name": "英雄对决 Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5237200": {
+    "name": "Last Block Standing",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "5"
+    }
+  },
+  "5237730": {
+    "name": "Steel Wolverines: Modern Armored Combat Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5237830": {
+    "name": "KEYCAST Application",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5237850": {
+    "name": "Burnout Bistro Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5237960": {
+    "name": "Approved! A Quiet Day of Paperwork",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "12"
+    }
+  },
+  "5238480": {
+    "name": "SliceForge Application",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "5238740": {
+    "name": "Noble Fates Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5239210": {
+    "name": "Climb Up Together",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "5"
+    }
+  },
+  "5239420": {
+    "name": "Tater Tube Player Application",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5239510": {
+    "name": "Bomb Star Bounce",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5239600": {
+    "name": "My Zombies Are Hungry",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "11"
+    }
+  },
+  "5240130": {
+    "name": "Cozy Jigsaw - Cats DLC",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5240230": {
+    "name": "Office Fishing: Boss Incoming, Bail!",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5240410": {
+    "name": "Desktop Tribe Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5240550": {
+    "name": "Monster Alchemy Soundtrack Music",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5240850": {
+    "name": "SimRail - The Railway Simulator: BR 285 DLC",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5241100": {
+    "name": "Wind's Road",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "5241150": {
+    "name": "The 11th Power Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5241530": {
+    "name": "MemTown(Demo)",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "5241570": {
+    "name": "Antivirus Survivors 2003 Professional: Supporter's Pack DLC",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5241740": {
+    "name": "Sunborn Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5241780": {
+    "name": "Indie Game Company Playtest Beta",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5242750": {
+    "name": "Slime Glutton Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5242770": {
+    "name": "古玩掌柜 Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5242820": {
+    "name": "Manaphore",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5242940": {
+    "name": "The Therapist",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5242970": {
+    "name": "Scratch It! Lucky Cards Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5243420": {
+    "name": "AI-VJ - Egyptians Visuals DLC",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5243780": {
+    "name": "Factorized Soundtrack Music",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5244530": {
+    "name": "Cozy Jigsaw - Photographs DLC",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5245170": {
+    "name": "第三定律 THIRD LAW",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5245550": {
+    "name": "Path of the Yaoguai Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5245700": {
+    "name": "Littlest Catalyst: Swarm Defense Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5245790": {
+    "name": "HOSPİTAL8",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "5"
+    }
+  },
+  "5245810": {
+    "name": "ForgeTax",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5246180": {
+    "name": "Never Enough Corn",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "10"
+    }
+  },
+  "5246360": {
+    "name": "Cozy Jigsaw - Chinese Paintings DLC",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5246520": {
+    "name": "WRITE HOUSE",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "5247050": {
+    "name": "SushiClicker",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5247380": {
+    "name": "Memory Wastes",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "7"
+    }
+  },
+  "5247850": {
+    "name": "Full Metal Hell Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5247970": {
+    "name": "Visual Novel: The Neighbor with My Face",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "7"
+    }
+  },
+  "5248050": {
+    "name": "Gym Mop Tycoon",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "5248150": {
+    "name": "Overflow Protocol Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5248180": {
+    "name": "Starbloom Ranch - Supporter Pack DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5248190": {
+    "name": "Hell Healers",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "13"
+    }
+  },
+  "5248210": {
+    "name": "Hell Healers - Supporter Pack DLC",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5248560": {
+    "name": "Desktop Tide",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5248880": {
+    "name": "Roll with Splonk Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5248940": {
+    "name": "Seasonal Reset: Halloween Edition",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5249260": {
+    "name": "Best. President. Ever! Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5249350": {
+    "name": "Hedge Knight",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5249360": {
+    "name": "Hedge Knight - Supporter Pack DLC",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5249370": {
+    "name": "Cube Speedrunner",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "5249470": {
+    "name": "Memory Wastes - Full Version DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5249900": {
+    "name": "Tankii Demo Demo",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5250500": {
+    "name": "The Great Game of Cards",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5250750": {
+    "name": "SUPER-TYPE Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5250840": {
+    "name": "Ninewrought: Nine Men's Morris",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5250860": {
+    "name": "Big Bug Billionaire Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5250990": {
+    "name": "The Judges' Quandary: Chimera Protocol Demo",
+    "releaseDate": "04 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5251240": {
+    "name": "Crank'N'Gun Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5252020": {
+    "name": "Idle Demon Lord II Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5252390": {
+    "name": "Arcane Library",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "5"
+    }
+  },
+  "5252790": {
+    "name": "Guardian Beast Application",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "6"
+    }
+  },
+  "5252850": {
+    "name": "Pixel Quest: Guild Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5253800": {
+    "name": "The Planet Miner",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "12"
+    }
+  },
+  "5254070": {
+    "name": "Sorcerer Adventure",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "5"
+    }
+  },
+  "5254190": {
+    "name": "The Nightmare Arena Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5254320": {
+    "name": "Dungeon Defenders - Forest Fairy Warden Skin DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5255190": {
+    "name": "Crown Bluff Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5255400": {
+    "name": "Animate Desktop Application",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "5"
+    }
+  },
+  "5255600": {
+    "name": "DICEWAR OTHERWORLD Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5255880": {
+    "name": "Shelfbound",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "5"
+    }
+  },
+  "5255950": {
+    "name": "Don't Drop The Ball Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5256480": {
+    "name": "Little Sister",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "7"
+    }
+  },
+  "5256550": {
+    "name": "In Falsus - Virtual Singers Song Pack DLC",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5256580": {
+    "name": "Please Fix! Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5256830": {
+    "name": "Stillmere Playtest Beta",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5257390": {
+    "name": "Colorsong Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5257420": {
+    "name": "Donation Voice Pack DLC",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5257990": {
+    "name": "MECCHA OCTOPUS Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5258920": {
+    "name": "SoulMonsters Ariel, Queen of the Sea",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "5259200": {
+    "name": "Domebreak",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5259440": {
+    "name": "Dungeon Rise Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5259820": {
+    "name": "Casino Dealer Simulator Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5259830": {
+    "name": "Guinea Pig Gunner Soundtrack Music",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5259980": {
+    "name": "Nivalis Nights Soundtrack Music",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5260940": {
+    "name": "Arcanum Solitarius Playtest Beta",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5261140": {
+    "name": "MEMEDASH",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "5261200": {
+    "name": "幻卡物语：星卡对决 Playtest Beta",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5261330": {
+    "name": "ROBOT DRAFT: LAST HUMAN Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5261390": {
+    "name": "Flowers and Deities - Thief Prince Expansion Pack DLC",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5261750": {
+    "name": "HOLD THE COOP! Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5262090": {
+    "name": "Night Cart: The Immortal Plague Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5262890": {
+    "name": "Double Skunk Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5262950": {
+    "name": "Xiao Wang's World-origin",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "5263120": {
+    "name": "Memoria Wake Playtest Beta",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5263270": {
+    "name": "Nothing But Cats Playtest Beta",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5264290": {
+    "name": "Deal Me In Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5264790": {
+    "name": "MATE THEM ALL: Office Undercover DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5265420": {
+    "name": "MATE THEM ALL: Summer Cruise DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5266450": {
+    "name": "FriendSLOT Playtest Beta",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5266960": {
+    "name": "Death Imminent Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5267120": {
+    "name": "Escape from 8-Bit High Soundtrack Music",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5267190": {
+    "name": "Crimson Harvest Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5267290": {
+    "name": "Rulehouse Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5267400": {
+    "name": "Towers to Be Playtest Beta",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5267510": {
+    "name": "Used Car Dealer Simulator Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5268450": {
+    "name": "Cranked Demo Demo",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5268610": {
+    "name": "Shenaniguns - Magic DLC",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5268840": {
+    "name": "幻想棋局 Playtest Beta",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5269020": {
+    "name": "unpakr Application",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "5269710": {
+    "name": "Akeno no Yosuga - Twilight Loop - Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5269800": {
+    "name": "NILSH Playtest Beta",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5269960": {
+    "name": "Real Estate Investor Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5270160": {
+    "name": "Digital Ferryman",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5270560": {
+    "name": "Keycap Keycap! Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5271120": {
+    "name": "Tandem Together Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5271320": {
+    "name": "Sexy Vacation Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5271710": {
+    "name": "Secret Favor Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5271820": {
+    "name": "Femboy & Futa Maidmare Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5271860": {
+    "name": "Sex, Gods &amp;amp; Monsters: The Velvet Apocalypse Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5271950": {
+    "name": "Sexperado Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5272050": {
+    "name": "HEX: You Are It Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5272140": {
+    "name": "Bulletbound Brigade",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "5272360": {
+    "name": "Midnight Moving Crew Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5273100": {
+    "name": "Avocado Survivor Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5273650": {
+    "name": "Cannonwake Clash",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5273740": {
+    "name": "NBA THE RUN - 2000's Legends DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5274310": {
+    "name": "Battleborne Isles",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "5274560": {
+    "name": "Back Together Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5274650": {
+    "name": "Rock and Found Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5275630": {
+    "name": "Midnight Gunwatch",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "5275800": {
+    "name": "Apocalypse Intern",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "5276130": {
+    "name": "Endless Void: Idle Tower Defence Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5276150": {
+    "name": "The Anomaly Detective Soundtrack Music",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5276720": {
+    "name": "GIGASTRIKER Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5277130": {
+    "name": "Echo Doodle Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5277380": {
+    "name": "Solar Imperium Playtest Beta",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5277770": {
+    "name": "The Final Stamp Demo Demo",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5277820": {
+    "name": "MarchMallows Playtest Beta",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5277830": {
+    "name": "BULLET GIRL：ZOMBIE DEFENSE Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5277980": {
+    "name": "Wife Life : Detective Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5278150": {
+    "name": "Number Naughties Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5278400": {
+    "name": "Siege of Akanor Playtest Beta",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5278490": {
+    "name": "Paws & Patches",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "5279260": {
+    "name": "zero contact Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5279270": {
+    "name": "ENCYCLORA Application",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5279370": {
+    "name": "Zombie Junction",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "3"
+    }
+  },
+  "5279610": {
+    "name": "Hot Human Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5279680": {
+    "name": "Copperburrow Company",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5279930": {
+    "name": "Chromaline Shuttle",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "5280010": {
+    "name": "RAT TAG! Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5280550": {
+    "name": "神官阿茉尔 Playtest Beta",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5280640": {
+    "name": "Marinette mm cl Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5281210": {
+    "name": "Dream City Psyche Demo Demo",
+    "releaseDate": "04 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5281220": {
+    "name": "The Anomaly Detective - Support Pack DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5281410": {
+    "name": "Not My Dad Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5281960": {
+    "name": "Daily Life With The Herb Girls Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5282330": {
+    "name": "メタルセイヴァーズ Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5282460": {
+    "name": "Vampus the Space Vampire Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5282900": {
+    "name": "Fast Point Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5283000": {
+    "name": "Undesirable Me Playtest Beta",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5283930": {
+    "name": "Collectible Cars Shop Simulator Demo Demo",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5284550": {
+    "name": "Bug Bus Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5284560": {
+    "name": "Motorbay Tycoon",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "4"
+    }
+  },
+  "5284800": {
+    "name": "Dead Reckoner Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5285660": {
+    "name": "Iron Gym Rival",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "5286090": {
+    "name": "Card Builder Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5287800": {
+    "name": "全城追缉3-画质增强包 DLC",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5288800": {
+    "name": "Tumbal 1985 Playtest Beta",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5288970": {
+    "name": "Little Bear`s Honey Shop Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5289020": {
+    "name": "Endless Rails - Digital Artbook DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5289050": {
+    "name": "Endless Rails Soundtrack Music",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5289400": {
+    "name": "Jaded Jade Jayden Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5289540": {
+    "name": "Triet Cat",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5289780": {
+    "name": "Comrade, Secrets Escape! Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5289850": {
+    "name": "Pinoptic Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5290380": {
+    "name": "Illyrium: Chronicles Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5290480": {
+    "name": "Blood & Canvas: Bareknuckle Boxing Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5291020": {
+    "name": "RavenStar Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5291730": {
+    "name": "Emojix Soundtrack Music",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5292430": {
+    "name": "Uyar Party Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5292530": {
+    "name": "Spin Realm: The Sovereign's Doom Playtest Beta",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5292560": {
+    "name": "House Rules 21 Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5294760": {
+    "name": "Slag Run Playtest Beta",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5295040": {
+    "name": "Pixel Ping Pong Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5295170": {
+    "name": "VALHALLA ARCHIVE: CCG Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5295500": {
+    "name": "La maldición de Max",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "1"
+    }
+  },
+  "5295560": {
+    "name": "EpicSelectly Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5295910": {
+    "name": "Soft 17 Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5296340": {
+    "name": "Maria IV: A Cozy Botanical Sim Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5296450": {
+    "name": "Mantlebound Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5296770": {
+    "name": "MaMills Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5296820": {
+    "name": "Click Clock Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5296990": {
+    "name": "Fuse Rush Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5297450": {
+    "name": "CLAWSTROPHOBIA Demo Demo",
+    "releaseDate": "04 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5298860": {
+    "name": "Core Module Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5298960": {
+    "name": "Melody Flow Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5299010": {
+    "name": "Yeet Animals Gently Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5299140": {
+    "name": "Sponge Bridges Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5299220": {
+    "name": "Barbe-Yeux Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5299230": {
+    "name": "Plamo Kits Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5299540": {
+    "name": "Rural Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5299600": {
+    "name": "Filthy Fly: Horde Survivor Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5299680": {
+    "name": "Splash Park Tycoon - Supporter Pack DLC",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5299770": {
+    "name": "Pixel Nightshift: The Vesta Protocol Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5299920": {
+    "name": "SnorQ Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5299950": {
+    "name": "Starward: Civil Defence Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5300710": {
+    "name": "Plinko Mining Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5300760": {
+    "name": "TinyBriks Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5300890": {
+    "name": "Renegades Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5300910": {
+    "name": "ZONE L.O.S.T. Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5301450": {
+    "name": "Zombie Lab Demo Demo",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5301650": {
+    "name": "LOVE COMPANY: A Romance Escape Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5301660": {
+    "name": "Cosmo Cat - Supporter Pack DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5301690": {
+    "name": "Flamebound Tactics Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5302350": {
+    "name": "Spellk Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5302640": {
+    "name": "KnighTD Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5303270": {
+    "name": "Magic Color Merge Puzzle VR Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5303420": {
+    "name": "CatPoker猫扑克-FoundationPack创始人礼包 DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5303630": {
+    "name": "Tank Commander: Major FOE Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5304010": {
+    "name": "Your Complaint Has Been Received Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5304250": {
+    "name": "Caravan Survivors Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5304400": {
+    "name": "Ryze Playtest Beta",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5304620": {
+    "name": "The Plinko Contract Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5305150": {
+    "name": "Master of Arms Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5305220": {
+    "name": "Tokugi Arena Playtest Beta",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5305240": {
+    "name": "Runes of Shadow Playtest Beta",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5305370": {
+    "name": "Macro Mesh Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5305460": {
+    "name": "Wreck of the Orchid Playtest Beta",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5305690": {
+    "name": "Smile Run Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5305750": {
+    "name": "Chocoletters Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5305800": {
+    "name": "Starflare Dominion Playtest Beta",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5305810": {
+    "name": "黑箱：无限构筑 Playtest Beta",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5305860": {
+    "name": "Gateholt Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5306160": {
+    "name": "The Batelus Playtest Beta",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5306190": {
+    "name": "Greedings Playtest Beta",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5306260": {
+    "name": "Westward Dash Demo Demo",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5306370": {
+    "name": "サツバツサッキュバス Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5306450": {
+    "name": "Crown of Light and Time : The Saint's Reunion Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5306670": {
+    "name": "Terraformer Wars Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5306770": {
+    "name": "Florana Defense Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5306820": {
+    "name": "100K ZOMBIES Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5306930": {
+    "name": "Afterglow Bytes: Reverie by the Shore Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5307730": {
+    "name": "Mythopolis Playtest Beta",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5307830": {
+    "name": "LABYRISON Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5308250": {
+    "name": "DuckAgent's CQB Lab Playtest Beta",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5308390": {
+    "name": "Jet Birds Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5308530": {
+    "name": "HEXPANSE Playtest Beta",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5308760": {
+    "name": "Hidden Raccoons in Winter Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5308800": {
+    "name": "Vug: From Caves to Stars Playtest Beta",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5308840": {
+    "name": "Platformino Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5309340": {
+    "name": "A Beacon Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5309500": {
+    "name": "Farm Break Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5309550": {
+    "name": "Echoes Below Demo Demo",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5309560": {
+    "name": "Set, Bounce, Cheese! Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5309570": {
+    "name": "Kaput Playtest Beta",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5309820": {
+    "name": "ALSTROEMERIA Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5310800": {
+    "name": "Match & Ruin Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5311820": {
+    "name": "RIPPLES Playtest Beta",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5311910": {
+    "name": "Balloon Bus Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5312270": {
+    "name": "Pixel Pirates Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5312730": {
+    "name": "Fate Dungeon Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5313250": {
+    "name": "TCG Card Market Simulator Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5313280": {
+    "name": "Wuxia Survivor: Return Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5314070": {
+    "name": "CHAMBER 13",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "2"
+    }
+  },
+  "5314540": {
+    "name": "PULLFINITY Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5314670": {
+    "name": "Blackout - Night Vision DLC",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5314890": {
+    "name": "Brush Rush Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5315430": {
+    "name": "Runic Conflux Playtest Beta",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5315590": {
+    "name": "Roadshift Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5315670": {
+    "name": "Dejinochi Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5316950": {
+    "name": "You Must Peg Demo Demo",
+    "releaseDate": "28 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5317340": {
+    "name": "Anxiety Ball Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5317910": {
+    "name": "GemCremental Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5318100": {
+    "name": "KRIS: The Last Good Summer Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5318530": {
+    "name": "Pitwall Motorsport Manager Playtest Beta",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5319560": {
+    "name": "DispatchControl Playtest Beta",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5321550": {
+    "name": "MindGate CornerGet Demo Demo",
+    "releaseDate": "30 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5322630": {
+    "name": "Tower of Fangs: Summoned to Another World, I Was Locked in a Tower with 299 Strikers, Only the Last Egoist Goes Home Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5322810": {
+    "name": "Tidy Slot Cars Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5323060": {
+    "name": "Backrooms Insane Demo Demo",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5324200": {
+    "name": "Run, Jesus, Run! - Creator Live Icon Pack DLC",
+    "releaseDate": "02 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5324260": {
+    "name": "unknown.exe Demo Demo",
+    "releaseDate": "01 Oct",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5324920": {
+    "name": "Geobeast - Atlas ancien DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5324930": {
+    "name": "Geobeast - Planète bleue DLC",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  },
+  "5332780": {
+    "name": "MMAntiqueShop Demo Demo",
+    "releaseDate": "29 Sep",
+    "history": {
+      "2026-09-30": "0"
+    }
+  }
+}
