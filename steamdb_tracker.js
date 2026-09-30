@@ -189,19 +189,28 @@ async function saveData(games) {
 
     const focusedApps = allApps.filter(appId => getLatestFollowers(existingData[appId]) >= FOCUSED_THRESHOLD);
 
-    console.log(`Checking Developer/Publisher data for ${focusedApps.length} focused games...`);
+    console.log(`Checking Developer/Publisher/Extra data for ${focusedApps.length} focused games...`);
     for (const appId of focusedApps) {
-        if (!existingData[appId].developer || !existingData[appId].publisher) {
-            console.log(`Fetching Dev/Pub for AppID: ${appId} (${existingData[appId].name})`);
+        if (!existingData[appId].developer || !existingData[appId].publisher || !existingData[appId].genres) {
+            console.log(`Fetching API data for AppID: ${appId} (${existingData[appId].name})`);
             try {
                 const response = await fetch(`https://store.steampowered.com/api/appdetails?appids=${appId}`);
                 const data = await response.json();
                 if (data && data[appId] && data[appId].success && data[appId].data) {
-                    existingData[appId].developer = data[appId].data.developers ? data[appId].data.developers.join(', ') : 'N/A';
-                    existingData[appId].publisher = data[appId].data.publishers ? data[appId].data.publishers.join(', ') : 'N/A';
+                    const appData = data[appId].data;
+                    existingData[appId].developer = appData.developers ? appData.developers.join(', ') : 'N/A';
+                    existingData[appId].publisher = appData.publishers ? appData.publishers.join(', ') : 'N/A';
+                    existingData[appId].isFree = appData.is_free ? 'Yes' : 'No';
+                    existingData[appId].genres = appData.genres ? appData.genres.map(g => g.description).join(', ') : 'N/A';
+                    existingData[appId].categories = appData.categories ? appData.categories.map(c => c.description).join(', ') : 'N/A';
+                    existingData[appId].platforms = appData.platforms ? Object.keys(appData.platforms).filter(k => appData.platforms[k]).join(', ') : 'N/A';
                 } else {
                     existingData[appId].developer = 'N/A';
                     existingData[appId].publisher = 'N/A';
+                    existingData[appId].isFree = 'N/A';
+                    existingData[appId].genres = 'N/A';
+                    existingData[appId].categories = 'N/A';
+                    existingData[appId].platforms = 'N/A';
                 }
                 // small delay to respect Steam API rate limits
                 await new Promise(r => setTimeout(r, 1000));
@@ -209,6 +218,10 @@ async function saveData(games) {
                 console.error(`Failed to fetch for ${appId}:`, err.message);
                 existingData[appId].developer = 'Error';
                 existingData[appId].publisher = 'Error';
+                existingData[appId].isFree = 'Error';
+                existingData[appId].genres = 'Error';
+                existingData[appId].categories = 'Error';
+                existingData[appId].platforms = 'Error';
             }
         }
     }
@@ -244,9 +257,13 @@ async function saveData(games) {
                 'AppID': Number(appId),
                 'Release Date': parsedDate,
                 'Game Title': data.name,
-                'Developer': data.developer || '',
+                'Followers': latestFollowers,
                 'Publisher': data.publisher || '',
-                'Followers': latestFollowers
+                'Developer': data.developer || '',
+                'Is Free': data.isFree || '',
+                'Genres': data.genres || '',
+                'Categories': data.categories || '',
+                'Platforms': data.platforms || ''
             };
 
             sortedDates.forEach(date => {
