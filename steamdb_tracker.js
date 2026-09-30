@@ -8,7 +8,7 @@ const XLSX = require('xlsx');
 
 // === CONFIGURATION ===
 // You can change this number anytime. Games with followers >= this number go to the "Focused" tab.
-const FOCUSED_THRESHOLD = 1000; 
+const FOCUSED_THRESHOLD = 5000; 
 
 async function scrapeSteamDB() {
     console.log("Starting SteamDB Tracker...");
@@ -234,27 +234,10 @@ async function saveData(games) {
             }
 
             let latestFollowers = 0;
-            let gain7d = null;
 
             if (dates.length > 0) {
                 const latestDateStr = dates[dates.length - 1];
                 latestFollowers = parseInt(data.history[latestDateStr]) || 0;
-                
-                // Find a comparison date up to 7 days ago
-                let pastFollowers = null;
-                for (let i = 7; i >= 1; i--) {
-                    const tempDate = new Date(latestDateStr);
-                    tempDate.setDate(tempDate.getDate() - i);
-                    const tempStr = tempDate.toISOString().split('T')[0];
-                    if (data.history[tempStr] !== undefined) {
-                        pastFollowers = parseInt(data.history[tempStr]) || 0;
-                        break; // found the oldest available data point within the 7 day window
-                    }
-                }
-                
-                if (pastFollowers !== null) {
-                    gain7d = latestFollowers - pastFollowers;
-                }
             }
 
             const row = {
@@ -263,8 +246,7 @@ async function saveData(games) {
                 'Game Title': data.name,
                 'Developer': data.developer || '',
                 'Publisher': data.publisher || '',
-                'Followers': latestFollowers,
-                '7d Gain': gain7d !== null ? gain7d : ''
+                'Followers': latestFollowers
             };
 
             sortedDates.forEach(date => {
