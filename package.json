@@ -7,6 +7,7 @@
     "start": "node steamdb_tracker.js"
   },
   "dependencies": {
+    "dotenv": "^18.0.4",
     "playwright": "^1.40.0",
     "playwright-extra": "^4.3.6",
     "puppeteer-extra-plugin-stealth": "^2.11.2",

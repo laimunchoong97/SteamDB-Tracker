@@ -1,3 +1,4 @@
+require('dotenv').config();
 const { chromium } = require('playwright-extra');
 const stealth = require('puppeteer-extra-plugin-stealth')();
 chromium.use(stealth);
@@ -13,13 +14,21 @@ async function scrapeSteamDB() {
     console.log("Starting SteamDB Tracker...");
     
     const userDataDir = path.join(__dirname, 'playwright_data');
-    const context = await chromium.launchPersistentContext(userDataDir, { 
+    
+    const launchOptions = {
         headless: false,
-        channel: 'chrome', // <--- Uses your REAL Google Chrome instead of the bot Chromium
         userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
         viewport: { width: 1280, height: 720 },
         args: ['--disable-blink-features=AutomationControlled']
-    });
+    };
+
+    if (process.env.BROWSER_EXECUTABLE_PATH) {
+        launchOptions.executablePath = process.env.BROWSER_EXECUTABLE_PATH;
+    } else if (process.env.BROWSER_CHANNEL) {
+        launchOptions.channel = process.env.BROWSER_CHANNEL;
+    }
+
+    const context = await chromium.launchPersistentContext(userDataDir, launchOptions);
     
     await context.addInitScript(() => {
         Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
