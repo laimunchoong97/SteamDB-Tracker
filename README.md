@@ -65,7 +65,7 @@ OUTPUT_LANGUAGE=both
 
 When `both` is selected, the two workbooks are generated from the **same in-memory model** in a single pass — no extra crawling and no extra Steam API calls.
 
-Only fixed workbook text is translated: sheet names, column headers, statuses, Summary titles/cards/tables, Current Outlook labels, the fixed `Yes`/`No` values, the fixed `N/A` missing-data marker used for publisher/developer/genres/categories/platforms, and link tooltips. Crawled values such as real game names, publishers, developers, genres, and categories are never translated. Chinese uses **Microsoft YaHei**; English uses **Aptos / Aptos Display**.
+Only fixed workbook text is translated: sheet names, column headers, statuses, Summary titles/cards/tables, Current Outlook labels, the fixed `Yes`/`No` values, the fixed `N/A` missing-data marker used for publisher/developer/genres/categories/platforms, and link tooltips. Crawled values such as real game names, publishers, developers, genres, and categories are never translated. Chinese uses **Microsoft YaHei** and the Excel-safe `yyyy-mm-dd` date format; English uses **Aptos / Aptos Display**.
 
 If a test or script passes an explicit `excelFile`, a single English workbook is written to that path unless a `language` option is also given.
 
@@ -329,6 +329,10 @@ Versions before the release-month redesign may have created `steamdb_monthly_sna
 ### Excel file is locked
 
 If the tracker says to close a workbook, close `steamdb_upcoming_tracker.xlsx` and `steamdb_upcoming_tracker_zh-CN.xlsx` in Excel and rerun the command. Excel prevents the script from replacing an open workbook.
+
+### Excel reports a problem with the Chinese workbook
+
+An earlier Chinese workbook format used localized date literals that some Excel versions attempted to repair in `styles.xml`. The current version uses the Excel-safe `yyyy-mm-dd` format. Close the workbook and run `npm run rebuild` to replace the older file.
 
 ### Cloudflare or a weekly table fails
 

@@ -156,7 +156,7 @@ const LOCALES = {
     'zh-CN': {
         fontDisplay: 'Microsoft YaHei',
         fontBody: 'Microsoft YaHei',
-        dateFormat: 'yyyy"年"m"月"d"日',
+        dateFormat: 'yyyy-mm-dd',
         sheet: {
             summary: '汇总',
             qualifiedUpcoming: '达标即将发售',

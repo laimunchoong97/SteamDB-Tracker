@@ -4,6 +4,7 @@ const os = require('node:os');
 const path = require('node:path');
 const test = require('node:test');
 const ExcelJS = require('exceljs');
+const JSZip = require('jszip');
 
 process.env.FOCUSED_THRESHOLD = '500';
 
@@ -74,7 +75,7 @@ test('writes Current Outlook without a Days to Release detail column', async con
             developer: 'Developer',
             history: { '2026-09-29': 2500, '2026-09-30': 3000 }
         }
-    }, outputFile);
+    }, { excelFile: outputFile, dataDir: tempDirectory });
 
     const workbook = new ExcelJS.Workbook();
     await workbook.xlsx.readFile(outputFile);
@@ -290,8 +291,8 @@ test('renders English and Simplified Chinese workbooks from the same model', asy
 
     const enFile = path.join(tempDirectory, 'en.xlsx');
     const zhFile = path.join(tempDirectory, 'zh.xlsx');
-    await generateWorkbook(master, { excelFile: enFile, language: 'en' });
-    await generateWorkbook(master, { excelFile: zhFile, language: 'zh-CN' });
+    await generateWorkbook(master, { excelFile: enFile, language: 'en', dataDir: tempDirectory });
+    await generateWorkbook(master, { excelFile: zhFile, language: 'zh-CN', dataDir: tempDirectory });
 
     const enWorkbook = new ExcelJS.Workbook();
     await enWorkbook.xlsx.readFile(enFile);
@@ -322,6 +323,11 @@ test('renders English and Simplified Chinese workbooks from the same model', asy
     assert.equal(zhSheet.getCell('D2').value, '暂无');
     assert.equal(zhSheet.getCell('E2').value, '暂无');
     assert.equal(zhSheet.getCell('G2').value, '否');
+    assert.equal(zhSheet.getCell('A2').numFmt, 'yyyy-mm-dd');
+
+    const zip = await JSZip.loadAsync(fs.readFileSync(zhFile));
+    const stylesXml = await zip.file('xl/styles.xml').async('string');
+    assert.equal(stylesXml.includes('&quot;年&quot;'), false);
 
     assert.deepEqual(zhWorkbook.getWorksheet('汇总').getRow(4).values.slice(1, 5)[0], '最近完整抓取');
 });
@@ -362,7 +368,7 @@ test('live sheets use only the latest crawl while month tabs retain stored games
     assert.deepEqual(model.activeMonthViews.map(view => view.appId).sort(), ['1', '2', '3']);
     assert.deepEqual(model.unscheduled, []);
 
-    await generateWorkbook(master, { excelFile, language: 'en' });
+    await generateWorkbook(master, { excelFile, language: 'en', dataDir: tempDirectory });
     const workbook = new ExcelJS.Workbook();
     await workbook.xlsx.readFile(excelFile);
     assert.equal(workbook.getWorksheet('Qualified Upcoming').rowCount - 1, 2);
