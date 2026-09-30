@@ -7,11 +7,12 @@ A Node.js tracker that collects upcoming Steam releases from SteamDB, retains fo
 - Scrapes SteamDB's upcoming releases sorted by follower count.
 - Covers the current week and the next five weeks.
 - Uses a manually verified Edge session to get through Cloudflare Turnstile.
-- Keeps every scraped game and groups it by its announced **release month**, not the month in which it was crawled.
+- Keeps every scraped game in the JSON database while showing only threshold-qualified games in Excel.
+- Groups visible games by their announced **release month**, not the month in which they were crawled.
 - Moves a game to its new release-month sheet when SteamDB reports a changed release date.
 - Places Coming Soon, year-only, quarter-only, and other non-month-specific releases in `Unscheduled`.
 - Retains dated follower history across crawls.
-- Enriches games with at least 1,000 followers using the Steam Store API.
+- Uses the same configurable follower threshold for Excel visibility and Steam Store API enrichment.
 - Produces a styled Excel dashboard with filters, frozen panes, conditional formatting, useful column widths, and clickable links.
 
 ## Requirements
@@ -33,6 +34,7 @@ Copy `.env.example` to `.env`. The default configuration uses Microsoft Edge:
 ```env
 BROWSER_CHANNEL=msedge
 BROWSER_EXECUTABLE_PATH=
+FOCUSED_THRESHOLD=1000
 ```
 
 ## Run The Tracker
@@ -54,16 +56,16 @@ npm run remote
 The workbook is rebuilt from the permanent JSON history after every complete crawl:
 
 ```text
-Summary | All Upcoming | Sep 2026 | Oct 2026 | ... | Unscheduled
+Summary | Qualified Upcoming | Sep 2026 | Oct 2026 | ... | Unscheduled
 ```
 
 - `Summary` contains headline metrics, release-month totals, top movers since the previous crawl, and releases due within 30 days.
-- `All Upcoming` contains games seen in the latest complete crawl.
-- Month sheets contain every retained game currently scheduled to launch in that month, regardless of follower count.
-- `Unscheduled` contains games that cannot be assigned to a specific release month.
+- `Qualified Upcoming` contains threshold-qualified games seen in the latest complete crawl.
+- Month sheets contain threshold-qualified games currently scheduled to launch in that month.
+- `Unscheduled` contains threshold-qualified games that cannot be assigned to a specific release month.
 - An incomplete crawl does not modify the master history.
 
-Games are enriched with Publisher, Developer, Is Free, Genres, Categories, and Platforms once they reach the configured follower threshold. Lower-follower games remain in the workbook with those fields blank.
+Games below the threshold are absent from every Excel analysis sheet and Summary calculation. They remain in `steamdb_master_data.json`, so a game automatically appears with its complete earlier follower history when its latest count reaches the threshold. Qualifying games are enriched with Publisher, Developer, Is Free, Genres, Categories, and Platforms.
 
 Each tracker sheet begins with this column order:
 
@@ -78,7 +80,7 @@ Dated follower columns are appended after these fields. Exact release dates are 
 
 ## Release-Month Behavior
 
-- A game with a September release date appears in `Sep YYYY`, even if it was first crawled in August.
+- A qualifying game with a September release date appears in `Sep YYYY`, even if it was first crawled in August.
 - Subsequent crawls update its latest follower count and append dated follower history in the same sheet.
 - If its release changes from September to October, it moves to `Oct YYYY` while keeping its complete follower history.
 - Released games remain in their release-month sheet because the JSON master database is never replaced by only the latest crawl.
@@ -101,10 +103,15 @@ npm run rebuild
 
 ## Configuration
 
-Edit the constants near the top of `steamdb_tracker.js`:
+Set the Excel visibility and Steam metadata threshold in `.env`:
+
+```env
+FOCUSED_THRESHOLD=1000
+```
+
+The value defaults to `1000` when the setting is missing or invalid. To change the number of release weeks crawled, edit the constant near the top of `steamdb_tracker.js`:
 
 ```javascript
-const FOCUSED_THRESHOLD = 1000;
 const WEEKS_TO_SCRAPE = 6;
 ```
 

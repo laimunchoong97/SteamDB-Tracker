@@ -8,7 +8,10 @@ const stealth = require('puppeteer-extra-plugin-stealth')();
 
 chromium.use(stealth);
 
-const FOCUSED_THRESHOLD = 1000;
+const configuredThreshold = Number.parseInt(process.env.FOCUSED_THRESHOLD || '', 10);
+const FOCUSED_THRESHOLD = Number.isFinite(configuredThreshold) && configuredThreshold > 0
+    ? configuredThreshold
+    : 1000;
 const WEEKS_TO_SCRAPE = 6;
 const STEAM_API_BATCH_SIZE = 1;
 const STEAM_API_BATCH_DELAY_MS = 1600;
@@ -531,7 +534,8 @@ function buildWorkbookModel(existingData) {
     const latestCrawlDate = getLatestCrawlDate(existingData);
     const views = Object.entries(existingData)
         .filter(([, game]) => game && typeof game === 'object' && getHistoryDates(game).length > 0)
-        .map(([appId, game]) => buildGameView(appId, game, latestCrawlDate));
+        .map(([appId, game]) => buildGameView(appId, game, latestCrawlDate))
+        .filter(view => view.latestFollowers >= FOCUSED_THRESHOLD);
 
     const releaseMonths = new Map();
     const unscheduled = [];
@@ -673,13 +677,13 @@ function styleTrackerWorksheet(worksheet, rowCount, historyDates) {
     worksheet.addConditionalFormatting({
         ref: `C2:C${lastRow}`,
         rules: [{
-            type: 'cellIs',
-            operator: 'greaterThanOrEqual',
-            formulae: [FOCUSED_THRESHOLD],
-            style: {
-                fill: { type: 'pattern', pattern: 'solid', fgColor: { argb: COLORS.lightGreen } },
-                font: { color: { argb: COLORS.green }, bold: true }
-            }
+            type: 'colorScale',
+            cfvo: [{ type: 'min' }, { type: 'percentile', value: 50 }, { type: 'max' }],
+            color: [
+                { argb: 'FFFFF1D6' },
+                { argb: 'FFDFF3F0' },
+                { argb: 'FF9BD5C8' }
+            ]
         }]
     });
     worksheet.addConditionalFormatting({
@@ -792,6 +796,7 @@ function addMetricCard(worksheet, startColumn, labelRow, label, value, fillColor
     valueCell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: fillColor } };
     valueCell.alignment = { horizontal: 'center', vertical: 'middle', wrapText: true };
     if (value instanceof Date) valueCell.numFmt = EXCEL_DATE_FORMAT;
+    if (typeof value === 'number') valueCell.numFmt = '#,##0';
 }
 
 function addSummarySheet(workbook, model) {
@@ -824,7 +829,6 @@ function addSummarySheet(workbook, model) {
     worksheet.getCell('A2').font = { name: 'Aptos', size: 10, italic: true, color: { argb: COLORS.grey } };
     worksheet.getCell('A2').alignment = { vertical: 'middle' };
 
-    const qualifyingCurrent = model.allUpcoming.filter(view => view.latestFollowers >= FOCUSED_THRESHOLD).length;
     const newThisCrawl = model.allUpcoming.filter(view => view.firstSeen === model.latestCrawlDate).length;
     const nextThirtyDays = model.allUpcoming.filter(view => (
         view.daysToRelease !== null && view.daysToRelease >= 0 && view.daysToRelease <= 30
@@ -832,13 +836,13 @@ function addSummarySheet(workbook, model) {
     const highlightedReleases = sortGameViews(nextThirtyDays).slice(0, 25);
     const metrics = [
         ['Last Complete Crawl', parseDateKey(model.latestCrawlDate), COLORS.lightBlue],
-        ['Current Upcoming', model.allUpcoming.length, COLORS.lightTeal],
-        [`${FOCUSED_THRESHOLD.toLocaleString()}+ Followers`, qualifyingCurrent, COLORS.lightGreen],
+        ['Qualified Upcoming', model.allUpcoming.length, COLORS.lightTeal],
         ['New This Crawl', newThisCrawl, COLORS.lightOrange],
+        ['Releases in 30 Days', nextThirtyDays.length, COLORS.lightGreen],
         ['Release Months', model.releaseMonths.size, COLORS.lightBlue],
         ['Unscheduled', model.unscheduled.length, COLORS.lightOrange],
-        ['Releases in 30 Days', nextThirtyDays.length, COLORS.lightGreen],
-        ['Total Games Retained', model.views.length, COLORS.lightTeal]
+        ['Total Qualified Tracked', model.views.length, COLORS.lightTeal],
+        ['Follower Threshold', FOCUSED_THRESHOLD, COLORS.lightGreen]
     ];
 
     metrics.slice(0, 4).forEach((metric, index) => {
@@ -851,7 +855,7 @@ function addSummarySheet(workbook, model) {
     const monthStartRow = 13;
     styleSectionTitle(worksheet, `A${monthStartRow}:E${monthStartRow}`, 'Release Month Overview');
     const monthHeaderRow = worksheet.getRow(monthStartRow + 1);
-    ['Release Month', 'Games', `${FOCUSED_THRESHOLD}+`, 'Total Followers', 'Average Followers']
+    ['Release Month', 'Qualified Games', 'Total Followers', 'Average Followers', 'Top Game']
         .forEach((header, index) => monthHeaderRow.getCell(index + 1).value = header);
     styleSummaryHeader(monthHeaderRow, 1, 5);
 
@@ -859,16 +863,24 @@ function addSummarySheet(workbook, model) {
     monthKeys.forEach((monthKey, index) => {
         const views = model.releaseMonths.get(monthKey);
         const totalFollowers = views.reduce((sum, view) => sum + view.latestFollowers, 0);
+        const topGame = [...views].sort((left, right) => right.latestFollowers - left.latestFollowers)[0];
         const row = worksheet.getRow(monthStartRow + 2 + index);
         row.values = [
             getMonthSheetName(monthKey),
             views.length,
-            views.filter(view => view.latestFollowers >= FOCUSED_THRESHOLD).length,
             totalFollowers,
-            views.length ? Math.round(totalFollowers / views.length) : 0
+            views.length ? Math.round(totalFollowers / views.length) : 0,
+            topGame ? topGame.game.name : ''
         ];
+        row.getCell(3).numFmt = '#,##0';
         row.getCell(4).numFmt = '#,##0';
-        row.getCell(5).numFmt = '#,##0';
+        if (topGame) {
+            row.getCell(5).value = {
+                text: topGame.game.name,
+                hyperlink: `https://steamdb.info/app/${topGame.appId}/`
+            };
+            row.getCell(5).font = { color: { argb: COLORS.blue }, underline: true };
+        }
     });
 
     styleSectionTitle(worksheet, `G${monthStartRow}:L${monthStartRow}`, 'Top Movers Since Previous Crawl');
@@ -965,7 +977,7 @@ async function generateWorkbook(existingData, excelFile) {
     workbook.calcProperties.fullCalcOnLoad = true;
 
     addSummarySheet(workbook, model);
-    addTrackerWorksheet(workbook, 'All Upcoming', model.allUpcoming, COLORS.teal);
+    addTrackerWorksheet(workbook, 'Qualified Upcoming', model.allUpcoming, COLORS.teal);
 
     const monthKeys = Array.from(model.releaseMonths.keys()).sort();
     monthKeys.forEach(monthKey => {
