@@ -56,7 +56,7 @@ async function scrapeSteamDB() {
     const weeksToScrape = getUpcomingWeeks(6); 
     
     for (const week of weeksToScrape) {
-        const url = `https://steamdb.info/upcoming/?week=${week}`;
+        const url = `https://steamdb.info/upcoming/?sort=followers_desc&week=${week}`;
         console.log(`Navigating to ${url}`);
         
         await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
@@ -192,13 +192,44 @@ function saveData(games) {
     const createSheetData = (appsList) => {
         return appsList.map(appId => {
             const data = existingData[appId];
+            const dates = Object.keys(data.history).sort();
+            
+            let latestFollowers = 0;
+            let gain7d = null;
+
+            if (dates.length > 0) {
+                const latestDateStr = dates[dates.length - 1];
+                latestFollowers = parseInt(data.history[latestDateStr]) || 0;
+                
+                // Find a comparison date up to 7 days ago
+                let pastFollowers = null;
+                for (let i = 7; i >= 1; i--) {
+                    const tempDate = new Date(latestDateStr);
+                    tempDate.setDate(tempDate.getDate() - i);
+                    const tempStr = tempDate.toISOString().split('T')[0];
+                    if (data.history[tempStr] !== undefined) {
+                        pastFollowers = parseInt(data.history[tempStr]) || 0;
+                        break; // found the oldest available data point within the 7 day window
+                    }
+                }
+                
+                if (pastFollowers !== null) {
+                    gain7d = latestFollowers - pastFollowers;
+                }
+            }
+
             const row = {
-                'AppID': appId,
+                'AppID': Number(appId),
                 'Name': data.name,
-                'Release Date': data.releaseDate
+                'Release Date': data.releaseDate,
+                'Latest Followers': latestFollowers,
+                '7d Gain': gain7d !== null ? gain7d : ''
             };
+
             sortedDates.forEach(date => {
-                row[date] = data.history[date] !== undefined ? data.history[date] : '';
+                const val = data.history[date];
+                // Force it to be a Number in Excel, or null (empty cell) if missing
+                row[date] = val !== undefined ? parseInt(val) : null;
             });
             return row;
         });
