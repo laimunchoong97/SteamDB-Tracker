@@ -2,7 +2,7 @@ require('dotenv').config();
 
 const fs = require('fs');
 const path = require('path');
-const XLSX = require('xlsx');
+const ExcelJS = require('exceljs');
 const { chromium } = require('playwright-extra');
 const stealth = require('puppeteer-extra-plugin-stealth')();
 
@@ -10,26 +10,52 @@ chromium.use(stealth);
 
 const FOCUSED_THRESHOLD = 1000;
 const WEEKS_TO_SCRAPE = 6;
-const STEAM_API_BATCH_SIZE = 4;
-const STEAM_API_BATCH_DELAY_MS = 750;
-
-const TRACKER_HEADERS = [
-    'Release Date',
-    'Game Title',
-    'Followers',
-    'Publisher',
-    'Developer',
-    'Is Free',
-    'Genres',
-    'Categories',
-    'Platforms',
-    'AppID',
-    'Snapshot Date'
-];
+const STEAM_API_BATCH_SIZE = 1;
+const STEAM_API_BATCH_DELAY_MS = 1600;
+const STEAM_API_MAX_RETRIES = 2;
+const STEAM_METADATA_RECHECK_DAYS = 7;
+const EXCEL_DATE_FORMAT = 'dd mmm yyyy';
 
 const MONTH_NAMES = [
     'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
     'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+];
+
+const COLORS = {
+    navy: 'FF17324D',
+    teal: 'FF0F766E',
+    lightTeal: 'FFDFF3F0',
+    blue: 'FF2563A6',
+    lightBlue: 'FFEAF2F8',
+    orange: 'FFF59E0B',
+    lightOrange: 'FFFFF1D6',
+    green: 'FF2E7D32',
+    lightGreen: 'FFE4F2E5',
+    red: 'FFB42318',
+    lightRed: 'FFFDE7E5',
+    grey: 'FF64748B',
+    lightGrey: 'FFF1F5F9',
+    white: 'FFFFFFFF',
+    border: 'FFD7E0E8'
+};
+
+const FIXED_COLUMNS = [
+    { header: 'Release Date', key: 'releaseDate', width: 15 },
+    { header: 'Game Title', key: 'gameTitle', width: 42 },
+    { header: 'Followers', key: 'followers', width: 13 },
+    { header: 'Publisher', key: 'publisher', width: 28 },
+    { header: 'Developer', key: 'developer', width: 28 },
+    { header: 'Is Free', key: 'isFree', width: 10 },
+    { header: 'Genres', key: 'genres', width: 30 },
+    { header: 'Categories', key: 'categories', width: 48 },
+    { header: 'Platforms', key: 'platforms', width: 20 },
+    { header: 'AppID', key: 'appId', width: 13 },
+    { header: 'Status', key: 'status', width: 18 },
+    { header: 'Days to Release', key: 'daysToRelease', width: 16 },
+    { header: 'Previous Crawl Followers', key: 'previousFollowers', width: 23 },
+    { header: 'Change Since Previous Crawl', key: 'changeSincePrevious', width: 27 },
+    { header: 'First Seen', key: 'firstSeen', width: 14 },
+    { header: 'Last Updated', key: 'lastUpdated', width: 14 }
 ];
 
 async function scrapeSteamDB() {
@@ -44,7 +70,7 @@ async function scrapeSteamDB() {
         console.log('Connecting to the pre-launched Edge browser...');
         browser = await chromium.connectOverCDP('http://localhost:9222');
         context = browser.contexts()[0];
-        page = context.pages().find(p => p.url().includes('steamdb.info'));
+        page = context.pages().find(candidate => candidate.url().includes('steamdb.info'));
         if (!page) page = await context.newPage();
     } else {
         const userDataDir = path.join(__dirname, 'playwright_data');
@@ -79,7 +105,6 @@ async function scrapeSteamDB() {
     for (const week of weeksToScrape) {
         const url = `https://steamdb.info/upcoming/?sort=followers_desc&week=${week}`;
         console.log(`Navigating to ${url}`);
-
         await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
 
         try {
@@ -145,13 +170,13 @@ function getUpcomingWeeks(numWeeks) {
     const weeks = [];
     const now = new Date();
 
-    for (let i = 0; i < numWeeks; i++) {
-        const d = new Date(now.getTime() + (i * 7 * 24 * 60 * 60 * 1000));
-        const day = d.getDay() || 7;
-        d.setDate(d.getDate() + 4 - day);
-        const yearStart = new Date(d.getFullYear(), 0, 1);
-        const weekNo = Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
-        weeks.push(`${d.getFullYear()}W${weekNo.toString().padStart(2, '0')}`);
+    for (let index = 0; index < numWeeks; index++) {
+        const date = new Date(now.getTime() + (index * 7 * 24 * 60 * 60 * 1000));
+        const day = date.getDay() || 7;
+        date.setDate(date.getDate() + 4 - day);
+        const yearStart = new Date(date.getFullYear(), 0, 1);
+        const weekNumber = Math.ceil((((date - yearStart) / 86400000) + 1) / 7);
+        weeks.push(`${date.getFullYear()}W${weekNumber.toString().padStart(2, '0')}`);
     }
 
     return [...new Set(weeks)];
@@ -162,6 +187,12 @@ function getLocalDateKey(date = new Date()) {
     const month = String(date.getMonth() + 1).padStart(2, '0');
     const day = String(date.getDate()).padStart(2, '0');
     return `${year}-${month}-${day}`;
+}
+
+function parseDateKey(dateKey) {
+    const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(dateKey || '');
+    if (!match) return null;
+    return new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3]));
 }
 
 function readJson(filePath, fallback) {
@@ -175,7 +206,9 @@ function readJson(filePath, fallback) {
 }
 
 function writeJson(filePath, value) {
-    fs.writeFileSync(filePath, JSON.stringify(value, null, 2), 'utf-8');
+    const temporaryFile = `${filePath}.tmp`;
+    fs.writeFileSync(temporaryFile, JSON.stringify(value, null, 2), 'utf-8');
+    fs.renameSync(temporaryFile, filePath);
 }
 
 function migrateCsv(oldCsvFile) {
@@ -186,23 +219,23 @@ function migrateCsv(oldCsvFile) {
     const rows = fs.readFileSync(oldCsvFile, 'utf-8').trim().split('\n');
     if (rows.length === 0) return migrated;
 
-    const headers = rows[0].split(',').map(h => h.trim().replace(/^"|"$/g, ''));
-    const dateColumns = headers.slice(3).filter(h => /^\d{4}-\d{2}-\d{2}$/.test(h));
+    const headers = rows[0].split(',').map(header => header.trim().replace(/^"|"$/g, ''));
+    const dateColumns = headers.slice(3).filter(header => /^\d{4}-\d{2}-\d{2}$/.test(header));
 
-    for (let i = 1; i < rows.length; i++) {
+    for (let index = 1; index < rows.length; index++) {
         const rowRegex = /(".*?"|[^",\s]+)(?=\s*,|\s*$)/g;
         let match;
         const row = [];
 
-        while ((match = rowRegex.exec(rows[i])) !== null) {
+        while ((match = rowRegex.exec(rows[index])) !== null) {
             row.push(match[1].replace(/^"|"$/g, ''));
         }
 
         if (row.length < 3) continue;
         const appId = row[0];
         migrated[appId] = { name: row[1], releaseDate: row[2], history: {} };
-        dateColumns.forEach((date, index) => {
-            const columnIndex = 3 + index;
+        dateColumns.forEach((date, dateIndex) => {
+            const columnIndex = 3 + dateIndex;
             if (columnIndex < row.length) migrated[appId].history[date] = row[columnIndex];
         });
     }
@@ -215,14 +248,12 @@ function deduplicateGames(games) {
 
     for (const game of games || []) {
         if (!game || !game.appId) continue;
-        const existing = uniqueGames.get(String(game.appId));
-        if (!existing || Number(game.followers) >= Number(existing.followers)) {
-            uniqueGames.set(String(game.appId), {
-                ...game,
-                appId: String(game.appId),
-                followers: Number(game.followers) || 0
-            });
-        }
+        const appId = String(game.appId);
+        uniqueGames.set(appId, {
+            ...game,
+            appId,
+            followers: Number(game.followers) || 0
+        });
     }
 
     return Array.from(uniqueGames.values());
@@ -235,6 +266,7 @@ function mergeScrapedGames(existingData, games, crawlDate) {
             existingData[appId] = {
                 name: game.name,
                 releaseDate: game.releaseDate,
+                releaseTimestamp: game.releaseTimestamp || null,
                 history: {},
                 firstSeen: crawlDate
             };
@@ -243,24 +275,46 @@ function mergeScrapedGames(existingData, games, crawlDate) {
         const record = existingData[appId];
         record.history = record.history || {};
         record.name = game.name;
-        record.releaseDate = game.releaseDate;
-        if (game.releaseTimestamp) record.releaseTimestamp = game.releaseTimestamp;
+        if (String(game.releaseDate || '').trim()) {
+            record.releaseDate = game.releaseDate;
+            record.releaseTimestamp = game.releaseTimestamp || null;
+        }
         record.firstSeen = record.firstSeen || crawlDate;
         record.lastSeen = crawlDate;
         record.history[crawlDate] = Number(game.followers) || 0;
     }
 }
 
+function getHistoryDates(game) {
+    return Object.keys((game && game.history) || {})
+        .filter(date => /^\d{4}-\d{2}-\d{2}$/.test(date))
+        .sort();
+}
+
+function getLatestFollowers(game) {
+    const dates = getHistoryDates(game);
+    if (dates.length === 0) return 0;
+    return Number(game.history[dates[dates.length - 1]]) || 0;
+}
+
+function getLatestCrawlDate(existingData) {
+    const dates = new Set();
+    Object.values(existingData).forEach(game => {
+        getHistoryDates(game).forEach(date => dates.add(date));
+    });
+    return Array.from(dates).sort().pop() || null;
+}
+
 function daysBetween(startDateKey, endDateKey) {
     const start = parseDateKey(startDateKey);
     const end = parseDateKey(endDateKey);
     if (!start || !end) return Number.POSITIVE_INFINITY;
-    return Math.floor((end.getTime() - start.getTime()) / 86400000);
+    return Math.floor((toUtcDay(end) - toUtcDay(start)) / 86400000);
 }
 
 function needsSteamMetadata(game, crawlDate) {
     if (game.metadataStatus === 'unavailable'
-        && daysBetween(game.metadataLastChecked, crawlDate) < 30) {
+        && daysBetween(game.metadataLastChecked, crawlDate) < STEAM_METADATA_RECHECK_DAYS) {
         return false;
     }
     if (game.metadataStatus === 'error'
@@ -272,10 +326,17 @@ function needsSteamMetadata(game, crawlDate) {
     return requiredFields.some(field => game[field] === undefined || game[field] === '' || game[field] === 'Error');
 }
 
-async function fetchSteamAppDetails(appId) {
+async function fetchSteamAppDetails(appId, attempt = 0) {
     const response = await fetch(`https://store.steampowered.com/api/appdetails?appids=${appId}`, {
         headers: { Accept: 'application/json' }
     });
+
+    if (response.status === 429 && attempt < STEAM_API_MAX_RETRIES) {
+        const retryAfter = Number(response.headers.get('retry-after')) || 5;
+        console.log(`Steam API rate-limited AppID ${appId}; retrying in ${retryAfter} seconds.`);
+        await new Promise(resolve => setTimeout(resolve, retryAfter * 1000));
+        return fetchSteamAppDetails(appId, attempt + 1);
+    }
 
     if (!response.ok) {
         throw new Error(`Steam API returned HTTP ${response.status}`);
@@ -293,12 +354,7 @@ function applySteamMetadata(game, appData, crawlDate) {
         return;
     }
 
-    const platformLabels = {
-        windows: 'Windows',
-        mac: 'macOS',
-        linux: 'Linux'
-    };
-
+    const platformLabels = { windows: 'Windows', mac: 'macOS', linux: 'Linux' };
     game.developer = appData.developers ? appData.developers.join(', ') : 'N/A';
     game.publisher = appData.publishers ? appData.publishers.join(', ') : 'N/A';
     game.isFree = appData.is_free ? 'Yes' : 'No';
@@ -319,7 +375,7 @@ async function enrichSteamMetadata(existingData, appIds, crawlDate, masterFile, 
 
     const fetcher = options.fetchAppDetails || fetchSteamAppDetails;
     const pendingIds = appIds.filter(appId => needsSteamMetadata(existingData[appId], crawlDate));
-    console.log(`Steam metadata required for ${pendingIds.length}/${appIds.length} focused games.`);
+    console.log(`Steam metadata required for ${pendingIds.length}/${appIds.length} qualifying games.`);
 
     for (let index = 0; index < pendingIds.length; index += STEAM_API_BATCH_SIZE) {
         const batch = pendingIds.slice(index, index + STEAM_API_BATCH_SIZE);
@@ -342,106 +398,162 @@ async function enrichSteamMetadata(existingData, appIds, crawlDate, masterFile, 
     }
 }
 
-function createSnapshotGame(appId, game, followers) {
-    const normalizedPlatforms = String(game.platforms || '')
+function normalizePlatforms(value) {
+    const labels = { windows: 'Windows', mac: 'macOS', macos: 'macOS', linux: 'Linux' };
+    return String(value || '')
         .split(',')
         .map(platform => platform.trim())
         .filter(Boolean)
-        .map(platform => ({ windows: 'Windows', mac: 'macOS', macos: 'macOS', linux: 'Linux' }[platform.toLowerCase()] || platform))
+        .map(platform => labels[platform.toLowerCase()] || platform)
         .join(', ');
-
-    return {
-        appId: String(appId),
-        releaseDate: game.releaseDate || '',
-        releaseTimestamp: game.releaseTimestamp || null,
-        name: game.name || '',
-        followers: Number(followers) || 0,
-        publisher: game.publisher || '',
-        developer: game.developer || '',
-        isFree: game.isFree || '',
-        genres: game.genres || '',
-        categories: game.categories || '',
-        platforms: normalizedPlatforms
-    };
 }
 
-function buildCurrentMonthlySnapshot(existingData, currentGames, crawlDate) {
-    const games = currentGames
-        .filter(game => Number(game.followers) >= FOCUSED_THRESHOLD)
-        .map(game => createSnapshotGame(game.appId, existingData[game.appId], game.followers));
-
-    return {
-        snapshotDate: crawlDate,
-        threshold: FOCUSED_THRESHOLD,
-        gameCount: games.length,
-        games
-    };
+function findMonthIndex(monthName) {
+    const abbreviation = String(monthName || '').slice(0, 3).toLowerCase();
+    return MONTH_NAMES.findIndex(month => month.toLowerCase() === abbreviation);
 }
 
-function bootstrapMonthlySnapshots(existingData) {
-    const datesByMonth = new Map();
-
-    Object.values(existingData).forEach(game => {
-        Object.keys(game.history || {}).forEach(date => {
-            if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return;
-            const monthKey = date.slice(0, 7);
-            if (!datesByMonth.has(monthKey)) datesByMonth.set(monthKey, new Set());
-            datesByMonth.get(monthKey).add(date);
-        });
-    });
-
-    const months = {};
-    for (const [monthKey, dates] of datesByMonth.entries()) {
-        const snapshotDate = Array.from(dates).sort().pop();
-        const games = Object.entries(existingData)
-            .filter(([, game]) => game.history && game.history[snapshotDate] !== undefined)
-            .filter(([, game]) => Number(game.history[snapshotDate]) >= FOCUSED_THRESHOLD)
-            .map(([appId, game]) => createSnapshotGame(appId, game, game.history[snapshotDate]));
-
-        months[monthKey] = {
-            snapshotDate,
-            threshold: FOCUSED_THRESHOLD,
-            gameCount: games.length,
-            migratedFromDailyHistory: true,
-            games
-        };
-    }
-
-    return { version: 1, months };
+function inferReleaseYear(monthIndex, referenceDateKey) {
+    const referenceDate = parseDateKey(referenceDateKey) || new Date();
+    let year = referenceDate.getFullYear();
+    if (referenceDate.getMonth() - monthIndex > 6) year += 1;
+    return year;
 }
 
-function parseDateKey(dateKey) {
-    const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(dateKey || '');
-    if (!match) return '';
-    return new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3]));
-}
-
-function parseReleaseDate(game, snapshotDate) {
+function getReleaseInfo(game, referenceDateKey) {
     const rawDate = String(game.releaseDate || '').trim();
     const exactDateMatch = /^(\d{1,2})\s+([A-Za-z]{3,9})(?:,?\s+(\d{4}))?$/.exec(rawDate);
-    if (!exactDateMatch) return rawDate;
 
-    if (game.releaseTimestamp) {
-        const timestampDate = new Date(Number(game.releaseTimestamp) * 1000);
-        if (!Number.isNaN(timestampDate.getTime())) {
-            return new Date(
-                timestampDate.getUTCFullYear(),
-                timestampDate.getUTCMonth(),
-                timestampDate.getUTCDate()
-            );
+    if (exactDateMatch) {
+        let exactDate = null;
+        if (game.releaseTimestamp) {
+            const timestampDate = new Date(Number(game.releaseTimestamp) * 1000);
+            if (!Number.isNaN(timestampDate.getTime())) {
+                exactDate = new Date(
+                    timestampDate.getUTCFullYear(),
+                    timestampDate.getUTCMonth(),
+                    timestampDate.getUTCDate()
+                );
+            }
+        }
+
+        if (!exactDate) {
+            const monthIndex = findMonthIndex(exactDateMatch[2]);
+            if (monthIndex !== -1) {
+                const year = exactDateMatch[3]
+                    ? Number(exactDateMatch[3])
+                    : inferReleaseYear(monthIndex, referenceDateKey);
+                exactDate = new Date(year, monthIndex, Number(exactDateMatch[1]));
+            }
+        }
+
+        if (exactDate && !Number.isNaN(exactDate.getTime())) {
+            return {
+                monthKey: `${exactDate.getFullYear()}-${String(exactDate.getMonth() + 1).padStart(2, '0')}`,
+                excelValue: exactDate,
+                exactDate,
+                sortValue: exactDate.getTime()
+            };
         }
     }
 
-    const monthIndex = MONTH_NAMES.findIndex(month => (
-        exactDateMatch[2].slice(0, 3).toLowerCase() === month.toLowerCase()
-    ));
-    if (monthIndex === -1) return rawDate;
+    const monthYearMatch = /^([A-Za-z]{3,9})\s+(\d{4})$/.exec(rawDate);
+    if (monthYearMatch) {
+        const monthIndex = findMonthIndex(monthYearMatch[1]);
+        if (monthIndex !== -1) {
+            return {
+                monthKey: `${monthYearMatch[2]}-${String(monthIndex + 1).padStart(2, '0')}`,
+                excelValue: rawDate,
+                exactDate: null,
+                sortValue: new Date(Number(monthYearMatch[2]), monthIndex, 1).getTime()
+            };
+        }
+    }
 
-    const referenceDate = parseDateKey(snapshotDate) || new Date();
-    let year = exactDateMatch[3] ? Number(exactDateMatch[3]) : referenceDate.getFullYear();
-    if (!exactDateMatch[3] && referenceDate.getMonth() - monthIndex > 6) year += 1;
+    return {
+        monthKey: null,
+        excelValue: rawDate || 'TBA',
+        exactDate: null,
+        sortValue: Number.MAX_SAFE_INTEGER
+    };
+}
 
-    return new Date(year, monthIndex, Number(exactDateMatch[1]));
+function toUtcDay(date) {
+    return Date.UTC(date.getFullYear(), date.getMonth(), date.getDate());
+}
+
+function getDaysToRelease(exactDate, referenceDateKey) {
+    const referenceDate = parseDateKey(referenceDateKey);
+    if (!exactDate || !referenceDate) return null;
+    return Math.round((toUtcDay(exactDate) - toUtcDay(referenceDate)) / 86400000);
+}
+
+function getReleaseStatus(releaseInfo, referenceDateKey) {
+    if (!releaseInfo.monthKey) return 'Unscheduled';
+
+    if (releaseInfo.exactDate) {
+        const days = getDaysToRelease(releaseInfo.exactDate, referenceDateKey);
+        if (days < 0) return 'Released';
+        if (days === 0) return 'Releases Today';
+        return 'Upcoming';
+    }
+
+    const referenceMonth = String(referenceDateKey || '').slice(0, 7);
+    if (releaseInfo.monthKey < referenceMonth) return 'Released (Month)';
+    if (releaseInfo.monthKey === referenceMonth) return 'Launch Month';
+    return 'Upcoming (Month)';
+}
+
+function buildGameView(appId, game, referenceDateKey) {
+    const historyDates = getHistoryDates(game);
+    const latestDate = historyDates[historyDates.length - 1] || null;
+    const previousDate = historyDates.length > 1 ? historyDates[historyDates.length - 2] : null;
+    const latestFollowers = latestDate ? Number(game.history[latestDate]) || 0 : 0;
+    const previousFollowers = previousDate ? Number(game.history[previousDate]) || 0 : null;
+    const releaseInfo = getReleaseInfo(game, latestDate || referenceDateKey);
+
+    return {
+        appId: String(appId),
+        game,
+        historyDates,
+        latestDate,
+        latestFollowers,
+        previousFollowers,
+        changeSincePrevious: previousFollowers === null ? null : latestFollowers - previousFollowers,
+        firstSeen: game.firstSeen || historyDates[0] || null,
+        releaseInfo,
+        status: getReleaseStatus(releaseInfo, referenceDateKey),
+        daysToRelease: getDaysToRelease(releaseInfo.exactDate, referenceDateKey)
+    };
+}
+
+function buildWorkbookModel(existingData) {
+    const latestCrawlDate = getLatestCrawlDate(existingData);
+    const views = Object.entries(existingData)
+        .filter(([, game]) => game && typeof game === 'object' && getHistoryDates(game).length > 0)
+        .map(([appId, game]) => buildGameView(appId, game, latestCrawlDate));
+
+    const releaseMonths = new Map();
+    const unscheduled = [];
+
+    for (const view of views) {
+        if (!view.releaseInfo.monthKey) {
+            unscheduled.push(view);
+            continue;
+        }
+        if (!releaseMonths.has(view.releaseInfo.monthKey)) {
+            releaseMonths.set(view.releaseInfo.monthKey, []);
+        }
+        releaseMonths.get(view.releaseInfo.monthKey).push(view);
+    }
+
+    return {
+        latestCrawlDate,
+        views,
+        allUpcoming: views.filter(view => view.latestDate === latestCrawlDate),
+        releaseMonths,
+        unscheduled
+    };
 }
 
 function getMonthSheetName(monthKey) {
@@ -450,165 +562,471 @@ function getMonthSheetName(monthKey) {
     return `${MONTH_NAMES[Number(match[2]) - 1]} ${match[1]}`;
 }
 
-function sortSnapshotGames(games) {
-    return [...games].sort((a, b) => {
-        const aDate = a.releaseTimestamp ? Number(a.releaseTimestamp) : Number.MAX_SAFE_INTEGER;
-        const bDate = b.releaseTimestamp ? Number(b.releaseTimestamp) : Number.MAX_SAFE_INTEGER;
-        if (aDate !== bDate) return aDate - bDate;
-        if (Number(a.followers) !== Number(b.followers)) return Number(b.followers) - Number(a.followers);
-        return String(a.name).localeCompare(String(b.name));
+function sortGameViews(views) {
+    return [...views].sort((left, right) => {
+        if (left.releaseInfo.sortValue !== right.releaseInfo.sortValue) {
+            return left.releaseInfo.sortValue - right.releaseInfo.sortValue;
+        }
+        if (left.latestFollowers !== right.latestFollowers) {
+            return right.latestFollowers - left.latestFollowers;
+        }
+        return String(left.game.name).localeCompare(String(right.game.name));
     });
 }
 
-function createTrackerSheet(snapshot) {
-    const rows = sortSnapshotGames(snapshot.games || []).map(game => ({
-        'Release Date': parseReleaseDate(game, snapshot.snapshotDate),
-        'Game Title': game.name,
-        'Followers': Number(game.followers) || 0,
-        'Publisher': game.publisher || '',
-        'Developer': game.developer || '',
-        'Is Free': game.isFree || '',
-        'Genres': game.genres || '',
-        'Categories': game.categories || '',
-        'Platforms': game.platforms || '',
-        'AppID': Number(game.appId),
-        'Snapshot Date': parseDateKey(snapshot.snapshotDate)
-    }));
+function historyKey(date) {
+    return `history_${date.replace(/-/g, '_')}`;
+}
 
-    const worksheet = XLSX.utils.json_to_sheet(rows, {
-        header: TRACKER_HEADERS,
-        cellDates: true,
-        dateNF: 'dd mmm yyyy'
+function getSheetHistoryDates(views) {
+    const dates = new Set();
+    views.forEach(view => view.historyDates.forEach(date => dates.add(date)));
+    return Array.from(dates).sort();
+}
+
+function buildTrackerRow(view, historyDates) {
+    const row = {
+        releaseDate: view.releaseInfo.excelValue,
+        gameTitle: view.game.name || '',
+        followers: view.latestFollowers,
+        publisher: view.game.publisher || '',
+        developer: view.game.developer || '',
+        isFree: view.game.isFree || '',
+        genres: view.game.genres || '',
+        categories: view.game.categories || '',
+        platforms: normalizePlatforms(view.game.platforms),
+        appId: Number(view.appId),
+        status: view.status,
+        daysToRelease: view.daysToRelease,
+        previousFollowers: view.previousFollowers,
+        changeSincePrevious: view.changeSincePrevious,
+        firstSeen: view.firstSeen ? parseDateKey(view.firstSeen) : null,
+        lastUpdated: view.latestDate ? parseDateKey(view.latestDate) : null
+    };
+
+    historyDates.forEach(date => {
+        row[historyKey(date)] = view.game.history[date] === undefined
+            ? null
+            : Number(view.game.history[date]) || 0;
+    });
+    return row;
+}
+
+function styleTrackerWorksheet(worksheet, rowCount, historyDates) {
+    worksheet.views = [{
+        state: 'frozen',
+        xSplit: 2,
+        ySplit: 1,
+        topLeftCell: 'C2',
+        activeCell: 'C2',
+        showGridLines: false
+    }];
+    worksheet.autoFilter = {
+        from: { row: 1, column: 1 },
+        to: { row: 1, column: FIXED_COLUMNS.length + historyDates.length }
+    };
+    worksheet.pageSetup = { orientation: 'landscape', fitToPage: true, fitToWidth: 1, fitToHeight: 0 };
+    worksheet.properties.defaultRowHeight = 22;
+
+    const headerRow = worksheet.getRow(1);
+    headerRow.height = 30;
+    headerRow.eachCell(cell => {
+        cell.font = { name: 'Aptos Display', size: 11, bold: true, color: { argb: COLORS.white } };
+        cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: COLORS.navy } };
+        cell.alignment = { vertical: 'middle', horizontal: 'center', wrapText: true };
+        cell.border = { bottom: { style: 'medium', color: { argb: COLORS.teal } } };
     });
 
-    worksheet['!autofilter'] = { ref: worksheet['!ref'] || 'A1:K1' };
-    worksheet['!cols'] = [
-        { wch: 14 }, { wch: 42 }, { wch: 12 }, { wch: 28 }, { wch: 28 },
-        { wch: 10 }, { wch: 32 }, { wch: 50 }, { wch: 20 }, { wch: 12 }, { wch: 14 }
-    ];
-    for (let rowIndex = 2; rowIndex <= rows.length + 1; rowIndex++) {
-        if (worksheet[`A${rowIndex}`] && worksheet[`A${rowIndex}`].t === 'd') {
-            worksheet[`A${rowIndex}`].z = 'dd mmm yyyy';
-        }
-        if (worksheet[`C${rowIndex}`]) worksheet[`C${rowIndex}`].z = '#,##0';
-        if (worksheet[`J${rowIndex}`]) {
-            const appId = worksheet[`J${rowIndex}`].v;
-            worksheet[`J${rowIndex}`].l = {
-                Target: `https://store.steampowered.com/app/${appId}/`,
-                Tooltip: 'Open Steam store page'
-            };
-        }
-        if (worksheet[`B${rowIndex}`]) {
-            const appId = worksheet[`J${rowIndex}`].v;
-            worksheet[`B${rowIndex}`].l = {
-                Target: `https://steamdb.info/app/${appId}/`,
-                Tooltip: 'Open SteamDB page'
-            };
-        }
-        if (worksheet[`K${rowIndex}`] && worksheet[`K${rowIndex}`].t === 'd') {
-            worksheet[`K${rowIndex}`].z = 'dd mmm yyyy';
+    for (let rowIndex = 2; rowIndex <= rowCount + 1; rowIndex++) {
+        const row = worksheet.getRow(rowIndex);
+        row.height = 45;
+        row.eachCell({ includeEmpty: true }, cell => {
+            cell.font = { name: 'Aptos', size: 10, color: { argb: COLORS.navy } };
+            cell.alignment = { vertical: 'top' };
+            cell.border = { bottom: { style: 'hair', color: { argb: COLORS.border } } };
+            if (rowIndex % 2 === 0) {
+                cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFF8FAFC' } };
+            }
+        });
+
+        ['B', 'D', 'E', 'G', 'H', 'I'].forEach(column => {
+            row.getCell(column).alignment = { vertical: 'top', wrapText: true };
+        });
+        row.getCell('A').numFmt = EXCEL_DATE_FORMAT;
+        row.getCell('C').numFmt = '#,##0';
+        row.getCell('L').numFmt = '0';
+        row.getCell('M').numFmt = '#,##0';
+        row.getCell('N').numFmt = '+#,##0;-#,##0;0';
+        row.getCell('O').numFmt = EXCEL_DATE_FORMAT;
+        row.getCell('P').numFmt = EXCEL_DATE_FORMAT;
+
+        for (let columnIndex = FIXED_COLUMNS.length + 1;
+            columnIndex <= FIXED_COLUMNS.length + historyDates.length;
+            columnIndex++) {
+            row.getCell(columnIndex).numFmt = '#,##0';
         }
     }
 
+    if (rowCount === 0) return;
+    const lastRow = rowCount + 1;
+
+    worksheet.addConditionalFormatting({
+        ref: `C2:C${lastRow}`,
+        rules: [{
+            type: 'cellIs',
+            operator: 'greaterThanOrEqual',
+            formulae: [FOCUSED_THRESHOLD],
+            style: {
+                fill: { type: 'pattern', pattern: 'solid', fgColor: { argb: COLORS.lightGreen } },
+                font: { color: { argb: COLORS.green }, bold: true }
+            }
+        }]
+    });
+    worksheet.addConditionalFormatting({
+        ref: `L2:L${lastRow}`,
+        rules: [{
+            type: 'cellIs',
+            operator: 'between',
+            formulae: [0, 14],
+            style: {
+                fill: { type: 'pattern', pattern: 'solid', fgColor: { argb: COLORS.lightOrange } },
+                font: { color: { argb: 'FF8A4B08' }, bold: true }
+            }
+        }]
+    });
+    worksheet.addConditionalFormatting({
+        ref: `N2:N${lastRow}`,
+        rules: [
+            {
+                type: 'cellIs',
+                operator: 'greaterThan',
+                formulae: [0],
+                style: {
+                    fill: { type: 'pattern', pattern: 'solid', fgColor: { argb: COLORS.lightGreen } },
+                    font: { color: { argb: COLORS.green } }
+                }
+            },
+            {
+                type: 'cellIs',
+                operator: 'lessThan',
+                formulae: [0],
+                style: {
+                    fill: { type: 'pattern', pattern: 'solid', fgColor: { argb: COLORS.lightRed } },
+                    font: { color: { argb: COLORS.red } }
+                }
+            }
+        ]
+    });
+}
+
+function addTrackerWorksheet(workbook, name, views, tabColor) {
+    const sortedViews = sortGameViews(views);
+    const historyDates = getSheetHistoryDates(sortedViews);
+    const worksheet = workbook.addWorksheet(name, {
+        properties: { tabColor: { argb: tabColor } }
+    });
+
+    worksheet.columns = [
+        ...FIXED_COLUMNS,
+        ...historyDates.map(date => ({ header: date, key: historyKey(date), width: 13 }))
+    ];
+
+    sortedViews.forEach(view => {
+        worksheet.addRow(buildTrackerRow(view, historyDates));
+    });
+
+    styleTrackerWorksheet(worksheet, sortedViews.length, historyDates);
+
+    sortedViews.forEach((view, index) => {
+        const row = worksheet.getRow(index + 2);
+        const titleCell = row.getCell('gameTitle');
+        titleCell.value = {
+            text: view.game.name || '',
+            hyperlink: `https://steamdb.info/app/${view.appId}/`,
+            tooltip: 'Open SteamDB page'
+        };
+        titleCell.font = { name: 'Aptos', size: 10, color: { argb: COLORS.blue }, underline: true };
+
+        const appIdCell = row.getCell('appId');
+        appIdCell.value = {
+            text: view.appId,
+            hyperlink: `https://store.steampowered.com/app/${view.appId}/`,
+            tooltip: 'Open Steam store page'
+        };
+        appIdCell.font = { name: 'Aptos', size: 10, color: { argb: COLORS.blue }, underline: true };
+    });
     return worksheet;
 }
 
-function generateWorkbook(snapshotStore, excelFile) {
-    const monthKeys = Object.keys(snapshotStore.months || {}).sort().reverse();
-    if (monthKeys.length === 0) {
-        console.log('No complete monthly snapshot is available yet; Excel was not changed.');
+function styleSectionTitle(worksheet, range, title) {
+    worksheet.mergeCells(range);
+    const cell = worksheet.getCell(range.split(':')[0]);
+    cell.value = title;
+    cell.font = { name: 'Aptos Display', size: 12, bold: true, color: { argb: COLORS.white } };
+    cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: COLORS.teal } };
+    cell.alignment = { vertical: 'middle', horizontal: 'left' };
+}
+
+function styleSummaryHeader(row, startColumn, endColumn) {
+    for (let column = startColumn; column <= endColumn; column++) {
+        const cell = row.getCell(column);
+        cell.font = { name: 'Aptos', size: 10, bold: true, color: { argb: COLORS.white } };
+        cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: COLORS.navy } };
+        cell.alignment = { vertical: 'middle', horizontal: 'center', wrapText: true };
+    }
+}
+
+function addMetricCard(worksheet, startColumn, labelRow, label, value, fillColor) {
+    worksheet.mergeCells(labelRow, startColumn, labelRow, startColumn + 1);
+    worksheet.mergeCells(labelRow + 1, startColumn, labelRow + 2, startColumn + 1);
+
+    const labelCell = worksheet.getCell(labelRow, startColumn);
+    labelCell.value = label;
+    labelCell.font = { name: 'Aptos', size: 9, bold: true, color: { argb: COLORS.grey } };
+    labelCell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: COLORS.lightGrey } };
+    labelCell.alignment = { horizontal: 'center', vertical: 'middle' };
+
+    const valueCell = worksheet.getCell(labelRow + 1, startColumn);
+    valueCell.value = value;
+    valueCell.font = { name: 'Aptos Display', size: 18, bold: true, color: { argb: COLORS.navy } };
+    valueCell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: fillColor } };
+    valueCell.alignment = { horizontal: 'center', vertical: 'middle', wrapText: true };
+    if (value instanceof Date) valueCell.numFmt = EXCEL_DATE_FORMAT;
+}
+
+function addSummarySheet(workbook, model) {
+    const worksheet = workbook.addWorksheet('Summary', {
+        properties: { tabColor: { argb: COLORS.orange } },
+        views: [{ state: 'frozen', ySplit: 2, showGridLines: false }]
+    });
+    worksheet.getColumn('A').width = 26;
+    worksheet.getColumn('B').width = 16;
+    worksheet.getColumn('C').width = 18;
+    worksheet.getColumn('D').width = 18;
+    worksheet.getColumn('E').width = 18;
+    worksheet.getColumn('F').width = 4;
+    worksheet.getColumn('G').width = 34;
+    worksheet.getColumn('H').width = 15;
+    worksheet.getColumn('I').width = 14;
+    worksheet.getColumn('J').width = 14;
+    worksheet.getColumn('K').width = 14;
+    worksheet.getColumn('L').width = 16;
+
+    worksheet.mergeCells('A1:L1');
+    worksheet.getCell('A1').value = 'SteamDB Release Tracker';
+    worksheet.getCell('A1').font = { name: 'Aptos Display', size: 24, bold: true, color: { argb: COLORS.white } };
+    worksheet.getCell('A1').fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: COLORS.navy } };
+    worksheet.getCell('A1').alignment = { vertical: 'middle', horizontal: 'left' };
+    worksheet.getRow(1).height = 40;
+
+    worksheet.mergeCells('A2:L2');
+    worksheet.getCell('A2').value = 'Games are grouped by launch month; follower history is retained across crawls.';
+    worksheet.getCell('A2').font = { name: 'Aptos', size: 10, italic: true, color: { argb: COLORS.grey } };
+    worksheet.getCell('A2').alignment = { vertical: 'middle' };
+
+    const qualifyingCurrent = model.allUpcoming.filter(view => view.latestFollowers >= FOCUSED_THRESHOLD).length;
+    const newThisCrawl = model.allUpcoming.filter(view => view.firstSeen === model.latestCrawlDate).length;
+    const nextThirtyDays = model.allUpcoming.filter(view => (
+        view.daysToRelease !== null && view.daysToRelease >= 0 && view.daysToRelease <= 30
+    ));
+    const highlightedReleases = sortGameViews(nextThirtyDays).slice(0, 25);
+    const metrics = [
+        ['Last Complete Crawl', parseDateKey(model.latestCrawlDate), COLORS.lightBlue],
+        ['Current Upcoming', model.allUpcoming.length, COLORS.lightTeal],
+        [`${FOCUSED_THRESHOLD.toLocaleString()}+ Followers`, qualifyingCurrent, COLORS.lightGreen],
+        ['New This Crawl', newThisCrawl, COLORS.lightOrange],
+        ['Release Months', model.releaseMonths.size, COLORS.lightBlue],
+        ['Unscheduled', model.unscheduled.length, COLORS.lightOrange],
+        ['Releases in 30 Days', nextThirtyDays.length, COLORS.lightGreen],
+        ['Total Games Retained', model.views.length, COLORS.lightTeal]
+    ];
+
+    metrics.slice(0, 4).forEach((metric, index) => {
+        addMetricCard(worksheet, 1 + (index * 3), 4, metric[0], metric[1], metric[2]);
+    });
+    metrics.slice(4).forEach((metric, index) => {
+        addMetricCard(worksheet, 1 + (index * 3), 8, metric[0], metric[1], metric[2]);
+    });
+
+    const monthStartRow = 13;
+    styleSectionTitle(worksheet, `A${monthStartRow}:E${monthStartRow}`, 'Release Month Overview');
+    const monthHeaderRow = worksheet.getRow(monthStartRow + 1);
+    ['Release Month', 'Games', `${FOCUSED_THRESHOLD}+`, 'Total Followers', 'Average Followers']
+        .forEach((header, index) => monthHeaderRow.getCell(index + 1).value = header);
+    styleSummaryHeader(monthHeaderRow, 1, 5);
+
+    const monthKeys = Array.from(model.releaseMonths.keys()).sort();
+    monthKeys.forEach((monthKey, index) => {
+        const views = model.releaseMonths.get(monthKey);
+        const totalFollowers = views.reduce((sum, view) => sum + view.latestFollowers, 0);
+        const row = worksheet.getRow(monthStartRow + 2 + index);
+        row.values = [
+            getMonthSheetName(monthKey),
+            views.length,
+            views.filter(view => view.latestFollowers >= FOCUSED_THRESHOLD).length,
+            totalFollowers,
+            views.length ? Math.round(totalFollowers / views.length) : 0
+        ];
+        row.getCell(4).numFmt = '#,##0';
+        row.getCell(5).numFmt = '#,##0';
+    });
+
+    styleSectionTitle(worksheet, `G${monthStartRow}:L${monthStartRow}`, 'Top Movers Since Previous Crawl');
+    const moverHeaderRow = worksheet.getRow(monthStartRow + 1);
+    ['Game Title', 'Release Date', 'Followers', 'Previous', 'Change', 'Release Month']
+        .forEach((header, index) => moverHeaderRow.getCell(index + 7).value = header);
+    styleSummaryHeader(moverHeaderRow, 7, 12);
+
+    const topMovers = [...model.allUpcoming]
+        .filter(view => view.changeSincePrevious !== null)
+        .sort((left, right) => right.changeSincePrevious - left.changeSincePrevious)
+        .slice(0, 10);
+
+    topMovers.forEach((view, index) => {
+        const row = worksheet.getRow(monthStartRow + 2 + index);
+        row.getCell(7).value = {
+            text: view.game.name,
+            hyperlink: `https://steamdb.info/app/${view.appId}/`
+        };
+        row.getCell(7).font = { color: { argb: COLORS.blue }, underline: true };
+        row.getCell(8).value = view.releaseInfo.excelValue;
+        row.getCell(8).numFmt = EXCEL_DATE_FORMAT;
+        row.getCell(9).value = view.latestFollowers;
+        row.getCell(10).value = view.previousFollowers;
+        row.getCell(11).value = view.changeSincePrevious;
+        row.getCell(12).value = view.releaseInfo.monthKey
+            ? getMonthSheetName(view.releaseInfo.monthKey)
+            : 'Unscheduled';
+        [9, 10].forEach(column => row.getCell(column).numFmt = '#,##0');
+        row.getCell(11).numFmt = '+#,##0;-#,##0;0';
+    });
+
+    if (topMovers.length > 0) {
+        worksheet.addConditionalFormatting({
+            ref: `K${monthStartRow + 2}:K${monthStartRow + 1 + topMovers.length}`,
+            rules: [
+                {
+                    type: 'cellIs',
+                    operator: 'greaterThan',
+                    formulae: [0],
+                    style: { fill: { type: 'pattern', pattern: 'solid', fgColor: { argb: COLORS.lightGreen } } }
+                },
+                {
+                    type: 'cellIs',
+                    operator: 'lessThan',
+                    formulae: [0],
+                    style: { fill: { type: 'pattern', pattern: 'solid', fgColor: { argb: COLORS.lightRed } } }
+                }
+            ]
+        });
+    }
+
+    const detailStartRow = monthStartRow + Math.max(monthKeys.length, topMovers.length, 1) + 4;
+    styleSectionTitle(worksheet, `A${detailStartRow}:E${detailStartRow}`, 'Next 25 Releases Within 30 Days');
+    const releaseHeaderRow = worksheet.getRow(detailStartRow + 1);
+    ['Game Title', 'Release Date', 'Followers', 'Publisher', 'Days to Release']
+        .forEach((header, index) => releaseHeaderRow.getCell(index + 1).value = header);
+    styleSummaryHeader(releaseHeaderRow, 1, 5);
+
+    highlightedReleases.forEach((view, index) => {
+        const row = worksheet.getRow(detailStartRow + 2 + index);
+        row.getCell(1).value = {
+            text: view.game.name,
+            hyperlink: `https://steamdb.info/app/${view.appId}/`
+        };
+        row.getCell(1).font = { color: { argb: COLORS.blue }, underline: true };
+        row.getCell(2).value = view.releaseInfo.excelValue;
+        row.getCell(2).numFmt = EXCEL_DATE_FORMAT;
+        row.getCell(3).value = view.latestFollowers;
+        row.getCell(3).numFmt = '#,##0';
+        row.getCell(4).value = view.game.publisher || '';
+        row.getCell(5).value = view.daysToRelease;
+    });
+
+    worksheet.eachRow({ includeEmpty: false }, row => {
+        row.eachCell({ includeEmpty: true }, cell => {
+            cell.alignment = { ...cell.alignment, vertical: 'middle', wrapText: true };
+        });
+    });
+    return worksheet;
+}
+
+async function generateWorkbook(existingData, excelFile) {
+    const model = buildWorkbookModel(existingData);
+    if (!model.latestCrawlDate) {
+        console.log('No crawl history is available yet; Excel was not changed.');
         return false;
     }
 
-    const workbook = XLSX.utils.book_new();
-    const latestSnapshot = snapshotStore.months[monthKeys[0]];
-    XLSX.utils.book_append_sheet(workbook, createTrackerSheet(latestSnapshot), 'Current Tracker');
+    const workbook = new ExcelJS.Workbook();
+    workbook.creator = 'SteamDB Upcoming Games Tracker';
+    workbook.created = new Date();
+    workbook.modified = new Date();
+    workbook.calcProperties.fullCalcOnLoad = true;
 
-    for (const monthKey of monthKeys) {
-        XLSX.utils.book_append_sheet(
+    addSummarySheet(workbook, model);
+    addTrackerWorksheet(workbook, 'All Upcoming', model.allUpcoming, COLORS.teal);
+
+    const monthKeys = Array.from(model.releaseMonths.keys()).sort();
+    monthKeys.forEach(monthKey => {
+        addTrackerWorksheet(
             workbook,
-            createTrackerSheet(snapshotStore.months[monthKey]),
-            getMonthSheetName(monthKey)
+            getMonthSheetName(monthKey),
+            model.releaseMonths.get(monthKey),
+            COLORS.blue
         );
-    }
+    });
+    addTrackerWorksheet(workbook, 'Unscheduled', model.unscheduled, COLORS.orange);
 
     try {
-        XLSX.writeFile(workbook, excelFile, { cellDates: true });
+        await workbook.xlsx.writeFile(excelFile);
     } catch (error) {
-        if (error.code === 'EBUSY') {
+        if (error.code === 'EBUSY' || error.code === 'EPERM') {
             throw new Error(`Close ${path.basename(excelFile)} in Excel, then run the tracker again.`);
         }
         throw error;
     }
 
-    console.log(`Excel tracker generated with ${monthKeys.length} monthly tab(s): ${excelFile}`);
+    console.log(`Excel tracker generated with ${monthKeys.length} release-month tab(s): ${excelFile}`);
     return true;
 }
 
 async function saveData(games, options = {}) {
     const dataDir = options.dataDir || __dirname;
     const masterFile = path.join(dataDir, 'steamdb_master_data.json');
-    const snapshotsFile = path.join(dataDir, 'steamdb_monthly_snapshots.json');
     const oldCsvFile = path.join(dataDir, 'steamdb_upcoming_tracker.csv');
     const excelFile = options.excelFile || path.join(dataDir, 'steamdb_upcoming_tracker.xlsx');
     const crawlDate = options.crawlDate || getLocalDateKey();
     const currentGames = deduplicateGames(games);
-
     const existingData = fs.existsSync(masterFile)
         ? readJson(masterFile, {})
         : migrateCsv(oldCsvFile);
 
-    const snapshotsFileExists = fs.existsSync(snapshotsFile);
-    const canBootstrap = currentGames.length === 0 || options.crawlComplete !== false;
-    const bootstrappedSnapshots = !snapshotsFileExists && canBootstrap;
-    const snapshotStore = snapshotsFileExists
-        ? readJson(snapshotsFile, { version: 1, months: {} })
-        : canBootstrap
-            ? bootstrapMonthlySnapshots(existingData)
-            : { version: 1, months: {} };
-
-    snapshotStore.version = 1;
-    snapshotStore.months = snapshotStore.months || {};
-
     const crawlCanBeCommitted = currentGames.length > 0 && options.crawlComplete !== false;
-
     if (crawlCanBeCommitted) {
         mergeScrapedGames(existingData, currentGames, crawlDate);
 
-        const focusedAppIds = currentGames
-            .filter(game => game.followers >= FOCUSED_THRESHOLD)
-            .map(game => game.appId);
+        const qualifyingAppIds = Object.entries(existingData)
+            .filter(([, game]) => getLatestFollowers(game) >= FOCUSED_THRESHOLD)
+            .map(([appId]) => appId);
 
-        await enrichSteamMetadata(existingData, focusedAppIds, crawlDate, masterFile, options);
+        await enrichSteamMetadata(existingData, qualifyingAppIds, crawlDate, masterFile, options);
         writeJson(masterFile, existingData);
-
-        const currentSnapshot = buildCurrentMonthlySnapshot(existingData, currentGames, crawlDate);
-        const monthKey = crawlDate.slice(0, 7);
-        if (currentSnapshot.games.length > 0) {
-            snapshotStore.months[monthKey] = currentSnapshot;
-            snapshotStore.updatedAt = crawlDate;
-            console.log(`Updated ${getMonthSheetName(monthKey)} with the ${crawlDate} snapshot.`);
-        } else {
-            console.log(`No games met the ${FOCUSED_THRESHOLD}-follower threshold; the monthly snapshot was not replaced.`);
-        }
     } else if (currentGames.length > 0) {
         console.log(
             `Crawl data was not committed because the crawl was incomplete `
             + `(${options.successfulWeeks || 0}/${options.expectedWeeks || WEEKS_TO_SCRAPE} weeks).`
         );
-    } else {
+    } else if (!fs.existsSync(masterFile)) {
         writeJson(masterFile, existingData);
     }
 
-    if (snapshotsFileExists || bootstrappedSnapshots) {
-        writeJson(snapshotsFile, snapshotStore);
-    }
-    generateWorkbook(snapshotStore, excelFile);
+    await generateWorkbook(existingData, excelFile);
 }
 
 if (require.main === module) {
     const command = process.argv.includes('--rebuild')
-        ? saveData([], { crawlComplete: false })
+        ? saveData([], { crawlComplete: false, fetchMetadata: false })
         : scrapeSteamDB();
 
     command.catch(error => {
@@ -618,10 +1036,9 @@ if (require.main === module) {
 }
 
 module.exports = {
-    bootstrapMonthlySnapshots,
-    createTrackerSheet,
+    buildWorkbookModel,
     generateWorkbook,
     getLocalDateKey,
-    parseReleaseDate,
+    getReleaseInfo,
     saveData
 };

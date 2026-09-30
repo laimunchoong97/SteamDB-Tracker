@@ -1,17 +1,18 @@
 # SteamDB Upcoming Games Tracker
 
-A Node.js tracker that collects upcoming Steam releases from SteamDB, enriches qualifying games with Steam Store metadata, and maintains an Excel workbook with permanent month-by-month snapshots.
+A Node.js tracker that collects upcoming Steam releases from SteamDB, retains follower history, enriches qualifying games with Steam Store metadata, and builds a formatted Excel release-planning workbook.
 
 ## Features
 
 - Scrapes SteamDB's upcoming releases sorted by follower count.
 - Covers the current week and the next five weeks.
 - Uses a manually verified Edge session to get through Cloudflare Turnstile.
-- Enriches games at or above the follower threshold with publisher, developer, free-to-play status, genres, categories, and supported platforms.
-- Stores daily follower observations in a local master JSON database.
-- Creates a live `Current Tracker` sheet and a permanent sheet for every month.
-- Preserves the last complete crawl of each month instead of deleting prior-month data.
-- Keeps month-only release dates as text and writes exact release dates as sortable Excel dates.
+- Keeps every scraped game and groups it by its announced **release month**, not the month in which it was crawled.
+- Moves a game to its new release-month sheet when SteamDB reports a changed release date.
+- Places Coming Soon, year-only, quarter-only, and other non-month-specific releases in `Unscheduled`.
+- Retains dated follower history across crawls.
+- Enriches games with at least 1,000 followers using the Steam Store API.
+- Produces a styled Excel dashboard with filters, frozen panes, conditional formatting, useful column widths, and clickable links.
 
 ## Requirements
 
@@ -48,41 +49,51 @@ The equivalent terminal command, after Edge has been started on debugging port `
 npm run remote
 ```
 
-## Monthly Workbook Behavior
+## Workbook Layout
 
-The workbook contains sheets such as:
+The workbook is rebuilt from the permanent JSON history after every complete crawl:
 
 ```text
-Current Tracker | Oct 2026 | Sep 2026
+Summary | All Upcoming | Sep 2026 | Oct 2026 | ... | Unscheduled
 ```
 
-- During a month, each complete crawl replaces that month's sheet with the newest successful snapshot.
-- When a new month begins, the previous month's final snapshot is left unchanged and a new monthly sheet is created.
-- Incomplete crawls do not replace a valid monthly snapshot.
-- Monthly sheets contain only games meeting the configured follower threshold at the time of that snapshot.
-- The newest month appears first after `Current Tracker`.
+- `Summary` contains headline metrics, release-month totals, top movers since the previous crawl, and releases due within 30 days.
+- `All Upcoming` contains games seen in the latest complete crawl.
+- Month sheets contain every retained game currently scheduled to launch in that month, regardless of follower count.
+- `Unscheduled` contains games that cannot be assigned to a specific release month.
+- An incomplete crawl does not modify the master history.
 
-Every tracker sheet uses this column order:
+Games are enriched with Publisher, Developer, Is Free, Genres, Categories, and Platforms once they reach the configured follower threshold. Lower-follower games remain in the workbook with those fields blank.
+
+Each tracker sheet begins with this column order:
 
 ```text
 Release Date, Game Title, Followers, Publisher, Developer,
-Is Free, Genres, Categories, Platforms, AppID, Snapshot Date
+Is Free, Genres, Categories, Platforms, AppID,
+Status, Days to Release, Previous Crawl Followers,
+Change Since Previous Crawl, First Seen, Last Updated
 ```
 
-Game titles link to SteamDB, and AppIDs link to the corresponding Steam Store pages.
+Dated follower columns are appended after these fields. Exact release dates are sortable Excel dates, while month-only values such as `Oct 2026` remain text. Game titles link to SteamDB and AppIDs link to Steam.
+
+## Release-Month Behavior
+
+- A game with a September release date appears in `Sep YYYY`, even if it was first crawled in August.
+- Subsequent crawls update its latest follower count and append dated follower history in the same sheet.
+- If its release changes from September to October, it moves to `Oct YYYY` while keeping its complete follower history.
+- Released games remain in their release-month sheet because the JSON master database is never replaced by only the latest crawl.
 
 ## Local Data Files
 
 The tracker creates these files locally:
 
-- `steamdb_master_data.json`: daily observations and cached Steam metadata.
-- `steamdb_monthly_snapshots.json`: frozen monthly snapshots used to rebuild the workbook.
-- `steamdb_upcoming_tracker.xlsx`: the generated Excel tracker.
+- `steamdb_master_data.json`: permanent follower observations, latest release information, and cached Steam metadata.
+- `steamdb_upcoming_tracker.xlsx`: the generated Excel workbook.
 - `debug_cloudflare_*.png`: troubleshooting screenshots created only when a weekly table fails to load.
 
-These generated files are intentionally ignored by Git. Someone cloning the repository starts with a clean tracker and creates their own local history.
+Generated data is intentionally ignored by Git. Someone cloning the repository starts with a clean tracker and creates their own local history.
 
-To regenerate Excel from the existing local JSON data without scraping SteamDB:
+To rebuild Excel from the existing local JSON data without crawling SteamDB or calling the Steam API:
 
 ```bash
 npm run rebuild
@@ -97,7 +108,7 @@ const FOCUSED_THRESHOLD = 1000;
 const WEEKS_TO_SCRAPE = 6;
 ```
 
-The Steam Store API is queried only for qualifying games whose metadata is not already cached.
+The Steam Store API is called at a conservative rate and only for qualifying games whose metadata is not already cached. The first enrichment pass can take several minutes; subsequent runs reuse the cache.
 
 ## Disclaimer
 

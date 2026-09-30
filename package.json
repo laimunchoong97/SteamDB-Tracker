@@ -1,7 +1,7 @@
 {
   "name": "steamdb-upcoming-tracker",
   "version": "1.0.0",
-  "description": "Automated SteamDB scraper for upcoming games with Excel and follower threshold tracking.",
+  "description": "SteamDB upcoming-game tracker with release-month Excel views and follower history.",
   "main": "steamdb_tracker.js",
   "scripts": {
     "start": "node steamdb_tracker.js",
@@ -11,14 +11,17 @@
   },
   "dependencies": {
     "dotenv": "^18.0.4",
+    "exceljs": "^4.4.0",
     "playwright": "^1.40.0",
     "playwright-extra": "^4.3.6",
-    "puppeteer-extra-plugin-stealth": "^2.11.2",
-    "xlsx": "^0.18.5"
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
   },
   "author": "",
   "license": "ISC",
   "engines": {
     "node": ">=18"
+  },
+  "overrides": {
+    "uuid": "^11.1.1"
   }
 }
