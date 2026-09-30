@@ -32,7 +32,7 @@ Excel month tabs represent when games are scheduled to launch:
 
 - A game releasing in September appears in `Sep YYYY`, even if it was crawled in August or September.
 - A game with a month-only date such as `Oct 2026` appears in `Oct 2026`, while the cell remains text.
-- Exact dates are stored as real Excel dates for sorting and filtering.
+- Exact dates are normalized to UTC midnight before being written as real Excel dates, preventing one-day shifts in GMT+8 and other non-UTC time zones.
 - If SteamDB moves a release from September to October, the row moves to `Oct YYYY` on the next complete crawl.
 - Moving a game does not remove its previous follower observations.
 - Coming Soon, year-only, quarter-only, and other dates without a specific month go to `Unscheduled`.
@@ -107,6 +107,7 @@ The requested core fields always appear first. API and calculated fields follow,
 - Release-date-first sorting, then follower count
 - Wrapped game titles and metadata text
 - Purposeful column widths and number/date formats
+- Timezone-safe crawl and release dates
 - SteamDB links on game titles
 - Steam Store links on AppIDs
 - Follower color scale for relative popularity
@@ -216,6 +217,12 @@ If any weekly table fails to load:
 
 Steam metadata is saved in the master JSON and reused on later runs. Requests are sent conservatively to avoid Steam API rate limits, so the first enrichment of many qualifying games can take several minutes. Failed or unavailable records are retried later.
 
+### Date And Time-Zone Handling
+
+Crawl history keys use the computer's local calendar date. Before a date is written to Excel, the tracker creates it at UTC midnight so ExcelJS cannot shift it into the previous day during serialization. For example, an underlying `01 Oct 2026` release remains `01 Oct 2026` in both the October tab and the visible Release Date cell when the tracker runs in GMT+8.
+
+After upgrading from an earlier version that displayed dates one day early, close Excel and run `npm run rebuild` to regenerate all visible dates from the unchanged JSON history.
+
 ## Local Files
 
 | File | Purpose | Committed to Git? |
@@ -247,6 +254,10 @@ The game may be below the threshold, unavailable through the Steam Store API, or
 ### A game is missing from Excel
 
 Check its latest follower count in `steamdb_master_data.json`. A game appears only when its latest value meets `FOCUSED_THRESHOLD`. Its history is retained even while hidden.
+
+### A date still appears one day early
+
+Close every open copy of `steamdb_upcoming_tracker.xlsx` and run `npm run rebuild`. Existing workbooks are not changed until they can be successfully regenerated.
 
 ## Sharing The Repository
 

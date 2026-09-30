@@ -195,7 +195,7 @@ function getLocalDateKey(date = new Date()) {
 function parseDateKey(dateKey) {
     const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(dateKey || '');
     if (!match) return null;
-    return new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3]));
+    return new Date(Date.UTC(Number(match[1]), Number(match[2]) - 1, Number(match[3])));
 }
 
 function readJson(filePath, fallback) {
@@ -418,8 +418,8 @@ function findMonthIndex(monthName) {
 
 function inferReleaseYear(monthIndex, referenceDateKey) {
     const referenceDate = parseDateKey(referenceDateKey) || new Date();
-    let year = referenceDate.getFullYear();
-    if (referenceDate.getMonth() - monthIndex > 6) year += 1;
+    let year = referenceDate.getUTCFullYear();
+    if (referenceDate.getUTCMonth() - monthIndex > 6) year += 1;
     return year;
 }
 
@@ -432,11 +432,11 @@ function getReleaseInfo(game, referenceDateKey) {
         if (game.releaseTimestamp) {
             const timestampDate = new Date(Number(game.releaseTimestamp) * 1000);
             if (!Number.isNaN(timestampDate.getTime())) {
-                exactDate = new Date(
+                exactDate = new Date(Date.UTC(
                     timestampDate.getUTCFullYear(),
                     timestampDate.getUTCMonth(),
                     timestampDate.getUTCDate()
-                );
+                ));
             }
         }
 
@@ -446,13 +446,13 @@ function getReleaseInfo(game, referenceDateKey) {
                 const year = exactDateMatch[3]
                     ? Number(exactDateMatch[3])
                     : inferReleaseYear(monthIndex, referenceDateKey);
-                exactDate = new Date(year, monthIndex, Number(exactDateMatch[1]));
+                exactDate = new Date(Date.UTC(year, monthIndex, Number(exactDateMatch[1])));
             }
         }
 
         if (exactDate && !Number.isNaN(exactDate.getTime())) {
             return {
-                monthKey: `${exactDate.getFullYear()}-${String(exactDate.getMonth() + 1).padStart(2, '0')}`,
+                monthKey: `${exactDate.getUTCFullYear()}-${String(exactDate.getUTCMonth() + 1).padStart(2, '0')}`,
                 excelValue: exactDate,
                 exactDate,
                 sortValue: exactDate.getTime()
@@ -468,7 +468,7 @@ function getReleaseInfo(game, referenceDateKey) {
                 monthKey: `${monthYearMatch[2]}-${String(monthIndex + 1).padStart(2, '0')}`,
                 excelValue: rawDate,
                 exactDate: null,
-                sortValue: new Date(Number(monthYearMatch[2]), monthIndex, 1).getTime()
+                sortValue: Date.UTC(Number(monthYearMatch[2]), monthIndex, 1)
             };
         }
     }
@@ -482,7 +482,7 @@ function getReleaseInfo(game, referenceDateKey) {
 }
 
 function toUtcDay(date) {
-    return Date.UTC(date.getFullYear(), date.getMonth(), date.getDate());
+    return Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate());
 }
 
 function getDaysToRelease(exactDate, referenceDateKey) {
