@@ -35,10 +35,11 @@ async function scrapeSteamDB() {
         await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
 
         try {
-            await page.waitForSelector('table.table-sales tbody tr.app', { timeout: 30000 });
+            console.log(`Waiting for table to load... (🚨 IF YOU SEE A CLOUDFLARE CHECKBOX IN THE BROWSER, PLEASE CLICK IT! 🚨)`);
+            await page.waitForSelector('table.table-sales tbody tr.app', { timeout: 90000 });
             console.log(`Table loaded for ${week}. Extracting...`);
         } catch (e) {
-            console.log(`Skipping ${week} - Table didn't load (Cloudflare block or no games).`);
+            console.log(`Skipping ${week} - Table didn't load. This usually means Cloudflare blocked us or you ran out of time to click the checkbox.`);
             continue;
         }
 
