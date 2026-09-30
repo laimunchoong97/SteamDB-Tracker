@@ -24,8 +24,12 @@ async function scrapeSteamDB() {
 
     if (process.env.BROWSER_EXECUTABLE_PATH) {
         launchOptions.executablePath = process.env.BROWSER_EXECUTABLE_PATH;
+        console.log(`🚀 Booting custom browser from: ${launchOptions.executablePath}`);
     } else if (process.env.BROWSER_CHANNEL) {
         launchOptions.channel = process.env.BROWSER_CHANNEL;
+        console.log(`🚀 Booting standard browser channel: ${launchOptions.channel}`);
+    } else {
+        console.log(`🚀 Booting default Playwright Chromium bot...`);
     }
 
     const context = await chromium.launchPersistentContext(userDataDir, launchOptions);
