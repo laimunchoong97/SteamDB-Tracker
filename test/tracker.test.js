@@ -10,7 +10,7 @@ process.env.FOCUSED_THRESHOLD = '500';
 const {
     buildWorkbookModel,
     generateWorkbook,
-    getFollowerInterpretation,
+    getCurrentOutlook,
     getReleaseInfo
 } = require('../steamdb_tracker');
 
@@ -32,15 +32,15 @@ test('enforces the 1,000 follower floor and retains earlier history', () => {
     assert.deepEqual(model.views[0].historyDates, ['2026-09-28', '2026-09-29', '2026-09-30']);
 });
 
-test('uses exact MECE follower tier boundaries', () => {
-    assert.equal(getFollowerInterpretation(999).tier, '');
-    assert.equal(getFollowerInterpretation(1000).tier, 'Tier 2');
-    assert.equal(getFollowerInterpretation(2999).tier, 'Tier 2');
-    assert.equal(getFollowerInterpretation(3000).tier, 'Tier 3');
-    assert.equal(getFollowerInterpretation(9999).tier, 'Tier 3');
-    assert.equal(getFollowerInterpretation(10000).tier, 'Tier 4');
-    assert.equal(getFollowerInterpretation(29999).tier, 'Tier 4');
-    assert.equal(getFollowerInterpretation(30000).tier, 'Tier 5');
+test('uses exact Current Outlook boundaries', () => {
+    assert.equal(getCurrentOutlook(999), '');
+    assert.equal(getCurrentOutlook(1000), 'P3 - Barely Viable');
+    assert.equal(getCurrentOutlook(2999), 'P3 - Barely Viable');
+    assert.equal(getCurrentOutlook(3000), 'P2 - Indie');
+    assert.equal(getCurrentOutlook(9999), 'P2 - Indie');
+    assert.equal(getCurrentOutlook(10000), 'P1 - AA');
+    assert.equal(getCurrentOutlook(29999), 'P1 - AA');
+    assert.equal(getCurrentOutlook(30000), 'P0 - AAA');
 });
 
 test('keeps month-boundary dates at UTC midnight', () => {
@@ -53,7 +53,7 @@ test('keeps month-boundary dates at UTC midnight', () => {
     assert.equal(release.exactDate.toISOString(), '2026-10-01T00:00:00.000Z');
 });
 
-test('writes interpreted fields without a Days to Release detail column', async context => {
+test('writes Current Outlook without a Days to Release detail column', async context => {
     const tempDirectory = fs.mkdtempSync(path.join(os.tmpdir(), 'steamdb-tracker-test-'));
     const outputFile = path.join(tempDirectory, 'tracker.xlsx');
     context.after(() => fs.rmSync(tempDirectory, { recursive: true, force: true }));
@@ -78,14 +78,13 @@ test('writes interpreted fields without a Days to Release detail column', async 
     const worksheet = workbook.getWorksheet('Oct 2026');
     const headers = worksheet.getRow(1).values.slice(1);
     assert.equal(headers.includes('Days to Release'), false);
-    assert.deepEqual(headers.slice(0, 7), [
+    assert.deepEqual(headers.slice(0, 6), [
         'Release Date', 'Game Title', 'Followers', 'Publisher', 'Developer',
-        'Follower Tier', 'Commercial Standing'
+        'Current Outlook'
     ]);
 
     assert.equal(worksheet.getCell('A2').value.toISOString(), '2026-10-01T00:00:00.000Z');
-    assert.equal(worksheet.getCell('F2').value, 'Tier 3');
-    assert.equal(worksheet.getCell('G2').value, 'Commercial Hit / Sustainable Indie');
+    assert.equal(worksheet.getCell('F2').value, 'P2 - Indie');
     assert.equal(worksheet.views[0].state, 'frozen');
     assert(worksheet.autoFilter);
 });

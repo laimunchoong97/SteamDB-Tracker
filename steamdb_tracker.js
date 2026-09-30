@@ -44,10 +44,10 @@ const COLORS = {
 };
 
 const TIER_STYLES = {
-    'Tier 2': { fill: COLORS.lightOrange, font: 'FF8A4B08' },
-    'Tier 3': { fill: COLORS.lightGreen, font: COLORS.green },
-    'Tier 4': { fill: COLORS.lightBlue, font: COLORS.blue },
-    'Tier 5': { fill: 'FFFFE7A3', font: 'FF7A4B00' }
+    P0: { fill: 'FFFFE7A3', font: 'FF7A4B00' },
+    P1: { fill: COLORS.lightBlue, font: COLORS.blue },
+    P2: { fill: COLORS.lightGreen, font: COLORS.green },
+    P3: { fill: COLORS.lightOrange, font: 'FF8A4B08' }
 };
 
 const FIXED_COLUMNS = [
@@ -56,8 +56,7 @@ const FIXED_COLUMNS = [
     { header: 'Followers', key: 'followers', width: 13 },
     { header: 'Publisher', key: 'publisher', width: 28 },
     { header: 'Developer', key: 'developer', width: 28 },
-    { header: 'Follower Tier', key: 'followerTier', width: 14 },
-    { header: 'Commercial Standing', key: 'commercialStanding', width: 34 },
+    { header: 'Current Outlook', key: 'currentOutlook', width: 22 },
     { header: 'Is Free', key: 'isFree', width: 10 },
     { header: 'Genres', key: 'genres', width: 30 },
     { header: 'Categories', key: 'categories', width: 48 },
@@ -516,32 +515,20 @@ function getReleaseStatus(releaseInfo, referenceDateKey) {
     return 'Upcoming (Month)';
 }
 
-function getFollowerInterpretation(followers) {
+function getCurrentOutlook(followers) {
     if (followers < MINIMUM_FOLLOWER_THRESHOLD) {
-        return { tier: '', standing: '' };
+        return '';
     }
     if (followers >= 30000) {
-        return {
-            tier: 'Tier 5',
-            standing: 'Major Commercial Hit / Megahit'
-        };
+        return 'P0 - AAA';
     }
     if (followers >= 10000) {
-        return {
-            tier: 'Tier 4',
-            standing: 'AA / Mid-Tier Blockbuster'
-        };
+        return 'P1 - AA';
     }
     if (followers >= 3000) {
-        return {
-            tier: 'Tier 3',
-            standing: 'Commercial Hit / Sustainable Indie'
-        };
+        return 'P2 - Indie';
     }
-    return {
-        tier: 'Tier 2',
-        standing: 'Barely Viable / Solo Indie Floor'
-    };
+    return 'P3 - Barely Viable';
 }
 
 function buildGameView(appId, game, referenceDateKey) {
@@ -551,7 +538,7 @@ function buildGameView(appId, game, referenceDateKey) {
     const latestFollowers = latestDate ? Number(game.history[latestDate]) || 0 : 0;
     const previousFollowers = previousDate ? Number(game.history[previousDate]) || 0 : null;
     const releaseInfo = getReleaseInfo(game, latestDate || referenceDateKey);
-    const followerInterpretation = getFollowerInterpretation(latestFollowers);
+    const currentOutlook = getCurrentOutlook(latestFollowers);
 
     return {
         appId: String(appId),
@@ -561,8 +548,7 @@ function buildGameView(appId, game, referenceDateKey) {
         latestFollowers,
         previousFollowers,
         changeSincePrevious: previousFollowers === null ? null : latestFollowers - previousFollowers,
-        followerTier: followerInterpretation.tier,
-        commercialStanding: followerInterpretation.standing,
+        currentOutlook,
         firstSeen: game.firstSeen || historyDates[0] || null,
         releaseInfo,
         status: getReleaseStatus(releaseInfo, referenceDateKey),
@@ -635,8 +621,7 @@ function buildTrackerRow(view, historyDates) {
         followers: view.latestFollowers,
         publisher: view.game.publisher || '',
         developer: view.game.developer || '',
-        followerTier: view.followerTier,
-        commercialStanding: view.commercialStanding,
+        currentOutlook: view.currentOutlook,
         isFree: view.game.isFree || '',
         genres: view.game.genres || '',
         categories: view.game.categories || '',
@@ -694,15 +679,15 @@ function styleTrackerWorksheet(worksheet, rowCount, historyDates) {
             }
         });
 
-        ['B', 'D', 'E', 'G', 'I', 'J', 'K'].forEach(column => {
+        ['B', 'D', 'E', 'F', 'H', 'I', 'J'].forEach(column => {
             row.getCell(column).alignment = { vertical: 'top', wrapText: true };
         });
         row.getCell('A').numFmt = EXCEL_DATE_FORMAT;
         row.getCell('C').numFmt = '#,##0';
-        row.getCell('N').numFmt = '#,##0';
-        row.getCell('O').numFmt = '+#,##0;-#,##0;0';
+        row.getCell('M').numFmt = '#,##0';
+        row.getCell('N').numFmt = '+#,##0;-#,##0;0';
+        row.getCell('O').numFmt = EXCEL_DATE_FORMAT;
         row.getCell('P').numFmt = EXCEL_DATE_FORMAT;
-        row.getCell('Q').numFmt = EXCEL_DATE_FORMAT;
 
         for (let columnIndex = FIXED_COLUMNS.length + 1;
             columnIndex <= FIXED_COLUMNS.length + historyDates.length;
@@ -727,7 +712,7 @@ function styleTrackerWorksheet(worksheet, rowCount, historyDates) {
         }]
     });
     worksheet.addConditionalFormatting({
-        ref: `O2:O${lastRow}`,
+        ref: `N2:N${lastRow}`,
         rules: [
             {
                 type: 'cellIs',
@@ -771,21 +756,19 @@ function addTrackerWorksheet(workbook, name, views, tabColor) {
 
     sortedViews.forEach((view, index) => {
         const row = worksheet.getRow(index + 2);
-        const tierColor = TIER_STYLES[view.followerTier];
+        const tierColor = TIER_STYLES[view.currentOutlook.slice(0, 2)];
         if (tierColor) {
-            ['followerTier', 'commercialStanding'].forEach(column => {
-                row.getCell(column).fill = {
-                    type: 'pattern',
-                    pattern: 'solid',
-                    fgColor: { argb: tierColor.fill }
-                };
-                row.getCell(column).font = {
-                    name: 'Aptos',
-                    size: 10,
-                    bold: true,
-                    color: { argb: tierColor.font }
-                };
-            });
+            row.getCell('currentOutlook').fill = {
+                type: 'pattern',
+                pattern: 'solid',
+                fgColor: { argb: tierColor.fill }
+            };
+            row.getCell('currentOutlook').font = {
+                name: 'Aptos',
+                size: 10,
+                bold: true,
+                color: { argb: tierColor.font }
+            };
         }
         if (view.daysToRelease !== null && view.daysToRelease >= 0 && view.daysToRelease <= 14) {
             row.getCell('releaseDate').fill = {
@@ -1102,7 +1085,7 @@ if (require.main === module) {
 module.exports = {
     buildWorkbookModel,
     generateWorkbook,
-    getFollowerInterpretation,
+    getCurrentOutlook,
     getLocalDateKey,
     getReleaseInfo,
     saveData

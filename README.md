@@ -10,7 +10,7 @@ A Windows-based Node.js tracker that collects upcoming Steam releases from Steam
 4. Fetches Steam Store metadata only for games meeting the configured follower threshold.
 5. Builds `steamdb_upcoming_tracker.xlsx` using only threshold-qualified games.
 6. Groups games into Excel tabs based on **their release month**, not the month they were crawled.
-7. Interprets each visible follower count using a Tier 2–5 commercial-significance framework.
+7. Assigns a dynamic `Current Outlook` from P0 to P3 using the latest follower count.
 
 This separation keeps the Excel analysis focused without discarding lower-follower source data.
 
@@ -89,8 +89,7 @@ The requested core fields always appear first. API and calculated fields follow,
 | Followers | SteamDB | Latest captured follower count |
 | Publisher | Steam Store API | Publisher list for qualifying games |
 | Developer | Steam Store API | Developer list for qualifying games |
-| Follower Tier | Calculated | Tier 2, 3, 4, or 5 based on the latest follower count |
-| Commercial Standing | Calculated | Concise interpretation associated with the follower tier |
+| Current Outlook | Calculated | P0–P3 outlook based on the latest follower count |
 | Is Free | Steam Store API | Whether the game is free to play |
 | Genres | Steam Store API | Steam genre list |
 | Categories | Steam Store API | Features such as single-player, co-op, or controller support |
@@ -103,18 +102,18 @@ The requested core fields always appear first. API and calculated fields follow,
 | Last Updated | Calculated | Most recent complete crawl containing the game |
 | `YYYY-MM-DD` columns | History | Follower count captured on each crawl date |
 
-## Follower Interpretation Framework
+## Current Outlook Framework
 
-The tracker interprets the latest SteamDB follower count using four mutually exclusive tiers. It does not generate wishlist, unit-sales, or revenue estimates.
+The tracker assigns one concise outlook using four mutually exclusive follower ranges. It does not generate wishlist, unit-sales, or revenue estimates.
 
-| Tier | Exact Follower Range | Commercial Standing | Interpretation |
-|---|---:|---|---|
-| Tier 2 | 1,000–2,999 | Barely Viable / Solo Indie Floor | Baseline level for a title to enter focused commercial monitoring. |
-| Tier 3 | 3,000–9,999 | Commercial Hit / Sustainable Indie | Stronger organic-interest signal associated with a potentially sustainable indie release. |
-| Tier 4 | 10,000–29,999 | AA / Mid-Tier Blockbuster | High-confidence signal of substantial pre-launch demand and broad market visibility. |
-| Tier 5 | 30,000+ | Major Commercial Hit / Megahit | Strongest tracked signal, indicating exceptional organic attention before launch. |
+| Priority | Exact Follower Range | Current Outlook |
+|---|---:|---|
+| P0 | 30,000+ | AAA |
+| P1 | 10,000–29,999 | AA |
+| P2 | 3,000–9,999 | Indie |
+| P3 | 1,000–2,999 | Barely Viable |
 
-Tier assignment is recalculated from the latest follower count whenever the workbook is built. It is a prioritization aid rather than a guaranteed commercial outcome.
+The displayed value combines both parts, such as `P1 - AA`. Current Outlook is recalculated whenever the workbook is built, so it can improve as followers grow closer to launch. It is a prioritization aid rather than a guaranteed commercial outcome.
 
 ## Excel Quality-Of-Life Features
 
@@ -127,7 +126,7 @@ Tier assignment is recalculated from the latest follower count whenever the work
 - SteamDB links on game titles
 - Steam Store links on AppIDs
 - Follower color scale for relative popularity
-- Tier-colored Follower Tier and Commercial Standing cells
+- Priority-colored Current Outlook cells
 - Green/red formatting for positive and negative follower movement
 - Highlighting for releases within 14 days
 - Styled Summary cards and tables
@@ -183,7 +182,7 @@ npm run remote
 | `npm run remote` | Attach to the manually verified Edge session on port 9222 |
 | `npm run rebuild` | Rebuild Excel from local JSON without crawling SteamDB or calling the Steam API |
 | `npm run check` | Check JavaScript syntax |
-| `npm test` | Run threshold, tier-boundary, date, and workbook tests |
+| `npm test` | Run threshold, outlook-boundary, date, and workbook tests |
 
 ## Configuration
 
@@ -200,7 +199,7 @@ The setting controls both:
 - Which games are visible anywhere in Excel
 - Which games receive Steam Store API enrichment
 
-The comparison is inclusive, so a game with exactly 1,000 followers qualifies. The Tier 2 framework enforces a hard floor of 1,000: higher settings narrow the workbook further, while lower, missing, invalid, zero, or negative values resolve to 1,000.
+The comparison is inclusive, so a game with exactly 1,000 followers qualifies. The P3 framework enforces a hard floor of 1,000: higher settings narrow the workbook further, while lower, missing, invalid, zero, or negative values resolve to 1,000.
 
 After changing the threshold, close Excel and run the following command to refresh the workbook without another crawl:
 
