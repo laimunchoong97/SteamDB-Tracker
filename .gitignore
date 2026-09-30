@@ -3,8 +3,10 @@ playwright_data/
 edge_profile/
 steamdb_master_data.json
 steamdb_monthly_snapshots.json
+steamdb_release_archives.json
 steamdb_upcoming_tracker.csv
 steamdb_upcoming_tracker.xlsx
+steamdb_upcoming_tracker_zh-CN.xlsx
 debug_cloudflare_*.png
 ~$*.xlsx
 .env
