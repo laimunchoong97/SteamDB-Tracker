@@ -4,7 +4,10 @@
   "description": "Automated SteamDB scraper for upcoming games with Excel and follower threshold tracking.",
   "main": "steamdb_tracker.js",
   "scripts": {
-    "start": "node steamdb_tracker.js"
+    "start": "node steamdb_tracker.js",
+    "remote": "node steamdb_tracker.js --remote",
+    "rebuild": "node steamdb_tracker.js --rebuild",
+    "check": "node --check steamdb_tracker.js"
   },
   "dependencies": {
     "dotenv": "^18.0.4",
@@ -14,5 +17,8 @@
     "xlsx": "^0.18.5"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "engines": {
+    "node": ">=18"
+  }
 }

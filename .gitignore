@@ -1,5 +1,10 @@
 node_modules/
 playwright_data/
+edge_profile/
 steamdb_master_data.json
+steamdb_monthly_snapshots.json
+steamdb_upcoming_tracker.csv
 steamdb_upcoming_tracker.xlsx
+debug_cloudflare_*.png
+~$*.xlsx
 .env

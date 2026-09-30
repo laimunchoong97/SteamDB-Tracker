@@ -1,56 +1,104 @@
 # SteamDB Upcoming Games Tracker
 
-An automated scraper built with Node.js and Playwright that bypasses Cloudflare protections to track the follower counts of upcoming Steam games week over week, cross-referencing data with the official Steam Store API.
+A Node.js tracker that collects upcoming Steam releases from SteamDB, enriches qualifying games with Steam Store metadata, and maintains an Excel workbook with permanent month-by-month snapshots.
 
 ## Features
-- **Cloudflare Bypass:** Includes a `start_tracker.bat` workflow to manually solve Turnstile captchas in a real Edge browser, then connects Playwright via CDP to completely bypass bot protection.
-- **Automated Lookahead:** Scrapes the current week + the next 5 weeks of top upcoming games.
-- **Steam API Integration:** Automatically fetches Developer, Publisher, Platform, Category, and Genre metadata directly from Steam for games that reach a certain follower threshold.
-- **Intelligent Excel Generation:** 
-  - Outputs a 2-tab Excel file (`steamdb_upcoming_tracker.xlsx`).
-  - Automatically calculates 7-day rolling follower gains.
-  - Correctly formats dates for Excel sorting.
 
-## Prerequisites
-- **Node.js** (v18 or higher)
-- **Windows** (Because it uses a `.bat` file to open MS Edge)
+- Scrapes SteamDB's upcoming releases sorted by follower count.
+- Covers the current week and the next five weeks.
+- Uses a manually verified Edge session to get through Cloudflare Turnstile.
+- Enriches games at or above the follower threshold with publisher, developer, free-to-play status, genres, categories, and supported platforms.
+- Stores daily follower observations in a local master JSON database.
+- Creates a live `Current Tracker` sheet and a permanent sheet for every month.
+- Preserves the last complete crawl of each month instead of deleting prior-month data.
+- Keeps month-only release dates as text and writes exact release dates as sortable Excel dates.
+
+## Requirements
+
+- Windows with Microsoft Edge
+- Node.js 18 or newer
+- npm
 
 ## Installation
 
-1. Clone or download this repository.
-2. Open your terminal/command prompt and navigate to the folder.
-3. Install the dependencies:
-   ```bash
-   npm install
-   ```
-
-## Setup Environment Variables
-1. Copy the `.env.example` file and rename it to `.env`:
-   ```bash
-   cp .env.example .env
-   ```
-2. Open the `.env` file and ensure `BROWSER_CHANNEL=msedge` (or provide an absolute path to a specific executable if needed).
-
-## Usage
-
-Because SteamDB uses extremely aggressive Cloudflare Turnstile protection, standard headless scrapers will be blocked. You must use the following workflow:
-
-1. Double-click the **`start_tracker.bat`** file.
-2. A new Microsoft Edge window will open to `https://steamdb.info/upcoming/`. 
-3. **If you see a Cloudflare "Verify you are human" checkbox, click it manually.**
-4. Once the actual SteamDB page loads, leave the browser open.
-5. Open a terminal in the project folder and run:
-   ```bash
-   node steamdb_tracker.js --remote
-   ```
-6. The script will attach to the Edge window you just verified, scrape the data, fetch Steam API metadata, and generate `steamdb_upcoming_tracker.xlsx`.
-
-## Configuration
-You can change the follower threshold for when games trigger the Steam API metadata fetch.
-Open `steamdb_tracker.js` and edit this line at the top of the file:
-```javascript
-const FOCUSED_THRESHOLD = 1000;
+```bash
+git clone https://github.com/laimunchoong97/SteamDB-Tracker.git
+cd SteamDB-Tracker
+npm install
 ```
 
+Copy `.env.example` to `.env`. The default configuration uses Microsoft Edge:
+
+```env
+BROWSER_CHANNEL=msedge
+BROWSER_EXECUTABLE_PATH=
+```
+
+## Run The Tracker
+
+1. Close `steamdb_upcoming_tracker.xlsx` if it is open.
+2. Double-click `start_tracker.bat`.
+3. Complete the Cloudflare check in the Edge window if one appears.
+4. Wait until the SteamDB table is visible, then return to the command window and press any key.
+5. The batch file runs the tracker and creates or updates the Excel workbook.
+
+The equivalent terminal command, after Edge has been started on debugging port `9222`, is:
+
+```bash
+npm run remote
+```
+
+## Monthly Workbook Behavior
+
+The workbook contains sheets such as:
+
+```text
+Current Tracker | Oct 2026 | Sep 2026
+```
+
+- During a month, each complete crawl replaces that month's sheet with the newest successful snapshot.
+- When a new month begins, the previous month's final snapshot is left unchanged and a new monthly sheet is created.
+- Incomplete crawls do not replace a valid monthly snapshot.
+- Monthly sheets contain only games meeting the configured follower threshold at the time of that snapshot.
+- The newest month appears first after `Current Tracker`.
+
+Every tracker sheet uses this column order:
+
+```text
+Release Date, Game Title, Followers, Publisher, Developer,
+Is Free, Genres, Categories, Platforms, AppID, Snapshot Date
+```
+
+Game titles link to SteamDB, and AppIDs link to the corresponding Steam Store pages.
+
+## Local Data Files
+
+The tracker creates these files locally:
+
+- `steamdb_master_data.json`: daily observations and cached Steam metadata.
+- `steamdb_monthly_snapshots.json`: frozen monthly snapshots used to rebuild the workbook.
+- `steamdb_upcoming_tracker.xlsx`: the generated Excel tracker.
+- `debug_cloudflare_*.png`: troubleshooting screenshots created only when a weekly table fails to load.
+
+These generated files are intentionally ignored by Git. Someone cloning the repository starts with a clean tracker and creates their own local history.
+
+To regenerate Excel from the existing local JSON data without scraping SteamDB:
+
+```bash
+npm run rebuild
+```
+
+## Configuration
+
+Edit the constants near the top of `steamdb_tracker.js`:
+
+```javascript
+const FOCUSED_THRESHOLD = 1000;
+const WEEKS_TO_SCRAPE = 6;
+```
+
+The Steam Store API is queried only for qualifying games whose metadata is not already cached.
+
 ## Disclaimer
-This tool is for educational and personal data tracking purposes. Please respect SteamDB's server load by running this script a maximum of once per day.
+
+This project is for personal and educational tracking. Run it no more than once per day and respect SteamDB's server load and terms.
