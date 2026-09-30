@@ -15,6 +15,7 @@ async function scrapeSteamDB() {
     const userDataDir = path.join(__dirname, 'playwright_data');
     const context = await chromium.launchPersistentContext(userDataDir, { 
         headless: false,
+        channel: 'chrome', // <--- Uses your REAL Google Chrome instead of the bot Chromium
         userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
         viewport: { width: 1280, height: 720 },
         args: ['--disable-blink-features=AutomationControlled']
@@ -39,7 +40,8 @@ async function scrapeSteamDB() {
             await page.waitForSelector('table.table-sales tbody tr.app', { timeout: 90000 });
             console.log(`Table loaded for ${week}. Extracting...`);
         } catch (e) {
-            console.log(`Skipping ${week} - Table didn't load. This usually means Cloudflare blocked us or you ran out of time to click the checkbox.`);
+            console.log(`Skipping ${week} - Table didn't load. Taking a debug screenshot...`);
+            await page.screenshot({ path: `debug_cloudflare_${week}.png` });
             continue;
         }
 
