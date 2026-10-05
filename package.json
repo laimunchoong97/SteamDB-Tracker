@@ -8,7 +8,7 @@
     "remote": "node steamdb_tracker.js --remote",
     "rebuild": "node steamdb_tracker.js --rebuild",
     "check": "node --check steamdb_tracker.js",
-    "test": "node --test test/*.test.js",
+    "test": "node --test test/tracker.test.js",
     "package:windows": "powershell -ExecutionPolicy Bypass -File scripts/build-windows-package.ps1"
   },
   "dependencies": {
