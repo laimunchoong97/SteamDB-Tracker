@@ -9,7 +9,10 @@ const JSZip = require('jszip');
 process.env.FOCUSED_THRESHOLD = '500';
 
 const {
+    assertCrawlProducedData,
     buildWorkbookModel,
+    enrichSteamMetadata,
+    formatDuration,
     generateWorkbook,
     getActiveMonthKeys,
     getCurrentOutlook,
@@ -21,6 +24,83 @@ const {
     resolveOutputTargets,
     saveData
 } = require('../steamdb_tracker');
+
+test('rejects crawls where no week loaded or no rows were extracted', () => {
+    assert.throws(
+        () => assertCrawlProducedData(0, 9, 0),
+        /none of the 9 week\(s\) loaded/
+    );
+    assert.throws(
+        () => assertCrawlProducedData(9, 9, 0),
+        /contained no game rows/
+    );
+    assert.doesNotThrow(() => assertCrawlProducedData(8, 9, 120));
+});
+
+test('reports metadata progress and completion totals', async context => {
+    const tempDirectory = fs.mkdtempSync(path.join(os.tmpdir(), 'steamdb-metadata-test-'));
+    const masterFile = path.join(tempDirectory, 'master.json');
+    const messages = [];
+    const errors = [];
+    const data = {
+        10: { name: 'Alpha' },
+        20: { name: 'Beta' }
+    };
+    context.after(() => fs.rmSync(tempDirectory, { recursive: true, force: true }));
+
+    await enrichSteamMetadata(data, ['10', '20'], '2026-10-02', masterFile, {
+        fetchAppDetails: async appId => appId === '10'
+            ? {
+                developers: ['Developer'],
+                publishers: ['Publisher'],
+                is_free: false,
+                genres: [],
+                categories: [],
+                platforms: { windows: true }
+            }
+            : null,
+        metadataConcurrency: 2,
+        metadataRequestSpacingMs: 0,
+        log: message => messages.push(message),
+        logError: message => errors.push(message)
+    });
+
+    assert.equal(data[10].metadataStatus, 'complete');
+    assert.equal(data[20].metadataStatus, 'unavailable');
+    assert.equal(errors.length, 0);
+    assert(messages.some(message => message.includes('[Metadata 1/2] Fetching Alpha')));
+    assert(messages.some(message => message.includes('[Metadata 2/2] Finished')));
+    assert(messages.some(message => message.includes('1 complete, 1 unavailable, 0 failed')));
+    assert.equal(formatDuration(15000), '15s');
+    assert.equal(formatDuration(65000), '1m 5s');
+});
+
+test('enriches metadata with the configured worker concurrency', async context => {
+    const tempDirectory = fs.mkdtempSync(path.join(os.tmpdir(), 'steamdb-concurrency-test-'));
+    const masterFile = path.join(tempDirectory, 'master.json');
+    const data = Object.fromEntries(
+        Array.from({ length: 6 }, (_, index) => [String(index + 1), { name: `Game ${index + 1}` }])
+    );
+    let inFlight = 0;
+    let maxInFlight = 0;
+    context.after(() => fs.rmSync(tempDirectory, { recursive: true, force: true }));
+
+    await enrichSteamMetadata(data, Object.keys(data), '2026-10-02', masterFile, {
+        fetchAppDetails: async () => {
+            inFlight += 1;
+            maxInFlight = Math.max(maxInFlight, inFlight);
+            await new Promise(resolve => setTimeout(resolve, 10));
+            inFlight -= 1;
+            return null;
+        },
+        metadataConcurrency: 3,
+        metadataRequestSpacingMs: 0,
+        log: () => {},
+        logError: () => {}
+    });
+
+    assert.equal(maxInFlight, 3);
+});
 
 test('enforces the 1,000 follower floor and retains earlier history', () => {
     const model = buildWorkbookModel({

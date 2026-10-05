@@ -8,7 +8,8 @@
     "remote": "node steamdb_tracker.js --remote",
     "rebuild": "node steamdb_tracker.js --rebuild",
     "check": "node --check steamdb_tracker.js",
-    "test": "node --test test/*.test.js"
+    "test": "node --test test/*.test.js",
+    "package:windows": "powershell -ExecutionPolicy Bypass -File scripts/build-windows-package.ps1"
   },
   "dependencies": {
     "dotenv": "^18.0.4",
@@ -24,5 +25,8 @@
   },
   "overrides": {
     "uuid": "^11.1.1"
+  },
+  "devDependencies": {
+    "jszip": "^3.10.2"
   }
 }

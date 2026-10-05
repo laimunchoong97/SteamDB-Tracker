@@ -188,6 +188,38 @@ The displayed value combines both parts, such as `P1 - AA`. Current Outlook is r
 
 ## Installation
 
+### Non-Technical Windows Package
+
+For colleagues who do not use Git or the command line, distribute one of the generated Windows packages:
+
+- `SteamDB-Tracker-Setup.exe` — recommended installer with Start Menu/optional desktop shortcut
+- `SteamDB-Tracker-Windows-x64.zip` — portable version; extract the full folder before running
+
+After installation or extraction, open **SteamDB Tracker.exe**. The bilingual launcher provides:
+
+- Workbook language selector: English, Simplified Chinese, or both
+- Follower-threshold setting
+- **Run Tracker** button
+- **Rebuild Excel** button
+- Buttons to open either workbook or the output folder
+- Progress and error log
+
+The package includes its own Node.js runtime and npm dependencies. End users do **not** need to install Node.js, npm, Git, Playwright Chromium, or Inno Setup. Microsoft Edge is still required for the Cloudflare verification step.
+
+The installer uses a per-user location under `%LOCALAPPDATA%\Programs\SteamDB Tracker`, so administrator access is not required. Tracker history and settings stay local to that installation.
+
+The generated executables are not code-signed. Windows SmartScreen may show an **Unknown publisher** warning; organizations that distribute the package broadly should sign the installer with their own trusted code-signing certificate.
+
+### Build The Windows Package
+
+Maintainers can create both packages on Windows:
+
+```powershell
+npm run package:windows
+```
+
+The command compiles the launcher, bundles Node.js and `node_modules`, validates the portable runtime, creates `dist/SteamDB-Tracker-Windows-x64.zip`, and creates `dist/SteamDB-Tracker-Setup.exe` when Inno Setup 6 is installed. SHA-256 hashes are written to `dist/SHA256SUMS.txt`. Generated files under `dist/` are not committed to Git.
+
 ### Requirements
 
 - Windows with Microsoft Edge
@@ -210,6 +242,9 @@ BROWSER_CHANNEL=msedge
 BROWSER_EXECUTABLE_PATH=
 FOCUSED_THRESHOLD=1000
 OUTPUT_LANGUAGE=both
+STEAM_API_TIMEOUT_MS=15000
+STEAM_API_CONCURRENCY=3
+STEAM_API_REQUEST_SPACING_MS=500
 ```
 
 ## Running A Crawl
@@ -239,6 +274,7 @@ npm run remote
 | `npm run rebuild` | Rebuild the workbook(s) and archives from local JSON without crawling SteamDB or calling the Steam API |
 | `npm run check` | Check JavaScript syntax |
 | `npm test` | Run calendar, archive, localization, threshold, and workbook tests |
+| `npm run package:windows` | Build the portable Windows package and installer |
 
 ## Configuration
 
@@ -299,7 +335,7 @@ If any expected weekly table fails to load:
 
 ### Steam Metadata Cache
 
-Steam metadata is saved in the master JSON and reused on later runs. Requests are sent conservatively to avoid Steam API rate limits, so the first enrichment of many qualifying games can take several minutes. Failed or unavailable records are retried later.
+Steam metadata is saved in the master JSON and reused on later runs. Requests use three concurrent workers by default, with globally spaced starts and automatic backoff to reduce Steam API rate limiting. The launcher reports per-game progress, completion percentage, and an estimated time remaining. Requests time out after `STEAM_API_TIMEOUT_MS` (15 seconds by default) and transient failures are retried. Concurrency can be reduced with `STEAM_API_CONCURRENCY`, and request pacing can be adjusted with `STEAM_API_REQUEST_SPACING_MS`. Failed or unavailable records are retried later.
 
 ### Date And Time-Zone Handling
 
@@ -313,6 +349,9 @@ After upgrading from an earlier version that displayed dates one day early, clos
 |---|---|---|
 | `steamdb_tracker.js` | Scraper, persistence, archives, localization, and Excel generation | Yes |
 | `start_tracker.bat` | Recommended Windows/Edge launch workflow | Yes |
+| `launcher/SteamDbTrackerLauncher.cs` | Bilingual graphical launcher source | Yes |
+| `scripts/build-windows-package.ps1` | Windows packaging and validation script | Yes |
+| `installer/SteamDBTracker.iss` | Installer definition | Yes |
 | `.env.example` | Shareable configuration template | Yes |
 | `README.zh-CN.md` | Simplified Chinese documentation | Yes |
 | `steamdb_master_data.json` | Permanent local game history and metadata cache | No |
@@ -328,7 +367,7 @@ Versions before the release-month redesign may have created `steamdb_monthly_sna
 
 ### Excel file is locked
 
-If the tracker says to close a workbook, close `steamdb_upcoming_tracker.xlsx` and `steamdb_upcoming_tracker_zh-CN.xlsx` in Excel and rerun the command. Excel prevents the script from replacing an open workbook.
+The launcher checks the selected output workbook before crawling or rebuilding and warns if Excel has it locked. Close `steamdb_upcoming_tracker.xlsx` and `steamdb_upcoming_tracker_zh-CN.xlsx`, then try again. If a crawl completed but workbook generation failed because a file was opened after the check, close Excel and click **Rebuild Excel**; the completed crawl data is already saved and does not need to be collected again.
 
 ### Excel reports a problem with the Chinese workbook
 

@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config({ quiet: true });
 
 const fs = require('fs');
 const path = require('path');
@@ -21,10 +21,20 @@ const CRAWL_META_KEY = '_crawlMeta';
 const ARCHIVE_FILE_NAME = 'steamdb_release_archives.json';
 const ARCHIVE_SCHEMA_VERSION = 1;
 
-const STEAM_API_BATCH_SIZE = 1;
-const STEAM_API_BATCH_DELAY_MS = 1600;
 const STEAM_API_MAX_RETRIES = 2;
 const STEAM_METADATA_RECHECK_DAYS = 7;
+const configuredSteamApiConcurrency = Number.parseInt(process.env.STEAM_API_CONCURRENCY || '', 10);
+const STEAM_API_CONCURRENCY = Number.isFinite(configuredSteamApiConcurrency)
+    ? Math.min(Math.max(configuredSteamApiConcurrency, 1), 8)
+    : 3;
+const configuredSteamApiSpacing = Number.parseInt(process.env.STEAM_API_REQUEST_SPACING_MS || '', 10);
+const STEAM_API_REQUEST_SPACING_MS = Number.isFinite(configuredSteamApiSpacing)
+    ? Math.max(configuredSteamApiSpacing, 0)
+    : 500;
+const configuredSteamApiTimeout = Number.parseInt(process.env.STEAM_API_TIMEOUT_MS || '', 10);
+const STEAM_API_TIMEOUT_MS = Number.isFinite(configuredSteamApiTimeout)
+    ? Math.max(configuredSteamApiTimeout, 1000)
+    : 15000;
 
 const MONTH_NAMES = [
     'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
@@ -307,6 +317,16 @@ function getUpcomingWeeksForMonths(crawlDate = new Date()) {
     return Array.from(weeks).sort();
 }
 
+function assertCrawlProducedData(successfulWeeks, expectedWeeks, rowCount) {
+    if (successfulWeeks === 0) {
+        throw new Error(`SteamDB crawl failed: none of the ${expectedWeeks} week(s) loaded.`);
+    }
+
+    if (rowCount === 0) {
+        throw new Error('SteamDB crawl failed: the loaded pages contained no game rows.');
+    }
+}
+
 async function scrapeSteamDB() {
     console.log('Starting SteamDB Tracker...');
 
@@ -352,67 +372,71 @@ async function scrapeSteamDB() {
     console.log(`Calendar-month crawl covers ${weeksToScrape.length} ISO week(s): ${weeksToScrape.join(', ')}`);
     let successfulWeeks = 0;
 
-    for (const week of weeksToScrape) {
-        const url = `https://steamdb.info/upcoming/?sort=followers_desc&week=${week}`;
-        console.log(`Navigating to ${url}`);
-        await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
+    try {
+        for (const week of weeksToScrape) {
+            const url = `https://steamdb.info/upcoming/?sort=followers_desc&week=${week}`;
+            console.log(`Navigating to ${url}`);
+            await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
 
-        try {
-            console.log('Waiting for the table. Complete any Cloudflare check in the browser.');
-            await page.waitForSelector('table.table-sales', { timeout: 90000 });
-        } catch (error) {
-            console.log(`Skipping ${week}: the table did not load.`);
-            await page.screenshot({ path: path.join(__dirname, `debug_cloudflare_${week}.png`) });
-            continue;
-        }
+            try {
+                console.log('Waiting for the table. Complete any Cloudflare check in the browser.');
+                await page.waitForSelector('table.table-sales', { timeout: 90000 });
+            } catch (error) {
+                console.log(`Skipping ${week}: the table did not load.`);
+                await page.screenshot({ path: path.join(__dirname, `debug_cloudflare_${week}.png`) });
+                continue;
+            }
 
-        const games = await page.evaluate(() => {
-            const results = [];
+            const games = await page.evaluate(() => {
+                const results = [];
 
-            document.querySelectorAll('table.table-sales tbody tr.app').forEach(row => {
-                const appId = row.getAttribute('data-appid');
-                const cells = Array.from(row.querySelectorAll('td'));
-                if (!appId || cells.length < 8) return;
+                document.querySelectorAll('table.table-sales tbody tr.app').forEach(row => {
+                    const appId = row.getAttribute('data-appid');
+                    const cells = Array.from(row.querySelectorAll('td'));
+                    if (!appId || cells.length < 8) return;
 
-                const releaseTimestamp = Number(cells[6].getAttribute('data-sort'));
-                results.push({
-                    appId,
-                    name: cells[2].innerText.trim().replace(/\n/g, ' '),
-                    releaseDate: cells[6].innerText.trim(),
-                    releaseTimestamp: Number.isFinite(releaseTimestamp) && releaseTimestamp > 0
-                        ? releaseTimestamp
-                        : null,
-                    followers: Number(cells[7].getAttribute('data-sort'))
-                        || parseInt(cells[7].innerText.replace(/,/g, ''), 10)
-                        || 0
+                    const releaseTimestamp = Number(cells[6].getAttribute('data-sort'));
+                    results.push({
+                        appId,
+                        name: cells[2].innerText.trim().replace(/\n/g, ' '),
+                        releaseDate: cells[6].innerText.trim(),
+                        releaseTimestamp: Number.isFinite(releaseTimestamp) && releaseTimestamp > 0
+                            ? releaseTimestamp
+                            : null,
+                        followers: Number(cells[7].getAttribute('data-sort'))
+                            || parseInt(cells[7].innerText.replace(/,/g, ''), 10)
+                            || 0
+                    });
                 });
+
+                return results;
             });
 
-            return results;
-        });
+            allGames.push(...games);
+            successfulWeeks += 1;
+            console.log(`Extracted ${games.length} games from ${week}.`);
+            await page.waitForTimeout(3000);
+        }
 
-        allGames.push(...games);
-        successfulWeeks += 1;
-        console.log(`Extracted ${games.length} games from ${week}.`);
-        await page.waitForTimeout(3000);
-    }
-
-    if (isRemote && browser) {
-        await browser.close();
-    } else {
-        await context.close();
-    }
-
-    const crawlComplete = successfulWeeks === weeksToScrape.length;
-    console.log(`Extracted ${allGames.length} rows across ${successfulWeeks}/${weeksToScrape.length} weeks.`);
-
-    if (allGames.length > 0) {
+        const crawlComplete = successfulWeeks === weeksToScrape.length;
+        console.log(`Extracted ${allGames.length} rows across ${successfulWeeks}/${weeksToScrape.length} weeks.`);
+        assertCrawlProducedData(successfulWeeks, weeksToScrape.length, allGames.length);
         await saveData(allGames, {
             crawlDate: getLocalDateKey(),
             crawlComplete,
             expectedWeeks: weeksToScrape.length,
             successfulWeeks
         });
+    } finally {
+        try {
+            if (isRemote && browser) {
+                await browser.close();
+            } else if (context) {
+                await context.close();
+            }
+        } catch (error) {
+            console.warn(`Browser cleanup failed: ${error.message || error}`);
+        }
     }
 }
 
@@ -595,25 +619,102 @@ function needsSteamMetadata(game, crawlDate) {
     return requiredFields.some(field => game[field] === undefined || game[field] === '' || game[field] === 'Error');
 }
 
-async function fetchSteamAppDetails(appId, attempt = 0) {
-    const response = await fetch(`https://store.steampowered.com/api/appdetails?appids=${appId}`, {
-        headers: { Accept: 'application/json' }
-    });
+function wait(milliseconds) {
+    return new Promise(resolve => setTimeout(resolve, milliseconds));
+}
 
-    if (response.status === 429 && attempt < STEAM_API_MAX_RETRIES) {
-        const retryAfter = Number(response.headers.get('retry-after')) || 5;
-        console.log(`Steam API rate-limited AppID ${appId}; retrying in ${retryAfter} seconds.`);
-        await new Promise(resolve => setTimeout(resolve, retryAfter * 1000));
-        return fetchSteamAppDetails(appId, attempt + 1);
+function formatDuration(milliseconds) {
+    const totalSeconds = Math.max(0, Math.ceil(milliseconds / 1000));
+    if (totalSeconds < 60) return `${totalSeconds}s`;
+    return `${Math.floor(totalSeconds / 60)}m ${totalSeconds % 60}s`;
+}
+
+function createRequestGate(spacingMs) {
+    let queue = Promise.resolve();
+    let nextRequestAt = 0;
+    let blockedUntil = 0;
+
+    return {
+        waitForSlot() {
+            const scheduled = queue.then(async () => {
+                const delayMs = Math.max(nextRequestAt, blockedUntil) - Date.now();
+                if (delayMs > 0) await wait(delayMs);
+                nextRequestAt = Date.now() + spacingMs;
+            });
+            queue = scheduled.catch(() => {});
+            return scheduled;
+        },
+        backoff(milliseconds) {
+            blockedUntil = Math.max(blockedUntil, Date.now() + milliseconds);
+        }
+    };
+}
+
+async function fetchSteamAppDetails(appId, options = {}) {
+    const timeoutMs = options.timeoutMs || STEAM_API_TIMEOUT_MS;
+    const log = options.log || console.log;
+
+    for (let attempt = 0; attempt <= STEAM_API_MAX_RETRIES; attempt += 1) {
+        if (options.beforeRequest) await options.beforeRequest();
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), timeoutMs);
+
+        try {
+            const response = await fetch(`https://store.steampowered.com/api/appdetails?appids=${appId}`, {
+                headers: { Accept: 'application/json' },
+                signal: controller.signal
+            });
+
+            if ((response.status === 429 || response.status >= 500) && attempt < STEAM_API_MAX_RETRIES) {
+                const retryAfter = response.status === 429
+                    ? Number(response.headers.get('retry-after')) || 5
+                    : 2 ** (attempt + 1);
+                log(
+                    `Steam API returned HTTP ${response.status} for AppID ${appId}; `
+                    + `retrying in ${retryAfter} seconds (${attempt + 1}/${STEAM_API_MAX_RETRIES}).`
+                );
+                if (options.onBackoff) {
+                    options.onBackoff(retryAfter * 1000);
+                } else {
+                    await wait(retryAfter * 1000);
+                }
+                continue;
+            }
+
+            if (!response.ok) {
+                throw new Error(`Steam API returned HTTP ${response.status}`);
+            }
+
+            const payload = await response.json();
+            const result = payload && payload[appId];
+            return result && result.success ? result.data : null;
+        } catch (error) {
+            const timedOut = error.name === 'AbortError';
+            const retryable = timedOut || error instanceof TypeError;
+            if (retryable && attempt < STEAM_API_MAX_RETRIES) {
+                const retryAfter = 2 ** (attempt + 1);
+                const reason = timedOut ? `timed out after ${formatDuration(timeoutMs)}` : error.message;
+                log(
+                    `Steam API request for AppID ${appId} ${reason}; `
+                    + `retrying in ${retryAfter} seconds (${attempt + 1}/${STEAM_API_MAX_RETRIES}).`
+                );
+                if (options.onBackoff) {
+                    options.onBackoff(retryAfter * 1000);
+                } else {
+                    await wait(retryAfter * 1000);
+                }
+                continue;
+            }
+            if (timedOut) {
+                throw new Error(`Steam API timed out after ${formatDuration(timeoutMs)}`);
+            }
+            throw error;
+        } finally {
+            clearTimeout(timeout);
+        }
     }
 
-    if (!response.ok) {
-        throw new Error(`Steam API returned HTTP ${response.status}`);
-    }
-
-    const payload = await response.json();
-    const result = payload && payload[appId];
-    return result && result.success ? result.data : null;
+    throw new Error('Steam API request failed after all retries');
 }
 
 function applySteamMetadata(game, appData, crawlDate) {
@@ -643,28 +744,77 @@ async function enrichSteamMetadata(existingData, appIds, crawlDate, masterFile, 
     if (options.fetchMetadata === false) return;
 
     const fetcher = options.fetchAppDetails || fetchSteamAppDetails;
+    const log = options.log || console.log;
+    const logError = options.logError || console.error;
+    const concurrency = Math.min(Math.max(options.metadataConcurrency ?? STEAM_API_CONCURRENCY, 1), 8);
+    const requestSpacingMs = Math.max(options.metadataRequestSpacingMs ?? STEAM_API_REQUEST_SPACING_MS, 0);
     const pendingIds = appIds.filter(appId => needsSteamMetadata(existingData[appId], crawlDate));
-    console.log(`Steam metadata required for ${pendingIds.length}/${appIds.length} qualifying games.`);
+    log(`Steam metadata required for ${pendingIds.length}/${appIds.length} qualifying games.`);
 
-    for (let index = 0; index < pendingIds.length; index += STEAM_API_BATCH_SIZE) {
-        const batch = pendingIds.slice(index, index + STEAM_API_BATCH_SIZE);
+    if (pendingIds.length === 0) {
+        log('Steam metadata is already up to date.');
+        return;
+    }
 
-        await Promise.all(batch.map(async appId => {
+    const startedAt = Date.now();
+    const results = { complete: 0, unavailable: 0, failed: 0 };
+    const requestGate = createRequestGate(requestSpacingMs);
+    let processed = 0;
+    let nextIndex = 0;
+
+    log(
+        `Fetching Steam metadata with ${Math.min(concurrency, pendingIds.length)} worker(s) `
+        + `and ${requestSpacingMs}ms request spacing.`
+    );
+
+    async function processNextGame() {
+        while (nextIndex < pendingIds.length) {
+            const position = nextIndex;
+            nextIndex += 1;
+            const appId = pendingIds[position];
+            const gameName = existingData[appId].name || 'Unknown game';
+            log(`[Metadata ${position + 1}/${pendingIds.length}] Fetching ${gameName} (AppID ${appId})...`);
+
             try {
-                const appData = await fetcher(appId);
+                const appData = await fetcher(appId, {
+                    timeoutMs: options.metadataTimeoutMs,
+                    log,
+                    beforeRequest: requestGate.waitForSlot,
+                    onBackoff: requestGate.backoff
+                });
                 applySteamMetadata(existingData[appId], appData, crawlDate);
+                results[appData ? 'complete' : 'unavailable'] += 1;
             } catch (error) {
-                console.error(`Steam metadata failed for AppID ${appId}: ${error.message}`);
+                logError(`Steam metadata failed for AppID ${appId}: ${error.message}`);
                 existingData[appId].metadataStatus = 'error';
                 existingData[appId].metadataLastChecked = crawlDate;
+                results.failed += 1;
             }
-        }));
 
-        writeJson(masterFile, existingData);
-        if (index + STEAM_API_BATCH_SIZE < pendingIds.length) {
-            await new Promise(resolve => setTimeout(resolve, STEAM_API_BATCH_DELAY_MS));
+            processed += 1;
+            const elapsed = Date.now() - startedAt;
+            const remaining = pendingIds.length - processed;
+            const eta = remaining > 0
+                ? `, ETA ${formatDuration((elapsed / processed) * remaining)}`
+                : '';
+            log(
+                `[Metadata ${processed}/${pendingIds.length}] Finished ${gameName} `
+                + `(${Math.round((processed / pendingIds.length) * 100)}%${eta}).`
+            );
+            writeJson(masterFile, existingData);
         }
     }
+
+    const workers = Array.from(
+        { length: Math.min(concurrency, pendingIds.length) },
+        () => processNextGame()
+    );
+    await Promise.all(workers);
+
+    log(
+        `Steam metadata finished in ${formatDuration(Date.now() - startedAt)}: `
+        + `${results.complete} complete, ${results.unavailable} unavailable, ${results.failed} failed.`
+    );
 }
 
 function normalizePlatforms(value) {
@@ -1696,7 +1846,11 @@ if (require.main === module) {
 module.exports = {
     COLUMN_SPECS,
     LOCALES,
+    assertCrawlProducedData,
     buildWorkbookModel,
+    enrichSteamMetadata,
+    fetchSteamAppDetails,
+    formatDuration,
     generateWorkbook,
     getActiveMonthKeys,
     getCurrentOutlook,

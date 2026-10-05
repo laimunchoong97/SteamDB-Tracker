@@ -10,3 +10,4 @@ steamdb_upcoming_tracker_zh-CN.xlsx
 debug_cloudflare_*.png
 ~$*.xlsx
 .env
+dist/

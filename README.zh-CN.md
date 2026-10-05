@@ -172,6 +172,38 @@ Excel 月份工作表代表游戏计划发售的时间：
 
 ## 安装
 
+### 面向非技术同事的 Windows 安装包
+
+不使用 Git 或命令行的同事可以直接使用以下任一安装包：
+
+- `SteamDB-Tracker-Setup.exe` — 推荐使用，提供开始菜单和可选桌面快捷方式
+- `SteamDB-Tracker-Windows-x64.zip` — 便携版，使用前请完整解压整个文件夹
+
+安装或解压后，打开 **SteamDB Tracker.exe**。双语图形界面提供：
+
+- 英文、简体中文或双语工作簿选择
+- 关注人数门槛设置
+- **运行抓取**按钮
+- **重建 Excel**按钮
+- 打开英文/中文工作簿或输出文件夹的按钮
+- 运行进度和错误日志
+
+安装包已包含 Node.js 运行时和 npm 依赖。最终用户无需安装 Node.js、npm、Git、Playwright Chromium 或 Inno Setup。Cloudflare 验证仍然需要 Microsoft Edge。
+
+安装程序默认使用 `%LOCALAPPDATA%\Programs\SteamDB Tracker` 下的当前用户目录，不需要管理员权限。追踪历史和设置保存在该安装中。
+
+生成的可执行文件尚未进行代码签名，因此 Windows SmartScreen 可能显示“未知发布者”。如需在公司内大规模分发，建议使用公司可信的代码签名证书对安装程序进行签名。
+
+### 构建 Windows 安装包
+
+维护者可在 Windows 上执行：
+
+```powershell
+npm run package:windows
+```
+
+该命令会编译图形启动器、打包 Node.js 与 `node_modules`、验证便携运行环境、生成 `dist/SteamDB-Tracker-Windows-x64.zip`，并在安装 Inno Setup 6 后生成 `dist/SteamDB-Tracker-Setup.exe`。SHA-256 校验值会写入 `dist/SHA256SUMS.txt`。`dist/` 下的生成文件不会提交到 Git。
+
 ### 环境要求
 
 - Windows，并安装 Microsoft Edge
@@ -194,6 +226,9 @@ BROWSER_CHANNEL=msedge
 BROWSER_EXECUTABLE_PATH=
 FOCUSED_THRESHOLD=1000
 OUTPUT_LANGUAGE=both
+STEAM_API_TIMEOUT_MS=15000
+STEAM_API_CONCURRENCY=3
+STEAM_API_REQUEST_SPACING_MS=500
 ```
 
 ## 运行抓取
@@ -223,6 +258,7 @@ npm run remote
 | `npm run rebuild` | 不抓取 SteamDB、不调用 Steam API，仅从本地 JSON 重建工作簿和归档 |
 | `npm run check` | 检查 JavaScript 语法 |
 | `npm test` | 运行日历、归档、本地化、阈值和工作簿测试 |
+| `npm run package:windows` | 构建 Windows 便携包和安装程序 |
 
 ## 配置
 
@@ -283,7 +319,7 @@ OUTPUT_LANGUAGE=both
 
 ### Steam 元数据缓存
 
-Steam 元数据保存在主 JSON 中，后续运行会复用。请求以保守节奏发送，以避免 Steam API 限流，因此首次为大量达标游戏补充元数据可能需要数分钟。失败或不可用的记录会在之后重试。
+Steam 元数据保存在主 JSON 中，后续运行会复用。默认使用 3 个并发工作线程，并对请求启动时间做全局间隔控制；遇到 Steam API 限流或临时错误时会自动退避。启动器会显示逐个游戏的进度、完成百分比和预计剩余时间。每个请求默认在 15 秒后超时（可通过 `STEAM_API_TIMEOUT_MS` 调整）；并发数和请求间隔可通过 `STEAM_API_CONCURRENCY` 与 `STEAM_API_REQUEST_SPACING_MS` 调整。失败或不可用的记录会在之后重试。
 
 ### 日期与时区处理
 
@@ -297,6 +333,9 @@ Steam 元数据保存在主 JSON 中，后续运行会复用。请求以保守�
 |---|---|---|
 | `steamdb_tracker.js` | 抓取、持久化、归档、本地化和 Excel 生成 | 是 |
 | `start_tracker.bat` | 推荐的 Windows/Edge 启动流程 | 是 |
+| `launcher/SteamDbTrackerLauncher.cs` | 双语图形启动器源代码 | 是 |
+| `scripts/build-windows-package.ps1` | Windows 打包与验证脚本 | 是 |
+| `installer/SteamDBTracker.iss` | 安装程序定义 | 是 |
 | `.env.example` | 可共享的配置模板 | 是 |
 | `README.md` | 英文文档 | 是 |
 | `steamdb_master_data.json` | 本地游戏历史与元数据缓存 | 否 |
@@ -312,7 +351,7 @@ Steam 元数据保存在主 JSON 中，后续运行会复用。请求以保守�
 
 ### Excel 文件被占用
 
-如果工具提示关闭工作簿，请在 Excel 中关闭 `steamdb_upcoming_tracker.xlsx` 和 `steamdb_upcoming_tracker_zh-CN.xlsx`，然后重新运行。Excel 会阻止脚本替换正在打开的工作簿。
+启动器会在抓取或重建前检查所选输出工作簿是否被 Excel 占用。如果出现提示，请关闭 `steamdb_upcoming_tracker.xlsx` 和 `steamdb_upcoming_tracker_zh-CN.xlsx` 后重试。如果抓取已完成，但工作簿在预检后被打开并导致生成失败，请关闭 Excel，然后点击 **重建 Excel**；完整抓取数据已经保存，无需再次抓取。
 
 ### Excel 提示中文工作簿内容有问题
 
